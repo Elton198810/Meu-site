@@ -1,115 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="40 ferramentas online gratuitas para cálculos, textos, conversões, geradores e produtividade.">
-  <meta name="keywords" content="ferramentas online, calculadora, conversor, gerador de senha, contador de palavras, QR Code">
-  <meta name="theme-color" content="#2563eb">
-  <meta property="og:title" content="Ferramentas Pro">
-  <meta property="og:description" content="40 ferramentas rápidas, gratuitas e fáceis de usar pelo celular.">
-  <meta property="og:type" content="website">
-  <title>Ferramentas Pro — Versão 6</title>
-  <style>
-    :root{--bg:#f4f7fb;--card:#fff;--text:#14213d;--muted:#64748b;--primary:#2563eb;--primary2:#7c3aed;--border:#dbe4f0;--shadow:0 10px 30px rgba(15,23,42,.08);--ok:#15803d;--danger:#dc2626}
-    body.dark{--bg:#0f172a;--card:#182235;--text:#f8fafc;--muted:#a8b3c7;--border:#2a3952;--shadow:0 10px 30px rgba(0,0,0,.25)}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);transition:.2s}
-    header{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;padding:34px 16px 28px;text-align:center}
-    header h1{margin:0;font-size:clamp(30px,7vw,50px)}
-    header p{margin:8px auto 0;max-width:760px;opacity:.94}
-    .topbar{max-width:1180px;margin:-18px auto 18px;padding:0 16px;display:flex;gap:10px}
-    .search{flex:1;padding:15px 18px;border:1px solid var(--border);border-radius:16px;background:var(--card);color:var(--text);box-shadow:var(--shadow);font-size:16px}
-    .iconbtn{border:0;border-radius:16px;background:var(--card);color:var(--text);box-shadow:var(--shadow);padding:0 17px;font-size:21px;cursor:pointer}
-    .wrap{max-width:1180px;margin:auto;padding:0 16px 44px}
-    .stats,.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}
-    .pill,.filter{background:var(--card);border:1px solid var(--border);padding:9px 13px;border-radius:999px;color:var(--muted)}
-    .filter{cursor:pointer;font-weight:700}
-    .filter.active{background:var(--primary);color:#fff;border-color:var(--primary)}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-    .card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:18px;box-shadow:var(--shadow);cursor:pointer;transition:.2s}
-    .card:hover{transform:translateY(-4px);border-color:#93b4f5}
-    .fav{position:absolute;right:14px;top:12px;border:0;background:transparent;font-size:26px;cursor:pointer}
-    .card .emoji{font-size:34px}.card h3{margin:10px 35px 6px 0}.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
-    .tag{display:inline-block;margin-top:12px;padding:5px 9px;border-radius:999px;background:rgba(37,99,235,.1);color:var(--primary);font-size:12px;font-weight:700}
-    .empty{grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)}
-    .modal{position:fixed;inset:0;background:rgba(2,6,23,.7);display:none;align-items:center;justify-content:center;padding:16px;z-index:99}
-    .modal.open{display:flex}.dialog{width:min(650px,100%);max-height:92vh;overflow:auto;background:var(--card);border-radius:22px;padding:20px;border:1px solid var(--border);box-shadow:0 30px 80px rgba(0,0,0,.35)}
-    .dialog-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.dialog-head h2{margin:0}.close{border:0;background:transparent;color:var(--text);font-size:30px;cursor:pointer}
-    .tool{margin-top:18px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    label{display:block;margin:10px 0 6px;font-weight:700;font-size:14px}input,select,textarea,button{font:inherit}
-    input,select,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--bg);color:var(--text)}
-    textarea{min-height:120px;resize:vertical}.btn{margin-top:12px;border:0;border-radius:12px;background:var(--primary);color:#fff;padding:12px 16px;font-weight:800;cursor:pointer}
-    .btn.secondary{background:#475569}.btn.danger{background:var(--danger)}.result{margin-top:14px;padding:14px;border-radius:14px;background:var(--bg);border:1px dashed var(--border);white-space:pre-wrap;word-break:break-word;min-height:48px}
-    .actions{display:flex;gap:8px;flex-wrap:wrap}.history{margin:24px 0;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px}.history h2{margin-top:0;font-size:20px}.history-list{display:flex;gap:8px;flex-wrap:wrap}.history button{border:1px solid var(--border);background:var(--bg);color:var(--text);border-radius:999px;padding:8px 11px;cursor:pointer}
-    footer{text-align:center;padding:24px;color:var(--muted)}
-
-    .popular{margin:18px 0;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
-    .popular h2{margin:0 0 12px;font-size:20px}
-    .popular-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
-    .popular-item{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:12px;cursor:pointer;color:var(--text);text-align:left}
-    .popular-item strong{display:block;margin-bottom:4px}
-    .popular-item small{color:var(--muted)}
-    .usage{display:inline-block;margin-left:8px;padding:4px 8px;border-radius:999px;background:rgba(21,128,61,.1);color:var(--ok);font-size:11px;font-weight:800}
-    .hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .hero-btn{border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.15);color:#fff;padding:9px 13px;border-radius:999px;font-weight:800;cursor:pointer}
-
-    @media(max-width:600px){.row,.row3{grid-template-columns:1fr}.dialog{padding:16px}.topbar{margin-top:-12px}.iconbtn{padding:0 14px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="70 ferramentas online gratuitas para cálculos, textos, conversões, geradores e produtividade.">
+<meta name="keywords" content="ferramentas online, calculadora, conversor, gerador de senha, contador de palavras, QR Code">
+<meta name="theme-color" content="#2563eb">
+<meta property="og:title" content="Ferramentas Pro">
+<meta property="og:description" content="70 ferramentas rápidas, gratuitas e fáceis de usar pelo celular.">
+<meta property="og:type" content="website">
+<title>Ferramentas Pro — Versão 7</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--text:#14213d;--muted:#64748b;--primary:#2563eb;--primary2:#7c3aed;--border:#dbe4f0;--shadow:0 10px 30px rgba(15,23,42,.08);--ok:#15803d;--danger:#dc2626}
+body.dark{--bg:#0f172a;--card:#182235;--text:#f8fafc;--muted:#a8b3c7;--border:#2a3952;--shadow:0 10px 30px rgba(0,0,0,.25)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);transition:.2s}
+header{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;padding:34px 16px 28px;text-align:center}
+header h1{margin:0;font-size:clamp(30px,7vw,50px)}header p{margin:8px auto 0;max-width:760px;opacity:.94}
+.hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+.hero-btn{border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.15);color:#fff;padding:9px 13px;border-radius:999px;font-weight:800;cursor:pointer}
+.topbar{max-width:1180px;margin:-18px auto 18px;padding:0 16px;display:flex;gap:10px}
+.search{flex:1;padding:15px 18px;border:1px solid var(--border);border-radius:16px;background:var(--card);color:var(--text);box-shadow:var(--shadow);font-size:16px}
+.iconbtn{border:0;border-radius:16px;background:var(--card);color:var(--text);box-shadow:var(--shadow);padding:0 17px;font-size:21px;cursor:pointer}
+.wrap{max-width:1180px;margin:auto;padding:0 16px 44px}.stats,.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}
+.pill,.filter{background:var(--card);border:1px solid var(--border);padding:9px 13px;border-radius:999px;color:var(--muted)}
+.filter{cursor:pointer;font-weight:700}.filter.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:18px;box-shadow:var(--shadow);cursor:pointer;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#93b4f5}.fav{position:absolute;right:14px;top:12px;border:0;background:transparent;font-size:26px;cursor:pointer}
+.card .emoji{font-size:34px}.card h3{margin:10px 35px 6px 0}.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+.tag{display:inline-block;margin-top:12px;padding:5px 9px;border-radius:999px;background:rgba(37,99,235,.1);color:var(--primary);font-size:12px;font-weight:700}
+.usage{display:inline-block;margin-left:8px;padding:4px 8px;border-radius:999px;background:rgba(21,128,61,.1);color:var(--ok);font-size:11px;font-weight:800}
+.empty{grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)}
+.popular,.history{margin:22px 0;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+.popular h2,.history h2{margin:0 0 12px;font-size:20px}.popular-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.popular-item,.history button{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:12px;cursor:pointer;color:var(--text);text-align:left}
+.popular-item strong{display:block;margin-bottom:4px}.popular-item small{color:var(--muted)}.history-list{display:flex;gap:8px;flex-wrap:wrap}.history button{border-radius:999px;padding:8px 11px}
+.modal{position:fixed;inset:0;background:rgba(2,6,23,.72);display:none;align-items:center;justify-content:center;padding:16px;z-index:99}
+.modal.open{display:flex}.dialog{width:min(680px,100%);max-height:92vh;overflow:auto;background:var(--card);border-radius:22px;padding:20px;border:1px solid var(--border);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.dialog-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.dialog-head h2{margin:0}.close{border:0;background:transparent;color:var(--text);font-size:30px;cursor:pointer}
+.tool{margin-top:18px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+label{display:block;margin:10px 0 6px;font-weight:700;font-size:14px}input,select,textarea,button{font:inherit}
+input,select,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--bg);color:var(--text)}
+textarea{min-height:120px;resize:vertical}.btn{margin-top:12px;border:0;border-radius:12px;background:var(--primary);color:#fff;padding:12px 16px;font-weight:800;cursor:pointer}
+.btn.secondary{background:#475569}.btn.danger{background:var(--danger)}.result{margin-top:14px;padding:14px;border-radius:14px;background:var(--bg);border:1px dashed var(--border);white-space:pre-wrap;word-break:break-word;min-height:48px}
+.actions{display:flex;gap:8px;flex-wrap:wrap}footer{text-align:center;padding:24px;color:var(--muted)}
+@media(max-width:600px){.row,.row3{grid-template-columns:1fr}.dialog{padding:16px}.topbar{margin-top:-12px}.iconbtn{padding:0 14px}}
+</style>
 </head>
 <body>
 <header>
-  <h1>Ferramentas Pro</h1>
-  <p>40 ferramentas rápidas, gratuitas e fáceis de usar no celular.</p>
-  <div class="hero-actions">
-    <button class="hero-btn" onclick="document.getElementById('busca').focus()">🔎 Encontrar ferramenta</button>
-    <button class="hero-btn" onclick="document.getElementById('ranking').scrollIntoView({behavior:'smooth'})">🏆 Mais usadas</button>
-  </div>
+<h1>Ferramentas Pro</h1>
+<p>70 ferramentas rápidas, gratuitas e fáceis de usar no celular.</p>
+<div class="hero-actions">
+<button class="hero-btn" onclick="document.getElementById('busca').focus()">🔎 Encontrar ferramenta</button>
+<button class="hero-btn" onclick="document.getElementById('ranking').scrollIntoView({behavior:'smooth'})">🏆 Mais usadas</button>
+</div>
 </header>
-
 <div class="topbar">
-  <input id="busca" class="search" placeholder="Pesquisar ferramenta..." aria-label="Pesquisar ferramenta">
-  <button class="iconbtn" id="favoritosBtn" title="Mostrar favoritos">⭐</button>
-  <button class="iconbtn" id="tema" title="Mudar tema">🌙</button>
+<input id="busca" class="search" placeholder="Pesquisar ferramenta..." aria-label="Pesquisar ferramenta">
+<button class="iconbtn" id="favoritosBtn" title="Mostrar favoritos">⭐</button>
+<button class="iconbtn" id="tema" title="Mudar tema">🌙</button>
 </div>
-
 <main class="wrap">
-  <div class="stats">
-    <span class="pill"><strong>40</strong> ferramentas</span>
-    <span class="pill">Sem cadastro</span>
-    <span class="pill">Funciona no celular</span>
-    <span class="pill">Versão 6</span>
-  </div>
-  <div id="filters" class="filters"></div>
-  <section id="grid" class="grid"></section>
-
-  <section id="ranking" class="popular">
-    <h2>🏆 Ferramentas mais usadas</h2>
-    <div id="popularList" class="popular-list"></div>
-  </section>
-
-  <section class="history">
-    <h2>🕘 Usadas recentemente</h2>
-    <div id="historyList" class="history-list">Nenhuma ferramenta usada ainda.</div>
-  </section>
+<div class="stats"><span class="pill"><strong>70</strong> ferramentas</span><span class="pill">Sem cadastro</span><span class="pill">Funciona no celular</span><span class="pill">Versão 7</span></div>
+<div id="filters" class="filters"></div>
+<section id="grid" class="grid"></section>
+<section id="ranking" class="popular"><h2>🏆 Ferramentas mais usadas</h2><div id="popularList" class="popular-list"></div></section>
+<section class="history"><h2>🕘 Usadas recentemente</h2><div id="historyList" class="history-list">Nenhuma ferramenta usada ainda.</div></section>
 </main>
-
-<footer>© 2026 Ferramentas Pro — Versão 6.0</footer>
-
-<div id="modal" class="modal" aria-hidden="true">
-  <div class="dialog">
-    <div class="dialog-head">
-      <h2 id="tituloModal">Ferramenta</h2>
-      <button class="close" id="fechar" aria-label="Fechar">×</button>
-    </div>
-    <div id="conteudoModal" class="tool"></div>
-    <div class="actions">
-      <button class="btn secondary" id="copiarBtn">📋 Copiar resultado</button>
-      <button class="btn secondary" id="compartilharBtn">📱 Compartilhar</button>
-    </div>
-  </div>
-</div>
-
+<footer>© 2026 Ferramentas Pro — Versão 7.0</footer>
+<div id="modal" class="modal" aria-hidden="true"><div class="dialog"><div class="dialog-head"><h2 id="tituloModal">Ferramenta</h2><button class="close" id="fechar">×</button></div><div id="conteudoModal" class="tool"></div><div class="actions"><button class="btn secondary" id="copiarBtn">📋 Copiar resultado</button><button class="btn secondary" id="compartilharBtn">📱 Compartilhar</button></div></div></div>
 <script>
 const ferramentas=[
 ['imc','🧍','Calculadora de IMC','Descubra seu índice de massa corporal.','Calculadoras'],
@@ -142,7 +102,6 @@ const ferramentas=[
 ['qrcode','▦','Gerador de QR Code','Crie um QR Code para texto ou link.','Utilidades'],
 ['pix','💸','Gerador de PIX','Gere código PIX Copia e Cola.','Financeiro'],
 ['sorteio','🎁','Sorteador de nomes','Sorteie um nome de uma lista.','Geradores'],
-
 ['variacao','📊','Variação percentual','Calcule aumento ou redução percentual.','Calculadoras'],
 ['combustivel','⛽','Custo de combustível','Estime o custo de uma viagem.','Financeiro'],
 ['ritmo','🏃','Calculadora de ritmo','Calcule o ritmo por quilômetro.','Calculadoras'],
@@ -152,149 +111,146 @@ const ferramentas=[
 ['slug','🔗','Gerador de slug','Transforme títulos em links amigáveis.','Desenvolvimento'],
 ['cor','🎨','Gerador de cor','Gere uma cor hexadecimal aleatória.','Geradores'],
 ['timestamp','🕰️','Conversor de timestamp','Converta data para timestamp e vice-versa.','Datas'],
-['formatardata','📆','Formatador de data','Formate datas no padrão brasileiro.','Datas']
+['formatardata','📆','Formatador de data','Formate datas no padrão brasileiro.','Datas'],
+['media','🧮','Calculadora de média','Calcule a média de vários números.','Calculadoras'],
+['proporcao','📐','Calculadora de proporção','Divida valores em uma proporção.','Calculadoras'],
+['bhaskara','➗','Equação do 2º grau','Calcule as raízes pela fórmula de Bhaskara.','Calculadoras'],
+['area','📏','Área de formas','Calcule áreas de formas geométricas.','Calculadoras'],
+['volume','📦','Volume de sólidos','Calcule volumes básicos.','Calculadoras'],
+['gorjeta','🍽️','Calculadora de gorjeta','Divida a conta e calcule a gorjeta.','Financeiro'],
+['lucro','💰','Margem de lucro','Calcule lucro e margem percentual.','Financeiro'],
+['parcelas','🧾','Compra parcelada','Veja o valor de cada parcela.','Financeiro'],
+['economia','🐷','Meta de economia','Descubra quanto guardar por mês.','Financeiro'],
+['ferias','🏖️','Contagem para uma data','Veja quantos dias faltam.','Datas'],
+['diadasemana','🗓️','Dia da semana','Descubra o dia da semana de uma data.','Datas'],
+['somardias','➕','Somar dias à data','Adicione dias a uma data.','Datas'],
+['removeracentos','🔡','Remover acentos','Converta texto para caracteres simples.','Texto'],
+['capitalizar','Aa','Capitalizar palavras','Deixe cada palavra com inicial maiúscula.','Texto'],
+['repetidas','🧽','Remover linhas repetidas','Elimine linhas duplicadas.','Texto'],
+['substituir','🔄','Localizar e substituir','Troque palavras em um texto.','Texto'],
+['json','{}','Formatador de JSON','Formate e valide código JSON.','Desenvolvimento'],
+['html','</>','Escapar HTML','Converta caracteres HTML especiais.','Desenvolvimento'],
+['hash','🔒','Gerador SHA-256','Crie um hash seguro de um texto.','Desenvolvimento'],
+['binario','01','Texto para binário','Converta texto em código binário.','Desenvolvimento'],
+['moeda','💱','Conversor de moedas manual','Converta usando uma cotação informada.','Conversores'],
+['velocidade','🚗','Conversor de velocidade','Km/h, m/s e mph.','Conversores'],
+['areaConv','📐','Conversor de área','m², km², hectares e acres.','Conversores'],
+['volumeConv','🧴','Conversor de volume','Litros, ml, galões e m³.','Conversores'],
+['romano','🏛️','Número romano','Converta números para algarismos romanos.','Conversores'],
+['dado','🎲','Rolar dados','Role dados virtuais.','Geradores'],
+['caraoucoroa','🪙','Cara ou coroa','Faça um sorteio rápido.','Geradores'],
+['times','⚽','Divisor de equipes','Separe nomes em equipes aleatórias.','Geradores'],
+['frase','💬','Gerador de frase motivacional','Receba uma frase aleatória.','Geradores'],
+['tabuada','✖️','Gerador de tabuada','Crie a tabuada de qualquer número.','Utilidades']
 ];
 
-const R=id=>document.getElementById(id), val=id=>parseFloat(R(id)?.value)||0;
-const grid=R('grid'), modal=R('modal'), tituloModal=R('tituloModal'), conteudoModal=R('conteudoModal');
-let categoria='Todas', somenteFavoritos=false, ferramentaAtual=null;
-let favoritos=JSON.parse(localStorage.getItem('fp_favoritos')||'[]');
-let usos=JSON.parse(localStorage.getItem('fp_usos')||'{}');
-let historico=JSON.parse(localStorage.getItem('fp_historico')||'[]');
+const R=id=>document.getElementById(id), val=id=>parseFloat(R(id)?.value)||0, out=(id,t)=>R(id).innerHTML=t;
+let categoria='Todas',somenteFavoritos=false,ferramentaAtual=null;
+let favoritos=JSON.parse(localStorage.getItem('fp_favoritos')||'[]'),usos=JSON.parse(localStorage.getItem('fp_usos')||'{}'),historico=JSON.parse(localStorage.getItem('fp_historico')||'[]');
 
-function renderFilters(){
- const cats=['Todas',...new Set(ferramentas.map(f=>f[4]))];
- R('filters').innerHTML=cats.map(c=>`<button class="filter ${categoria===c?'active':''}" onclick="categoria='${c}';renderFilters();render()">${c}</button>`).join('');
-}
-function render(){
- const q=R('busca').value.toLowerCase();
- const lista=ferramentas.filter(f=>(categoria==='Todas'||f[4]===categoria)&&(!somenteFavoritos||favoritos.includes(f[0]))&&f.join(' ').toLowerCase().includes(q));
- grid.innerHTML=lista.length?'':`<div class="empty">Nenhuma ferramenta encontrada.</div>`;
- lista.forEach(f=>{
-   const el=document.createElement('article');el.className='card';
-   el.innerHTML=`<button class="fav" onclick="event.stopPropagation();toggleFav('${f[0]}')">${favoritos.includes(f[0])?'★':'☆'}</button><div class="emoji">${f[1]}</div><h3>${f[2]}</h3><p>${f[3]}</p><span class="tag">${f[4]}</span><span class="usage">${usos[f[0]]||0} usos</span>`;
-   el.onclick=()=>abrir(f[0]);grid.appendChild(el);
- });
-}
+function renderFilters(){const cats=['Todas',...new Set(ferramentas.map(f=>f[4]))];R('filters').innerHTML=cats.map(c=>`<button class="filter ${categoria===c?'active':''}" onclick="categoria='${c}';renderFilters();render()">${c}</button>`).join('')}
+function render(){const q=R('busca').value.toLowerCase();const lista=ferramentas.filter(f=>(categoria==='Todas'||f[4]===categoria)&&(!somenteFavoritos||favoritos.includes(f[0]))&&f.join(' ').toLowerCase().includes(q));R('grid').innerHTML=lista.length?'':'<div class="empty">Nenhuma ferramenta encontrada.</div>';lista.forEach(f=>{let el=document.createElement('article');el.className='card';el.innerHTML=`<button class="fav" onclick="event.stopPropagation();toggleFav('${f[0]}')">${favoritos.includes(f[0])?'★':'☆'}</button><div class="emoji">${f[1]}</div><h3>${f[2]}</h3><p>${f[3]}</p><span class="tag">${f[4]}</span><span class="usage">${usos[f[0]]||0} usos</span>`;el.onclick=()=>abrir(f[0]);R('grid').appendChild(el)})}
 function toggleFav(id){favoritos=favoritos.includes(id)?favoritos.filter(x=>x!==id):[...favoritos,id];localStorage.setItem('fp_favoritos',JSON.stringify(favoritos));render()}
-function addHistory(id){
- historico=[id,...historico.filter(x=>x!==id)].slice(0,6);
- usos[id]=(usos[id]||0)+1;
- localStorage.setItem('fp_historico',JSON.stringify(historico));
- localStorage.setItem('fp_usos',JSON.stringify(usos));
- renderHistory();renderPopular();render();
-}
-
-function renderPopular(){
- const lista=[...ferramentas].sort((a,b)=>(usos[b[0]]||0)-(usos[a[0]]||0)).slice(0,6);
- const el=R('popularList');
- el.innerHTML=lista.map((f,i)=>`<button class="popular-item" onclick="abrir('${f[0]}')"><strong>${i+1}. ${f[1]} ${f[2]}</strong><small>${usos[f[0]]||0} usos neste aparelho</small></button>`).join('');
-}
-
-function renderHistory(){
- const el=R('historyList');
- if(!historico.length){el.textContent='Nenhuma ferramenta usada ainda.';return}
- el.innerHTML=historico.map(id=>{const f=ferramentas.find(x=>x[0]===id);return f?`<button onclick="abrir('${id}')">${f[1]} ${f[2]}</button>`:''}).join('');
-}
-function abrir(id){
- const f=ferramentas.find(x=>x[0]===id);ferramentaAtual=f;
- tituloModal.textContent=f[2];conteudoModal.innerHTML=templates[id]();modal.classList.add('open');modal.setAttribute('aria-hidden','false');addHistory(id);if(init[id])init[id]();
- history.replaceState(null,'',`#${id}`);
-}
-function fechar(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');history.replaceState(null,'',location.pathname)}
-R('fechar').onclick=fechar;modal.onclick=e=>{if(e.target===modal)fechar()};document.addEventListener('keydown',e=>{if(e.key==='Escape')fechar()});
-R('busca').oninput=render;
-R('favoritosBtn').onclick=()=>{somenteFavoritos=!somenteFavoritos;R('favoritosBtn').textContent=somenteFavoritos?'⭐✓':'⭐';render()};
+function addHistory(id){historico=[id,...historico.filter(x=>x!==id)].slice(0,6);usos[id]=(usos[id]||0)+1;localStorage.setItem('fp_historico',JSON.stringify(historico));localStorage.setItem('fp_usos',JSON.stringify(usos));renderHistory();renderPopular();render()}
+function renderPopular(){let lista=[...ferramentas].sort((a,b)=>(usos[b[0]]||0)-(usos[a[0]]||0)).slice(0,6);R('popularList').innerHTML=lista.map((f,i)=>`<button class="popular-item" onclick="abrir('${f[0]}')"><strong>${i+1}. ${f[1]} ${f[2]}</strong><small>${usos[f[0]]||0} usos neste aparelho</small></button>`).join('')}
+function renderHistory(){if(!historico.length){R('historyList').textContent='Nenhuma ferramenta usada ainda.';return}R('historyList').innerHTML=historico.map(id=>{let f=ferramentas.find(x=>x[0]===id);return f?`<button onclick="abrir('${id}')">${f[1]} ${f[2]}</button>`:''}).join('')}
+function abrir(id){let f=ferramentas.find(x=>x[0]===id);ferramentaAtual=f;R('tituloModal').textContent=f[2];R('conteudoModal').innerHTML=templates[id]();R('modal').classList.add('open');addHistory(id);if(init[id])init[id]();history.replaceState(null,'',`#${id}`)}
+function fechar(){R('modal').classList.remove('open');history.replaceState(null,'',location.pathname)}
+R('fechar').onclick=fechar;R('modal').onclick=e=>{if(e.target===R('modal'))fechar()};document.addEventListener('keydown',e=>{if(e.key==='Escape')fechar()});
+R('busca').oninput=render;R('favoritosBtn').onclick=()=>{somenteFavoritos=!somenteFavoritos;R('favoritosBtn').textContent=somenteFavoritos?'⭐✓':'⭐';render()};
 R('tema').onclick=()=>{document.body.classList.toggle('dark');localStorage.setItem('fp_tema',document.body.classList.contains('dark')?'dark':'light');R('tema').textContent=document.body.classList.contains('dark')?'☀️':'🌙'};
 if(localStorage.getItem('fp_tema')==='dark'){document.body.classList.add('dark');R('tema').textContent='☀️'}
-
-function resultadoTexto(){return conteudoModal.querySelector('.result')?.innerText||'Use a ferramenta para gerar um resultado.'}
+function resultadoTexto(){return R('conteudoModal').querySelector('.result')?.innerText||'Use a ferramenta para gerar um resultado.'}
 R('copiarBtn').onclick=async()=>{try{await navigator.clipboard.writeText(resultadoTexto());alert('Resultado copiado!')}catch{alert('Não foi possível copiar.')}};
-R('compartilharBtn').onclick=async()=>{const text=`${ferramentaAtual?.[2]}: ${resultadoTexto()}`;if(navigator.share){try{await navigator.share({title:'Ferramentas Pro',text,url:location.href})}catch{}}else{window.open(`https://wa.me/?text=${encodeURIComponent(text+' '+location.href)}`,'_blank')}};
+R('compartilharBtn').onclick=async()=>{let text=`${ferramentaAtual?.[2]}: ${resultadoTexto()}`;if(navigator.share){try{await navigator.share({title:'Ferramentas Pro',text,url:location.href})}catch{}}else window.open(`https://wa.me/?text=${encodeURIComponent(text+' '+location.href)}`,'_blank')};
 
-const out=(id,t)=>R(id).innerHTML=t;
+const simple=(fields,fn,btn='Calcular')=>fields+`<button class="btn" onclick="${fn}">${btn}</button><div id="res" class="result"></div>`;
 const templates={
-imc:()=>`<div class="row"><div><label>Peso (kg)</label><input id="pesoImc" type="number" step="0.1"></div><div><label>Altura (m)</label><input id="alturaImc" type="number" step="0.01"></div></div><button class="btn" onclick="calcIMC()">Calcular</button><div id="rImc" class="result"></div>`,
-porcentagem:()=>`<label>Porcentagem</label><input id="pct" type="number"><label>Valor</label><input id="base" type="number"><button class="btn" onclick="out('rPct',pct.value+'% de '+base.value+' = '+(val('pct')*val('base')/100).toFixed(2))">Calcular</button><div id="rPct" class="result"></div>`,
-desconto:()=>`<div class="row"><input id="preco" type="number" placeholder="Preço"><input id="desc" type="number" placeholder="Desconto %"></div><button class="btn" onclick="calcDesc()">Calcular</button><div id="rDesc" class="result"></div>`,
-regra3:()=>`<div class="row3"><input id="a3" placeholder="A" type="number"><input id="b3" placeholder="B" type="number"><input id="c3" placeholder="C" type="number"></div><button class="btn" onclick="out('rR3',val('a3')?'X = '+(val('b3')*val('c3')/val('a3')).toFixed(4):'A não pode ser zero.')">Calcular</button><div id="rR3" class="result"></div>`,
-juros:()=>`<div class="row3"><input id="cap" type="number" placeholder="Capital"><input id="taxa" type="number" placeholder="Taxa mensal %"><input id="meses" type="number" placeholder="Meses"></div><button class="btn" onclick="calcJuros()">Calcular</button><div id="rJuros" class="result"></div>`,
-emprestimo:()=>`<div class="row3"><input id="ev" type="number" placeholder="Valor"><input id="ei" type="number" placeholder="Juros ao mês %"><input id="en" type="number" placeholder="Parcelas"></div><button class="btn" onclick="calcEmp()">Calcular</button><div id="rEmp" class="result"></div>`,
-idade:()=>`<label>Data de nascimento</label><input id="nasc" type="date"><button class="btn" onclick="calcIdade()">Calcular</button><div id="rIdade" class="result"></div>`,
-dias:()=>`<div class="row"><input id="d1" type="date"><input id="d2" type="date"></div><button class="btn" onclick="calcDias()">Calcular</button><div id="rDias" class="result"></div>`,
-caracteres:()=>`<textarea id="txtCar" placeholder="Digite seu texto..."></textarea><div id="rCar" class="result">0 caracteres</div>`,
-palavras:()=>`<textarea id="txtPal" placeholder="Digite seu texto..."></textarea><div id="rPal" class="result">0 palavras</div>`,
-maiusculas:()=>`<textarea id="txtMai"></textarea><button class="btn" onclick="txtMai.value=txtMai.value.toUpperCase()">MAIÚSCULAS</button> <button class="btn secondary" onclick="txtMai.value=txtMai.value.toLowerCase()">minúsculas</button><div class="result" id="rMai">O texto é alterado acima.</div>`,
-espacos:()=>`<textarea id="txtEsp"></textarea><button class="btn" onclick="txtEsp.value=txtEsp.value.replace(/\\s+/g,' ').trim();out('rEsp',txtEsp.value)">Limpar espaços</button><div id="rEsp" class="result"></div>`,
-ordenar:()=>`<textarea id="txtOrd" placeholder="Uma linha por item"></textarea><button class="btn" onclick="txtOrd.value=txtOrd.value.split('\\n').filter(Boolean).sort((a,b)=>a.localeCompare(b)).join('\\n');out('rOrd',txtOrd.value)">Ordenar A–Z</button><div id="rOrd" class="result"></div>`,
-base64:()=>`<textarea id="txtB64"></textarea><button class="btn" onclick="b64enc()">Codificar</button> <button class="btn secondary" onclick="b64dec()">Decodificar</button><div id="rB64" class="result"></div>`,
-url:()=>`<textarea id="txtUrl"></textarea><button class="btn" onclick="out('rUrl',encodeURIComponent(txtUrl.value))">Codificar</button> <button class="btn secondary" onclick="urlDec()">Decodificar</button><div id="rUrl" class="result"></div>`,
-senha:()=>`<label>Tamanho</label><input id="tamSenha" type="number" value="16"><button class="btn" onclick="gerarSenha()">Gerar senha</button><div id="rSenha" class="result"></div>`,
-uuid:()=>`<button class="btn" onclick="out('rUuid',crypto.randomUUID())">Gerar UUID</button><div id="rUuid" class="result"></div>`,
-numero:()=>`<div class="row"><input id="nmin" type="number" value="1"><input id="nmax" type="number" value="100"></div><button class="btn" onclick="sortearNumero()">Sortear</button><div id="rNumero" class="result"></div>`,
-loteria:()=>`<button class="btn" onclick="mega()">Gerar números</button><div id="rMega" class="result"></div>`,
-cpfgerar:()=>`<button class="btn" onclick="out('rCpfG',gerarCPF())">Gerar CPF</button><div id="rCpfG" class="result"></div>`,
-cpfvalidar:()=>`<input id="cpfV" placeholder="Digite o CPF"><button class="btn" onclick="out('rCpfV',cpfValido(cpfV.value)?'CPF válido':'CPF inválido')">Validar</button><div id="rCpfV" class="result"></div>`,
+imc:()=>simple('<div class="row"><input id="a" type="number" placeholder="Peso (kg)"><input id="b" type="number" step=".01" placeholder="Altura (m)"></div>',"let x=val('a')/(val('b')**2);out('res',x?`IMC: ${x.toFixed(2)}`:'Preencha os campos.')"),
+porcentagem:()=>simple('<div class="row"><input id="a" type="number" placeholder="Porcentagem"><input id="b" type="number" placeholder="Valor"></div>',"out('res',`${val('a')}% de ${val('b')} = ${(val('a')*val('b')/100).toFixed(2)}`)"),
+desconto:()=>simple('<div class="row"><input id="a" type="number" placeholder="Preço"><input id="b" type="number" placeholder="Desconto %"></div>',"let x=val('a')*(1-val('b')/100);out('res',`Preço final: R$ ${x.toFixed(2)}`)"),
+regra3:()=>simple('<div class="row3"><input id="a" type="number" placeholder="A"><input id="b" type="number" placeholder="B"><input id="c" type="number" placeholder="C"></div>',"out('res',val('a')?`X = ${(val('b')*val('c')/val('a')).toFixed(4)}`:'A não pode ser zero.')"),
+juros:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Capital"><input id="b" type="number" placeholder="Taxa mensal %"><input id="c" type="number" placeholder="Meses"></div>',"let m=val('a')*((1+val('b')/100)**val('c'));out('res',`Montante: R$ ${m.toFixed(2)}\\nJuros: R$ ${(m-val('a')).toFixed(2)}`)"),
+emprestimo:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Valor"><input id="b" type="number" placeholder="Juros ao mês %"><input id="c" type="number" placeholder="Parcelas"></div>',"let p=val('a'),i=val('b')/100,n=val('c'),x=i?p*i*(1+i)**n/((1+i)**n-1):p/n;out('res',n?`Parcela: R$ ${x.toFixed(2)}\\nTotal: R$ ${(x*n).toFixed(2)}`:'Informe as parcelas.')"),
+idade:()=>simple('<input id="a" type="date">',"let n=new Date(R('a').value+'T00:00:00'),h=new Date(),x=h.getFullYear()-n.getFullYear();if(h<new Date(h.getFullYear(),n.getMonth(),n.getDate()))x--;out('res',isNaN(n)?'Escolha a data.':`${x} anos`)"),
+dias:()=>simple('<div class="row"><input id="a" type="date"><input id="b" type="date"></div>',"let x=new Date(R('a').value),y=new Date(R('b').value);out('res',isNaN(x)||isNaN(y)?'Escolha as datas.':`${Math.abs(Math.round((y-x)/86400000))} dias`)"),
+caracteres:()=>'<textarea id="texto"></textarea><div id="res" class="result">0 caracteres</div>',
+palavras:()=>'<textarea id="texto"></textarea><div id="res" class="result">0 palavras</div>',
+maiusculas:()=>'<textarea id="texto"></textarea><button class="btn" onclick="R(\'texto\').value=R(\'texto\').value.toUpperCase();out(\'res\',R(\'texto\').value)">MAIÚSCULAS</button><button class="btn secondary" onclick="R(\'texto\').value=R(\'texto\').value.toLowerCase();out(\'res\',R(\'texto\').value)">minúsculas</button><div id="res" class="result"></div>',
+espacos:()=>simple('<textarea id="texto"></textarea>',"let t=R('texto').value.replace(/\\s+/g,' ').trim();R('texto').value=t;out('res',t)",'Limpar'),
+ordenar:()=>simple('<textarea id="texto" placeholder="Uma linha por item"></textarea>',"let t=R('texto').value.split('\\n').filter(Boolean).sort((a,b)=>a.localeCompare(b)).join('\\n');R('texto').value=t;out('res',t)",'Ordenar'),
+base64:()=>'<textarea id="texto"></textarea><button class="btn" onclick="try{out(\'res\',btoa(unescape(encodeURIComponent(R(\'texto\').value))))}catch{out(\'res\',\'Erro.\')}">Codificar</button><button class="btn secondary" onclick="try{out(\'res\',decodeURIComponent(escape(atob(R(\'texto\').value))))}catch{out(\'res\',\'Base64 inválido.\')}">Decodificar</button><div id="res" class="result"></div>',
+url:()=>'<textarea id="texto"></textarea><button class="btn" onclick="out(\'res\',encodeURIComponent(R(\'texto\').value))">Codificar</button><button class="btn secondary" onclick="try{out(\'res\',decodeURIComponent(R(\'texto\').value))}catch{out(\'res\',\'URL inválida.\')}">Decodificar</button><div id="res" class="result"></div>',
+senha:()=>simple('<input id="a" type="number" value="16">',"let n=Math.max(4,Math.min(100,val('a'))),c='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%&*_-+=',z=new Uint32Array(n);crypto.getRandomValues(z);out('res',Array.from(z,x=>c[x%c.length]).join(''))",'Gerar senha'),
+uuid:()=>simple('',"out('res',crypto.randomUUID())",'Gerar UUID'),
+numero:()=>simple('<div class="row"><input id="a" type="number" value="1"><input id="b" type="number" value="100"></div>',"let a=Math.ceil(val('a')),b=Math.floor(val('b'));if(a>b)[a,b]=[b,a];out('res',Math.floor(Math.random()*(b-a+1))+a)",'Sortear'),
+loteria:()=>simple('',"let s=new Set();while(s.size<6)s.add(Math.floor(Math.random()*60)+1);out('res',[...s].sort((a,b)=>a-b).map(n=>String(n).padStart(2,'0')).join(' • '))",'Gerar números'),
+cpfgerar:()=>simple('',"out('res',gerarCPF())",'Gerar CPF'),
+cpfvalidar:()=>simple('<input id="texto" placeholder="CPF">',"out('res',cpfValido(R('texto').value)?'CPF válido':'CPF inválido')",'Validar'),
 temperatura:()=>convTemplate('temp'),comprimento:()=>convTemplate('comp'),peso:()=>convTemplate('peso'),dados:()=>convTemplate('dados'),
-cronometro:()=>`<div id="tempoCrono" class="result" style="font-size:36px;text-align:center">00:00:00</div><button class="btn" onclick="cronoStart()">Iniciar</button> <button class="btn secondary" onclick="cronoPause()">Pausar</button> <button class="btn danger" onclick="cronoReset()">Zerar</button>`,
-temporizador:()=>`<input id="segTimer" type="number" value="60"><div id="tempoTimer" class="result" style="font-size:36px;text-align:center">01:00</div><button class="btn" onclick="timerStart()">Iniciar</button> <button class="btn danger" onclick="timerStop()">Parar</button>`,
-qrcode:()=>`<textarea id="qrTxt" placeholder="Texto ou link"></textarea><button class="btn" onclick="gerarQR()">Gerar QR Code</button><div id="rQr" class="result" style="text-align:center"></div>`,
-pix:()=>`<input id="pixChave" placeholder="Chave PIX"><div class="row"><input id="pixNome" maxlength="25" placeholder="Nome"><input id="pixCidade" maxlength="15" placeholder="Cidade"></div><input id="pixValor" type="number" step="0.01" placeholder="Valor opcional"><button class="btn" onclick="gerarPix()">Gerar código</button><div id="rPix" class="result"></div>`,
-sorteio:()=>`<textarea id="nomes" placeholder="Um nome por linha"></textarea><button class="btn" onclick="sortearNome()">Sortear nome</button><div id="rNome" class="result"></div>`
-
-,variacao:()=>`<div class="row"><input id="vInicial" type="number" placeholder="Valor inicial"><input id="vFinal" type="number" placeholder="Valor final"></div><button class="btn" onclick="calcVariacao()">Calcular</button><div id="rVariacao" class="result"></div>`
-,combustivel:()=>`<div class="row3"><input id="dist" type="number" placeholder="Distância (km)"><input id="consumo" type="number" placeholder="Km por litro"><input id="precoComb" type="number" step="0.01" placeholder="Preço do litro"></div><button class="btn" onclick="calcCombustivel()">Calcular</button><div id="rComb" class="result"></div>`
-,ritmo:()=>`<div class="row3"><input id="ritmoKm" type="number" step="0.01" placeholder="Distância (km)"><input id="ritmoH" type="number" placeholder="Horas"><input id="ritmoM" type="number" placeholder="Minutos"></div><button class="btn" onclick="calcRitmo()">Calcular</button><div id="rRitmo" class="result"></div>`
-,hora:()=>`<div class="row"><input id="salario" type="number" placeholder="Salário mensal"><input id="horasSemana" type="number" value="44" placeholder="Horas por semana"></div><button class="btn" onclick="calcHora()">Calcular</button><div id="rHora" class="result"></div>`
-,calorias:()=>`<div class="row3"><input id="calPeso" type="number" placeholder="Peso (kg)"><input id="calAltura" type="number" placeholder="Altura (cm)"><input id="calIdade" type="number" placeholder="Idade"></div><select id="calSexo"><option value="m">Masculino</option><option value="f">Feminino</option></select><select id="calAtiv"><option value="1.2">Sedentário</option><option value="1.375">Atividade leve</option><option value="1.55">Atividade moderada</option><option value="1.725">Muito ativo</option></select><button class="btn" onclick="calcCalorias()">Estimar</button><div id="rCalorias" class="result"></div>`
-,inverter:()=>`<textarea id="txtInv" placeholder="Digite o texto..."></textarea><button class="btn" onclick="out('rInv',txtInv.value.split('').reverse().join(''))">Inverter</button><div id="rInv" class="result"></div>`
-,slug:()=>`<textarea id="txtSlug" placeholder="Digite um título..."></textarea><button class="btn" onclick="gerarSlug()">Gerar slug</button><div id="rSlug" class="result"></div>`
-,cor:()=>`<button class="btn" onclick="gerarCor()">Gerar cor</button><div id="rCor" class="result" style="font-size:26px;text-align:center"></div>`
-,timestamp:()=>`<label>Data e hora</label><input id="tsData" type="datetime-local"><button class="btn" onclick="dataParaTs()">Data → timestamp</button><label>Timestamp</label><input id="tsNumero" type="number" placeholder="Ex.: 1767225600"><button class="btn secondary" onclick="tsParaData()">Timestamp → data</button><div id="rTs" class="result"></div>`
-,formatardata:()=>`<label>Escolha uma data</label><input id="fmtData" type="date"><button class="btn" onclick="formatarData()">Formatar</button><div id="rFmt" class="result"></div>`
-
+cronometro:()=>'<div id="res" class="result" style="font-size:36px;text-align:center">00:00:00</div><button class="btn" onclick="cronoStart()">Iniciar</button><button class="btn secondary" onclick="cronoPause()">Pausar</button><button class="btn danger" onclick="cronoReset()">Zerar</button>',
+temporizador:()=>'<input id="a" type="number" value="60"><div id="res" class="result" style="font-size:36px;text-align:center">01:00</div><button class="btn" onclick="timerStart()">Iniciar</button><button class="btn danger" onclick="timerStop()">Parar</button>',
+qrcode:()=>simple('<textarea id="texto" placeholder="Texto ou link"></textarea>',"let t=encodeURIComponent(R('texto').value.trim());out('res',t?`<img alt='QR Code' style='max-width:260px;width:100%' src='https://quickchart.io/qr?text=${t}&size=300'>`:'Digite um texto.')",'Gerar QR Code'),
+pix:()=>simple('<input id="a" placeholder="Chave PIX"><div class="row"><input id="b" placeholder="Nome"><input id="c" placeholder="Cidade"></div><input id="d" type="number" placeholder="Valor opcional">',"gerarPix()",'Gerar código'),
+sorteio:()=>simple('<textarea id="texto" placeholder="Um nome por linha"></textarea>',"let a=R('texto').value.split('\\n').map(x=>x.trim()).filter(Boolean);out('res',a.length?'🎉 '+a[Math.floor(Math.random()*a.length)]:'Adicione nomes.')",'Sortear'),
+variacao:()=>simple('<div class="row"><input id="a" type="number" placeholder="Inicial"><input id="b" type="number" placeholder="Final"></div>',"let p=(val('b')-val('a'))/val('a')*100;out('res',val('a')?`${p>=0?'Aumento':'Redução'} de ${Math.abs(p).toFixed(2)}%`:'Inicial não pode ser zero.')"),
+combustivel:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Distância km"><input id="b" type="number" placeholder="Km/l"><input id="c" type="number" placeholder="Preço/l"></div>',"let l=val('a')/val('b');out('res',val('b')?`Litros: ${l.toFixed(2)}\\nCusto: R$ ${(l*val('c')).toFixed(2)}`:'Preencha os campos.')"),
+ritmo:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Distância km"><input id="b" type="number" placeholder="Horas"><input id="c" type="number" placeholder="Minutos"></div>',"let r=(val('b')*60+val('c'))/val('a'),m=Math.floor(r),s=Math.round((r-m)*60);out('res',val('a')?`${m}:${String(s).padStart(2,'0')} min/km`:'Informe a distância.')"),
+hora:()=>simple('<div class="row"><input id="a" type="number" placeholder="Salário"><input id="b" type="number" value="44" placeholder="Horas/semana"></div>',"out('res',val('b')?`R$ ${(val('a')/(val('b')*4.33)).toFixed(2)} por hora`:'Informe as horas.')"),
+calorias:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Peso kg"><input id="b" type="number" placeholder="Altura cm"><input id="c" type="number" placeholder="Idade"></div><select id="d"><option value="m">Masculino</option><option value="f">Feminino</option></select>',"let x=R('d').value==='m'?10*val('a')+6.25*val('b')-5*val('c')+5:10*val('a')+6.25*val('b')-5*val('c')-161;out('res',`Metabolismo basal: ${Math.round(x)} kcal/dia`)",'Estimar'),
+inverter:()=>simple('<textarea id="texto"></textarea>',"out('res',R('texto').value.split('').reverse().join(''))",'Inverter'),
+slug:()=>simple('<textarea id="texto"></textarea>',"out('res',R('texto').value.normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''))",'Gerar slug'),
+cor:()=>simple('',"let c='#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0').toUpperCase();out('res',`<div style='height:90px;border-radius:12px;background:${c};margin-bottom:10px'></div>${c}`)",'Gerar cor'),
+timestamp:()=>simple('<input id="a" type="datetime-local">',"let d=new Date(R('a').value);out('res',isNaN(d)?'Escolha a data.':Math.floor(d.getTime()/1000))",'Converter'),
+formatardata:()=>simple('<input id="a" type="date">',"let d=new Date(R('a').value+'T00:00:00');out('res',isNaN(d)?'Escolha a data.':d.toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'long',year:'numeric'}))",'Formatar'),
+media:()=>simple('<textarea id="texto" placeholder="Números separados por vírgula"></textarea>',"let a=R('texto').value.split(/[;,\\s]+/).map(Number).filter(x=>!isNaN(x));out('res',a.length?`Média: ${(a.reduce((s,x)=>s+x,0)/a.length).toFixed(2)}`:'Digite números.')"),
+proporcao:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Valor total"><input id="b" type="number" placeholder="Parte 1"><input id="c" type="number" placeholder="Parte 2"></div>',"let s=val('b')+val('c');out('res',s?`Parte 1: ${(val('a')*val('b')/s).toFixed(2)}\\nParte 2: ${(val('a')*val('c')/s).toFixed(2)}`:'Informe a proporção.')"),
+bhaskara:()=>simple('<div class="row3"><input id="a" type="number" placeholder="a"><input id="b" type="number" placeholder="b"><input id="c" type="number" placeholder="c"></div>',"let a=val('a'),b=val('b'),c=val('c'),d=b*b-4*a*c;if(!a)out('res','a não pode ser zero.');else if(d<0)out('res','Não há raízes reais.');else out('res',`x1 = ${((-b+Math.sqrt(d))/(2*a)).toFixed(4)}\\nx2 = ${((-b-Math.sqrt(d))/(2*a)).toFixed(4)}`)"),
+area:()=>simple('<select id="d"><option value="ret">Retângulo</option><option value="tri">Triângulo</option><option value="cir">Círculo</option></select><div class="row"><input id="a" type="number" placeholder="Base ou raio"><input id="b" type="number" placeholder="Altura"></div>',"let t=R('d').value,x=t==='cir'?Math.PI*val('a')**2:t==='tri'?val('a')*val('b')/2:val('a')*val('b');out('res',`Área: ${x.toFixed(2)}`)"),
+volume:()=>simple('<select id="d"><option value="cubo">Cubo</option><option value="cil">Cilindro</option></select><div class="row"><input id="a" type="number" placeholder="Lado ou raio"><input id="b" type="number" placeholder="Altura"></div>',"let x=R('d').value==='cubo'?val('a')**3:Math.PI*val('a')**2*val('b');out('res',`Volume: ${x.toFixed(2)}`)"),
+gorjeta:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Conta"><input id="b" type="number" value="10" placeholder="Gorjeta %"><input id="c" type="number" value="1" placeholder="Pessoas"></div>',"let total=val('a')*(1+val('b')/100);out('res',val('c')?`Total: R$ ${total.toFixed(2)}\\nPor pessoa: R$ ${(total/val('c')).toFixed(2)}`:'Informe pessoas.')"),
+lucro:()=>simple('<div class="row"><input id="a" type="number" placeholder="Custo"><input id="b" type="number" placeholder="Venda"></div>',"let l=val('b')-val('a');out('res',`Lucro: R$ ${l.toFixed(2)}\\nMargem: ${val('b')?(l/val('b')*100).toFixed(2):0}%`)"),
+parcelas:()=>simple('<div class="row"><input id="a" type="number" placeholder="Total"><input id="b" type="number" placeholder="Parcelas"></div>',"out('res',val('b')?`${val('b')}x de R$ ${(val('a')/val('b')).toFixed(2)}`:'Informe as parcelas.')"),
+economia:()=>simple('<div class="row"><input id="a" type="number" placeholder="Meta"><input id="b" type="number" placeholder="Meses"></div>',"out('res',val('b')?`Guarde R$ ${(val('a')/val('b')).toFixed(2)} por mês`:'Informe os meses.')"),
+ferias:()=>simple('<input id="a" type="date">',"let d=new Date(R('a').value),h=new Date();out('res',isNaN(d)?'Escolha a data.':`${Math.ceil((d-h)/86400000)} dias`)"),
+diadasemana:()=>simple('<input id="a" type="date">',"let d=new Date(R('a').value+'T00:00:00');out('res',isNaN(d)?'Escolha a data.':d.toLocaleDateString('pt-BR',{weekday:'long'}))"),
+somardias:()=>simple('<div class="row"><input id="a" type="date"><input id="b" type="number" placeholder="Dias"></div>',"let d=new Date(R('a').value+'T00:00:00');d.setDate(d.getDate()+val('b'));out('res',isNaN(d)?'Escolha a data.':d.toLocaleDateString('pt-BR'))"),
+removeracentos:()=>simple('<textarea id="texto"></textarea>',"out('res',R('texto').value.normalize('NFD').replace(/[\\u0300-\\u036f]/g,''))",'Remover'),
+capitalizar:()=>simple('<textarea id="texto"></textarea>',"out('res',R('texto').value.toLowerCase().replace(/\\b\\w/g,c=>c.toUpperCase()))",'Capitalizar'),
+repetidas:()=>simple('<textarea id="texto"></textarea>',"out('res',[...new Set(R('texto').value.split('\\n'))].filter(Boolean).join('\\n'))",'Remover repetidas'),
+substituir:()=>simple('<textarea id="texto"></textarea><div class="row"><input id="a" placeholder="Localizar"><input id="b" placeholder="Substituir"></div>',"out('res',R('texto').value.split(R('a').value).join(R('b').value))",'Substituir'),
+json:()=>simple('<textarea id="texto" placeholder=\'{"nome":"João"}\'></textarea>',"try{out('res',JSON.stringify(JSON.parse(R('texto').value),null,2))}catch(e){out('res','JSON inválido: '+e.message)}",'Formatar'),
+html:()=>simple('<textarea id="texto"></textarea>',"out('res',R('texto').value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;'))",'Escapar'),
+hash:()=>simple('<textarea id="texto"></textarea>',"gerarHash()",'Gerar SHA-256'),
+binario:()=>simple('<textarea id="texto"></textarea>',"out('res',[...R('texto').value].map(c=>c.charCodeAt(0).toString(2).padStart(8,'0')).join(' '))",'Converter'),
+moeda:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Valor"><input id="b" type="number" placeholder="Cotação"><select id="d"><option value="m">Multiplicar</option><option value="d">Dividir</option></select></div>',"let x=R('d').value==='m'?val('a')*val('b'):val('a')/val('b');out('res',`Resultado: ${x.toFixed(2)}`)"),
+velocidade:()=>convTemplate('vel'),areaConv:()=>convTemplate('area'),volumeConv:()=>convTemplate('vol'),
+romano:()=>simple('<input id="a" type="number" min="1" max="3999">',"out('res',toRoman(Math.floor(val('a'))))",'Converter'),
+dado:()=>simple('<div class="row"><input id="a" type="number" value="1" placeholder="Quantidade"><input id="b" type="number" value="6" placeholder="Lados"></div>',"let q=Math.min(20,Math.max(1,val('a'))),l=Math.max(2,val('b')),r=Array.from({length:q},()=>Math.floor(Math.random()*l)+1);out('res',r.join(' • ')+'\\nTotal: '+r.reduce((s,x)=>s+x,0))",'Rolar'),
+caraoucoroa:()=>simple('',"out('res',Math.random()<.5?'🪙 Cara':'🪙 Coroa')",'Jogar'),
+times:()=>simple('<textarea id="texto" placeholder="Um nome por linha"></textarea><input id="a" type="number" value="2" placeholder="Número de equipes">',"dividirTimes()",'Dividir equipes'),
+frase:()=>simple('',"let f=['A persistência transforma pequenos passos em grandes resultados.','Comece com o que você tem e melhore todos os dias.','Quem continua tentando já está na frente de quem desistiu.','Seu futuro começa nas escolhas de hoje.','Disciplina vence a motivação quando a motivação acaba.'];out('res',f[Math.floor(Math.random()*f.length)])",'Gerar frase'),
+tabuada:()=>simple('<input id="a" type="number" value="10">',"let n=val('a');out('res',Array.from({length:10},(_,i)=>`${n} × ${i+1} = ${n*(i+1)}`).join('\\n'))",'Gerar tabuada')
 };
 
-function convTemplate(tipo){const o={temp:[['c','Celsius'],['f','Fahrenheit'],['k','Kelvin']],comp:[['m','Metros'],['km','Quilômetros'],['mi','Milhas']],peso:[['kg','Quilos'],['g','Gramas'],['lb','Libras']],dados:[['b','Bytes'],['kb','KB'],['mb','MB'],['gb','GB']]}[tipo].map(x=>`<option value="${x[0]}">${x[1]}</option>`).join('');return `<input id="cv" type="number" placeholder="Valor"><div class="row"><select id="cde">${o}</select><select id="cpara">${o}</select></div><button class="btn" onclick="converter('${tipo}')">Converter</button><div id="rConv" class="result"></div>`}
-const init={caracteres:()=>txtCar.oninput=()=>out('rCar',`${txtCar.value.length} caracteres • ${txtCar.value.replace(/\\s/g,'').length} sem espaços`),palavras:()=>txtPal.oninput=()=>{let t=txtPal.value.trim();out('rPal',`${t?t.split(/\\s+/).length:0} palavras • ${t?t.split(/\\n/).length:0} linhas`)},temporizador:()=>segTimer.oninput=()=>{timerSeg=Math.max(0,parseInt(segTimer.value)||0);mostrarTimer()}};
+const init={
+caracteres:()=>R('texto').oninput=()=>out('res',`${R('texto').value.length} caracteres • ${R('texto').value.replace(/\\s/g,'').length} sem espaços`),
+palavras:()=>R('texto').oninput=()=>{let t=R('texto').value.trim();out('res',`${t?t.split(/\\s+/).length:0} palavras • ${t?t.split(/\\n/).length:0} linhas`)}
+};
 
-function calcIMC(){let p=val('pesoImc'),a=val('alturaImc');if(!p||!a)return out('rImc','Preencha peso e altura.');let i=p/(a*a),c=i<18.5?'Abaixo do peso':i<25?'Peso normal':i<30?'Sobrepeso':i<35?'Obesidade grau I':i<40?'Obesidade grau II':'Obesidade grau III';out('rImc',`IMC: ${i.toFixed(2)} — ${c}`)}
-function calcDesc(){let p=val('preco'),d=val('desc'),f=p*(1-d/100);out('rDesc',`Preço final: R$ ${f.toFixed(2)}\\nEconomia: R$ ${(p-f).toFixed(2)}`)}
-function calcJuros(){let c=val('cap'),i=val('taxa')/100,n=val('meses'),m=c*Math.pow(1+i,n);out('rJuros',`Montante: R$ ${m.toFixed(2)}\\nJuros: R$ ${(m-c).toFixed(2)}`)}
-function calcEmp(){let p=val('ev'),i=val('ei')/100,n=val('en');if(!n)return;let x=i?p*i*Math.pow(1+i,n)/(Math.pow(1+i,n)-1):p/n;out('rEmp',`Parcela: R$ ${x.toFixed(2)}\\nTotal: R$ ${(x*n).toFixed(2)}`)}
-function calcIdade(){let n=new Date(nasc.value+'T00:00:00'),h=new Date();if(isNaN(n))return;let a=h.getFullYear()-n.getFullYear();if(h<new Date(h.getFullYear(),n.getMonth(),n.getDate()))a--;out('rIdade',`${a} anos`)}
-function calcDias(){let a=new Date(d1.value),b=new Date(d2.value);out('rDias',isNaN(a)||isNaN(b)?'Escolha as duas datas.':`${Math.abs(Math.round((b-a)/86400000))} dias`)}
-function b64enc(){try{out('rB64',btoa(unescape(encodeURIComponent(txtB64.value))))}catch{out('rB64','Não foi possível codificar.')}}
-function b64dec(){try{out('rB64',decodeURIComponent(escape(atob(txtB64.value))))}catch{out('rB64','Base64 inválido.')}}
-function urlDec(){try{out('rUrl',decodeURIComponent(txtUrl.value))}catch{out('rUrl','URL inválida.')}}
-function gerarSenha(){let n=Math.max(4,Math.min(100,parseInt(tamSenha.value)||16)),chars='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%&*_-+=',a=new Uint32Array(n);crypto.getRandomValues(a);out('rSenha',Array.from(a,x=>chars[x%chars.length]).join(''))}
-function sortearNumero(){let a=Math.ceil(val('nmin')),b=Math.floor(val('nmax'));if(a>b)[a,b]=[b,a];out('rNumero',String(Math.floor(Math.random()*(b-a+1))+a))}
-function mega(){let s=new Set();while(s.size<6)s.add(Math.floor(Math.random()*60)+1);out('rMega',[...s].sort((a,b)=>a-b).map(n=>String(n).padStart(2,'0')).join(' • '))}
+function convTemplate(tipo){let map={temp:[['c','Celsius'],['f','Fahrenheit'],['k','Kelvin']],comp:[['m','Metros'],['km','Quilômetros'],['mi','Milhas']],peso:[['kg','Quilos'],['g','Gramas'],['lb','Libras']],dados:[['b','Bytes'],['kb','KB'],['mb','MB'],['gb','GB']],vel:[['kmh','Km/h'],['ms','m/s'],['mph','mph']],area:[['m2','m²'],['km2','km²'],['ha','Hectares'],['acre','Acres']],vol:[['l','Litros'],['ml','Mililitros'],['gal','Galões'],['m3','m³']]};let o=map[tipo].map(x=>`<option value="${x[0]}">${x[1]}</option>`).join('');return `<input id="a" type="number" placeholder="Valor"><div class="row"><select id="b">${o}</select><select id="c">${o}</select></div><button class="btn" onclick="converter('${tipo}')">Converter</button><div id="res" class="result"></div>`}
+function converter(t){let v=val('a'),de=R('b').value,para=R('c').value,r=v;if(t==='temp'){let c=de==='c'?v:de==='f'?(v-32)*5/9:v-273.15;r=para==='c'?c:para==='f'?c*9/5+32:c+273.15}else{let maps={comp:{m:1,km:1000,mi:1609.344},peso:{kg:1,g:.001,lb:.45359237},dados:{b:1,kb:1024,mb:1048576,gb:1073741824},vel:{kmh:1,ms:3.6,mph:1.609344},area:{m2:1,km2:1e6,ha:1e4,acre:4046.8564224},vol:{l:1,ml:.001,gal:3.785411784,m3:1000}};let f=maps[t];r=v*f[de]/f[para]}out('res',Number(r.toFixed(8)))}
 function gerarCPF(){let n=Array.from({length:9},()=>Math.floor(Math.random()*10));for(let t=9;t<=10;t++){let s=0;for(let i=0;i<t;i++)s+=n[i]*(t+1-i);let d=(s*10)%11;n.push(d===10?0:d)}return n.join('').replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/,'$1.$2.$3-$4')}
-function cpfValido(cpf){cpf=cpf.replace(/\\D/g,'');if(cpf.length!==11||/^(\\d)\\1+$/.test(cpf))return false;for(let t=9;t<11;t++){let s=0;for(let i=0;i<t;i++)s+=+cpf[i]*(t+1-i);let d=(s*10)%11;if(d===10)d=0;if(d!==+cpf[t])return false}return true}
-function converter(tipo){let v=val('cv'),de=cde.value,para=cpara.value,r=v;if(tipo==='temp'){let c=de==='c'?v:de==='f'?(v-32)*5/9:v-273.15;r=para==='c'?c:para==='f'?c*9/5+32:c+273.15}else{let f={comp:{m:1,km:1000,mi:1609.344},peso:{kg:1,g:.001,lb:.45359237},dados:{b:1,kb:1024,mb:1048576,gb:1073741824}}[tipo];r=v*f[de]/f[para]}out('rConv',String(Number(r.toFixed(8))))}
-let cronoInt=null,cronoInicio=0,cronoPassado=0;function cronoStart(){if(cronoInt)return;cronoInicio=Date.now()-cronoPassado;cronoInt=setInterval(()=>{cronoPassado=Date.now()-cronoInicio;let s=Math.floor(cronoPassado/1000),h=Math.floor(s/3600),m=Math.floor(s%3600/60);tempoCrono.textContent=[h,m,s%60].map(x=>String(x).padStart(2,'0')).join(':')},250)}function cronoPause(){clearInterval(cronoInt);cronoInt=null}function cronoReset(){cronoPause();cronoPassado=0;if(R('tempoCrono'))tempoCrono.textContent='00:00:00'}
-let timerInt=null,timerSeg=60;function mostrarTimer(){if(R('tempoTimer'))tempoTimer.textContent=`${String(Math.floor(timerSeg/60)).padStart(2,'0')}:${String(timerSeg%60).padStart(2,'0')}`}function timerStart(){timerStop();timerSeg=Math.max(0,parseInt(segTimer.value)||0);mostrarTimer();timerInt=setInterval(()=>{timerSeg--;mostrarTimer();if(timerSeg<=0){timerStop();alert('Tempo encerrado!')}},1000)}function timerStop(){clearInterval(timerInt);timerInt=null}
-function gerarQR(){let t=encodeURIComponent(qrTxt.value.trim());if(!t)return;out('rQr',`<img alt="QR Code" style="max-width:260px;width:100%" src="https://quickchart.io/qr?text=${t}&size=300">`)}
+function cpfValido(c){c=c.replace(/\\D/g,'');if(c.length!==11||/^(\\d)\\1+$/.test(c))return false;for(let t=9;t<11;t++){let s=0;for(let i=0;i<t;i++)s+=+c[i]*(t+1-i);let d=(s*10)%11;if(d===10)d=0;if(d!==+c[t])return false}return true}
+let cronoInt=null,cronoInicio=0,cronoPassado=0;function cronoStart(){if(cronoInt)return;cronoInicio=Date.now()-cronoPassado;cronoInt=setInterval(()=>{cronoPassado=Date.now()-cronoInicio;let s=Math.floor(cronoPassado/1000),h=Math.floor(s/3600),m=Math.floor(s%3600/60);out('res',[h,m,s%60].map(x=>String(x).padStart(2,'0')).join(':'))},250)}function cronoPause(){clearInterval(cronoInt);cronoInt=null}function cronoReset(){cronoPause();cronoPassado=0;out('res','00:00:00')}
+let timerInt=null;function timerStart(){timerStop();let s=Math.max(0,val('a'));let show=()=>out('res',`${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`);show();timerInt=setInterval(()=>{s--;show();if(s<=0){timerStop();alert('Tempo encerrado!')}},1000)}function timerStop(){clearInterval(timerInt);timerInt=null}
 function crc16(str){let crc=0xFFFF;for(let c of str){crc^=c.charCodeAt(0)<<8;for(let i=0;i<8;i++)crc=(crc&0x8000)?((crc<<1)^0x1021):(crc<<1);crc&=0xFFFF}return crc.toString(16).toUpperCase().padStart(4,'0')}
 function emv(id,v){return id+String(v.length).padStart(2,'0')+v}
-function gerarPix(){let chave=pixChave.value.trim(),nome=pixNome.value.trim().toUpperCase().slice(0,25),cidade=pixCidade.value.trim().toUpperCase().slice(0,15),valor=parseFloat(pixValor.value);if(!chave||!nome||!cidade)return out('rPix','Preencha chave, nome e cidade.');let gui=emv('00','BR.GOV.BCB.PIX'),conta=emv('26',gui+emv('01',chave)),p=emv('00','01')+emv('01','12')+conta+emv('52','0000')+emv('53','986');if(valor>0)p+=emv('54',valor.toFixed(2));p+=emv('58','BR')+emv('59',nome)+emv('60',cidade)+emv('62',emv('05','***'))+'6304';out('rPix',p+crc16(p))}
-
-function calcVariacao(){let a=val('vInicial'),b=val('vFinal');if(!a)return out('rVariacao','O valor inicial não pode ser zero.');let p=(b-a)/a*100;out('rVariacao',`${p>=0?'Aumento':'Redução'} de ${Math.abs(p).toFixed(2)}%`)}
-function calcCombustivel(){let d=val('dist'),c=val('consumo'),p=val('precoComb');if(!d||!c||!p)return out('rComb','Preencha todos os campos.');let l=d/c;out('rComb',`Combustível: ${l.toFixed(2)} litros\nCusto estimado: R$ ${(l*p).toFixed(2)}`)}
-function calcRitmo(){let km=val('ritmoKm'),min=val('ritmoH')*60+val('ritmoM');if(!km||!min)return out('rRitmo','Preencha distância e tempo.');let ritmo=min/km,m=Math.floor(ritmo),s=Math.round((ritmo-m)*60);out('rRitmo',`Ritmo médio: ${m}:${String(s).padStart(2,'0')} min/km`)}
-function calcHora(){let s=val('salario'),h=val('horasSemana');if(!s||!h)return out('rHora','Preencha os campos.');out('rHora',`Valor aproximado por hora: R$ ${(s/(h*4.33)).toFixed(2)}`)}
-function calcCalorias(){let p=val('calPeso'),a=val('calAltura'),i=val('calIdade');if(!p||!a||!i)return out('rCalorias','Preencha peso, altura e idade.');let basal=calSexo.value==='m'?(10*p+6.25*a-5*i+5):(10*p+6.25*a-5*i-161);out('rCalorias',`Metabolismo basal: ${Math.round(basal)} kcal/dia\nGasto diário estimado: ${Math.round(basal*parseFloat(calAtiv.value))} kcal/dia`)}
-function gerarSlug(){let s=txtSlug.value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');out('rSlug',s)}
-function gerarCor(){let c='#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0').toUpperCase();R('rCor').innerHTML=`<div style="height:90px;border-radius:12px;background:${c};margin-bottom:10px"></div>${c}`}
-function dataParaTs(){let d=new Date(tsData.value);out('rTs',isNaN(d)?'Escolha uma data válida.':String(Math.floor(d.getTime()/1000)))}
-function tsParaData(){let n=parseInt(tsNumero.value);if(!n)return out('rTs','Digite um timestamp válido.');out('rTs',new Date(n*1000).toLocaleString('pt-BR'))}
-function formatarData(){let d=new Date(fmtData.value+'T00:00:00');out('rFmt',isNaN(d)?'Escolha uma data válida.':d.toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'long',year:'numeric'}))}
-
-function sortearNome(){let a=nomes.value.split('\\n').map(x=>x.trim()).filter(Boolean);out('rNome',a.length?`🎉 ${a[Math.floor(Math.random()*a.length)]}`:'Adicione pelo menos um nome.')}
-
-renderFilters();render();renderHistory();renderPopular();
-const hash=location.hash.replace('#','');if(ferramentas.some(f=>f[0]===hash))setTimeout(()=>abrir(hash),100);
+function gerarPix(){let chave=R('a').value.trim(),nome=R('b').value.trim().toUpperCase().slice(0,25),cidade=R('c').value.trim().toUpperCase().slice(0,15),valor=val('d');if(!chave||!nome||!cidade)return out('res','Preencha chave, nome e cidade.');let conta=emv('26',emv('00','BR.GOV.BCB.PIX')+emv('01',chave)),p=emv('00','01')+emv('01','12')+conta+emv('52','0000')+emv('53','986');if(valor>0)p+=emv('54',valor.toFixed(2));p+=emv('58','BR')+emv('59',nome)+emv('60',cidade)+emv('62',emv('05','***'))+'6304';out('res',p+crc16(p))}
+async function gerarHash(){let data=new TextEncoder().encode(R('texto').value),buf=await crypto.subtle.digest('SHA-256',data);out('res',[...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join(''))}
+function toRoman(n){if(n<1||n>3999)return'Use um número de 1 a 3999.';let m=[['M',1000],['CM',900],['D',500],['CD',400],['C',100],['XC',90],['L',50],['XL',40],['X',10],['IX',9],['V',5],['IV',4],['I',1]],r='';for(let [s,v] of m)while(n>=v){r+=s;n-=v}return r}
+function dividirTimes(){let nomes=R('texto').value.split('\\n').map(x=>x.trim()).filter(Boolean),q=Math.max(2,Math.floor(val('a')));nomes.sort(()=>Math.random()-.5);let times=Array.from({length:q},()=>[]);nomes.forEach((n,i)=>times[i%q].push(n));out('res',times.map((t,i)=>`Equipe ${i+1}:\\n${t.join('\\n')}`).join('\\n\\n'))}
+renderFilters();render();renderHistory();renderPopular();let hash=location.hash.replace('#','');if(ferramentas.some(f=>f[0]===hash))setTimeout(()=>abrir(hash),100);
 </script>
 </body>
 </html>
