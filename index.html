@@ -3,94 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="70 ferramentas online gratuitas para cálculos, textos, conversões, geradores e produtividade.">
-<meta name="keywords" content="ferramentas online, calculadora, conversor, gerador de senha, contador de palavras, QR Code">
+<meta name="description" content="70 ferramentas online gratuitas com Assistente Pro inteligente para cálculos, textos, conversões, geradores e produtividade.">
+<meta name="keywords" content="ferramentas online, inteligência artificial, calculadora, conversor, gerador de senha, contador de palavras, QR Code">
 <meta name="theme-color" content="#2563eb">
 <meta property="og:title" content="Ferramentas Pro">
-<meta property="og:description" content="70 ferramentas rápidas, gratuitas e fáceis de usar pelo celular.">
+<meta property="og:description" content="70 ferramentas rápidas com assistente inteligente para ajudar você.">
 <meta property="og:type" content="website">
-<title>Ferramentas Pro — Versão 8</title>
+<title>Ferramentas Pro — Versão 9</title>
 <style>
-:root{--bg:#f4f7fb;--card:#fff;--text:#14213d;--muted:#64748b;--primary:#2563eb;--primary2:#7c3aed;--border:#dbe4f0;--shadow:0 10px 30px rgba(15,23,42,.08);--ok:#15803d;--danger:#dc2626;--warning:#f59e0b}
+:root{--bg:#f4f7fb;--card:#fff;--text:#14213d;--muted:#64748b;--primary:#2563eb;--primary2:#7c3aed;--border:#dbe4f0;--shadow:0 10px 30px rgba(15,23,42,.08);--ok:#15803d;--danger:#dc2626}
 body.dark{--bg:#0f172a;--card:#182235;--text:#f8fafc;--muted:#a8b3c7;--border:#2a3952;--shadow:0 10px 30px rgba(0,0,0,.25)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);transition:.25s}
-#progress{position:fixed;left:0;top:0;height:4px;width:0;background:#fff;z-index:999;box-shadow:0 0 12px rgba(255,255,255,.8)}
+#progress{position:fixed;left:0;top:0;height:4px;width:0;background:#fff;z-index:999}
 header{position:relative;overflow:hidden;background:linear-gradient(120deg,#2563eb,#7c3aed,#db2777,#2563eb);background-size:300% 300%;animation:gradiente 10s ease infinite;color:#fff;padding:38px 16px 34px;text-align:center}
-header:before{content:"";position:absolute;inset:-80px;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.20),transparent 30%),radial-gradient(circle at 80% 10%,rgba(255,255,255,.14),transparent 25%);pointer-events:none}
 @keyframes gradiente{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
-header h1{position:relative;margin:0;font-size:clamp(31px,7vw,52px);letter-spacing:-1px}
-header p{position:relative;margin:8px auto 0;max-width:760px;opacity:.95}
-.hero-actions{position:relative;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
-.hero-btn{border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.16);backdrop-filter:blur(10px);color:#fff;padding:10px 14px;border-radius:999px;font-weight:800;cursor:pointer}
-.hero-btn:hover{background:rgba(255,255,255,.25)}
+header h1{margin:0;font-size:clamp(31px,7vw,52px)}header p{margin:8px auto 0;max-width:760px;opacity:.95}
+.hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.hero-btn{border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.16);color:#fff;padding:10px 14px;border-radius:999px;font-weight:800;cursor:pointer}
 .topbar{max-width:1180px;margin:-20px auto 18px;padding:0 16px;display:flex;gap:10px;position:relative;z-index:2}
-.search-wrap{position:relative;flex:1}
-.search{width:100%;padding:15px 48px 15px 18px;border:1px solid var(--border);border-radius:17px;background:var(--card);color:var(--text);box-shadow:var(--shadow);font-size:16px}
+.search-wrap{position:relative;flex:1}.search{width:100%;padding:15px 48px 15px 18px;border:1px solid var(--border);border-radius:17px;background:var(--card);color:var(--text);box-shadow:var(--shadow);font-size:16px}
 .clear-search{position:absolute;right:12px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:var(--muted);font-size:22px;cursor:pointer;display:none}
 .iconbtn{border:0;border-radius:16px;background:var(--card);color:var(--text);box-shadow:var(--shadow);padding:0 17px;font-size:21px;cursor:pointer}
-.wrap{max-width:1180px;margin:auto;padding:0 16px 70px}
-.stats,.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}
+.wrap{max-width:1180px;margin:auto;padding:0 16px 90px}.stats,.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}
 .pill,.filter{background:var(--card);border:1px solid var(--border);padding:9px 13px;border-radius:999px;color:var(--muted)}
-.pill strong{color:var(--text)}
-.filter{cursor:pointer;font-weight:700}.filter.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.pill strong{color:var(--text)}.filter{cursor:pointer;font-weight:700}.filter.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.ai-banner{margin:16px 0;padding:18px;border-radius:20px;color:#fff;background:linear-gradient(135deg,#111827,#2563eb,#7c3aed);box-shadow:var(--shadow)}
+.ai-banner h2{margin:0 0 6px}.ai-banner p{margin:0 0 12px;opacity:.9}.ai-banner button{border:0;border-radius:12px;padding:11px 15px;font-weight:800;cursor:pointer}
 .quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:18px 0}
-.quick-card{border:1px solid var(--border);background:var(--card);border-radius:18px;padding:15px;box-shadow:var(--shadow)}
-.quick-card h3{margin:0 0 7px;font-size:16px}.quick-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
-.quick-card button{margin-top:11px;border:0;border-radius:11px;background:var(--primary);color:#fff;padding:9px 12px;font-weight:800;cursor:pointer}
+.quick-card,.popular,.history,.search-history{border:1px solid var(--border);background:var(--card);border-radius:18px;padding:15px;box-shadow:var(--shadow)}
+.quick-card h3{margin:0 0 7px}.quick-card p{margin:0;color:var(--muted);font-size:13px}.quick-card button{margin-top:11px;border:0;border-radius:11px;background:var(--primary);color:#fff;padding:9px 12px;font-weight:800;cursor:pointer}
 .ad-slot{margin:18px 0;border:1px dashed var(--border);background:var(--card);border-radius:18px;padding:18px;text-align:center;color:var(--muted);font-size:13px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:18px;box-shadow:var(--shadow);cursor:pointer;transition:.2s;animation:cardIn .28s ease both}
-@keyframes cardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.card:hover{transform:translateY(-4px);border-color:#93b4f5}
-.fav{position:absolute;right:14px;top:12px;border:0;background:transparent;color:var(--text);font-size:26px;cursor:pointer}
+.card{position:relative;background:var(--card);border:1px solidsolid var(--border);border-radius:20px;padding:18px;box-shadow:var(--shadow);cursor:pointer;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#93b4f5}.fav{position:absolute;right:14px;top:12px;border:0;background:transparent;color:var(--text);font-size:26px;cursor:pointer}
 .card .emoji{font-size:34px}.card h3{margin:10px 35px 6px 0}.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
-.tag{display:inline-block;margin-top:12px;padding:5px 9px;border-radius:999px;background:rgba(37,99,235,.1);color:var(--primary);font-size:12px;font-weight:700}
-.usage{display:inline-block;margin-left:8px;padding:4px 8px;border-radius:999px;background:rgba(21,128,61,.1);color:var(--ok);font-size:11px;font-weight:800}
-.empty{grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)}
-.popular,.history,.search-history{margin:22px 0;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
-.popular h2,.history h2,.search-history h2{margin:0 0 12px;font-size:20px}
-.popular-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
-.popular-item,.history button,.search-history button{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:12px;cursor:pointer;color:var(--text);text-align:left}
-.popular-item strong{display:block;margin-bottom:4px}.popular-item small{color:var(--muted)}
+.tag,.usage{display:inline-block;margin-top:12px;padding:5px 9px;border-radius:999px;font-size:12px;font-weight:700}.tag{background:rgba(37,99,235,.1);color:var(--primary)}.usage{margin-left:8px;background:rgba(21,128,61,.1);color:var(--ok)}
+.popular,.history,.search-history{margin:22px 0}.popular-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}.popular-item,.history button,.search-history button{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:12px;cursor:pointer;color:var(--text);text-align:left}
 .history-list,.search-history-list{display:flex;gap:8px;flex-wrap:wrap}.history button,.search-history button{border-radius:999px;padding:8px 11px}
-.modal{position:fixed;inset:0;background:rgba(2,6,23,.72);display:none;align-items:center;justify-content:center;padding:16px;z-index:99}
-.modal.open{display:flex}.dialog{width:min(700px,100%);max-height:92vh;overflow:auto;background:var(--card);border-radius:22px;padding:20px;border:1px solid var(--border);box-shadow:0 30px 80px rgba(0,0,0,.35);animation:dialogIn .2s ease}
-@keyframes dialogIn{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
-.dialog-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.dialog-head h2{margin:0}.close{border:0;background:transparent;color:var(--text);font-size:30px;cursor:pointer}
-.tool{margin-top:18px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-label{display:block;margin:10px 0 6px;font-weight:700;font-size:14px}input,select,textarea,button{font:inherit}
-input,select,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--bg);color:var(--text)}
-textarea{min-height:120px;resize:vertical}.btn{margin-top:12px;border:0;border-radius:12px;background:var(--primary);color:#fff;padding:12px 16px;font-weight:800;cursor:pointer}
-.btn.secondary{background:#475569}.btn.danger{background:var(--danger)}.result{margin-top:14px;padding:14px;border-radius:14px;background:var(--bg);border:1px dashed var(--border);white-space:pre-wrap;word-break:break-word;min-height:48px}
-.actions{display:flex;gap:8px;flex-wrap:wrap}
-#toTop{position:fixed;right:18px;bottom:18px;border:0;background:var(--primary);color:#fff;width:48px;height:48px;border-radius:50%;font-size:22px;box-shadow:var(--shadow);cursor:pointer;display:none;z-index:20}
-.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%) translateY(30px);background:#111827;color:#fff;padding:11px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:.2s;z-index:150}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.modal{position:fixed;inset:0;background:rgba(2,6,23,.72);display:none;align-items:center;justify-content:center;padding:16px;z-index:99}.modal.open{display:flex}
+.dialog{width:min(720px,100%);max-height:92vh;overflow:auto;background:var(--card);border-radius:22px;padding:20px;border:1px solid var(--border)}
+.dialog-head{display:flex;align-items:center;justify-content:space-between}.dialog-head h2{margin:0}.close{border:0;background:transparent;color:var(--text);font-size:30px;cursor:pointer}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+input,select,textarea,button{font:inherit}input,select,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--bg);color:var(--text);margin-top:10px}
+textarea{min-height:120px}.btn{margin-top:12px;border:0;border-radius:12px;background:var(--primary);color:#fff;padding:12px 16px;font-weight:800;cursor:pointer}.btn.secondary{background:#475569}
+.result{margin-top:14px;padding:14px;border-radius:14px;background:var(--bg);border:1px dashed var(--border);white-space:pre-wrap;word-break:break-word;min-height:48px}.actions{display:flex;gap:8px;flex-wrap:wrap}
+.ai-fab{position:fixed;right:18px;bottom:18px;border:0;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;padding:14px 18px;border-radius:999px;font-weight:900;box-shadow:0 14px 35px rgba(37,99,235,.35);cursor:pointer;z-index:30}
+.ai-panel{position:fixed;right:14px;bottom:82px;width:min(390px,calc(100vw - 28px));height:min(610px,calc(100vh - 110px));background:var(--card);border:1px solid var(--border);border-radius:22px;box-shadow:0 25px 80px rgba(0,0,0,.28);display:none;flex-direction:column;z-index:110;overflow:hidden}.ai-panel.open{display:flex}
+.ai-head{padding:14px 16px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;display:flex;justify-content:space-between;align-items:center}.ai-head button{border:0;background:transparent;color:#fff;font-size:26px;cursor:pointer}
+.ai-messages{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px}.msg{max-width:86%;padding:10px 12px;border-radius:15px;line-height:1.4;font-size:14px}.bot{background:var(--bg);align-self:flex-start}.user{background:var(--primary);color:#fff;align-self:flex-end}
+.ai-suggestions{display:flex;gap:6px;overflow:auto;padding:0 12px 10px}.ai-suggestions button{white-space:nowrap;border:1px solid var(--border);background:var(--bg);color:var(--text);border-radius:999px;padding:7px 9px;cursor:pointer;font-size:12px}
+.ai-input{display:flex;gap:8px;padding:12px;border-top:1px solid var(--border)}.ai-input input{margin:0}.ai-input button{border:0;border-radius:12px;background:var(--primary);color:#fff;padding:0 15px;font-weight:900;cursor:pointer}
+.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%) translateY(30px);background:#111827;color:#fff;padding:11px 16px;border-radius:999px;opacity:0;transition:.2s;z-index:150}.toast.show{opacity:1;transform:translateX(-50%)}
 footer{text-align:center;padding:24px;color:var(--muted)}
-@media(max-width:600px){.row,.row3{grid-template-columns:1fr}.dialog{padding:16px}.topbar{margin-top:-14px}.iconbtn{padding:0 14px}.quick{grid-template-columns:1fr}}
-</style>
+@media(max-width:600px){.row,.row3{grid-template-columns:1fr}.dialog{padding:16px}.ai-fab{right:12px;bottom:12px}}</style>
 </head>
 <body>
 <div id="progress"></div>
 <header>
 <h1>Ferramentas Pro</h1>
-<p>70 ferramentas rápidas, gratuitas e fáceis de usar no celular.</p>
+<p>70 ferramentas rápidas, gratuitas e agora com Assistente Pro inteligente.</p>
 <div class="hero-actions">
-<button class="hero-btn" onclick="document.getElementById('busca').focus()">🔎 Encontrar ferramenta</button>
-<button class="hero-btn" onclick="document.getElementById('ranking').scrollIntoView({behavior:'smooth'})">🏆 Mais usadas</button>
+<button class="hero-btn" onclick="R('busca').focus()">🔎 Encontrar ferramenta</button>
+<button class="hero-btn" onclick="abrirIA()">🤖 Perguntar à IA</button>
 <button class="hero-btn" onclick="surpresa()">🎁 Ferramenta surpresa</button>
 </div>
 </header>
 
 <div class="topbar">
-<div class="search-wrap">
-<input id="busca" class="search" placeholder="Pesquisar ferramenta..." aria-label="Pesquisar ferramenta">
-<button id="limparBusca" class="clear-search" title="Limpar busca">×</button>
-</div>
-<button class="iconbtn" id="favoritosBtn" title="Mostrar favoritos">⭐</button>
-<button class="iconbtn" id="tema" title="Mudar tema">🌙</button>
+<div class="search-wrap"><input id="busca" class="search" placeholder="Pesquisar ferramenta..."><button id="limparBusca" class="clear-search">×</button></div>
+<button class="iconbtn" id="favoritosBtn">⭐</button><button class="iconbtn" id="tema">🌙</button>
 </div>
 
 <main class="wrap">
@@ -98,43 +80,51 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 <span class="pill"><strong id="totalFerramentas">70</strong> ferramentas</span>
 <span class="pill"><strong id="totalUsos">0</strong> usos neste aparelho</span>
 <span class="pill"><strong id="totalFavoritos">0</strong> favoritas</span>
-<span class="pill">Sem cadastro</span>
-<span class="pill">Versão 8</span>
+<span class="pill">Sem cadastro</span><span class="pill">Versão 9</span>
 </div>
+
+<section class="ai-banner">
+<h2>🤖 Novo Assistente Pro</h2>
+<p>Escreva o que precisa. Ele encontra a ferramenta certa, faz cálculos rápidos e orienta você.</p>
+<button onclick="abrirIA()">Conversar com o Assistente</button>
+</section>
 
 <div id="filters" class="filters"></div>
 
 <section class="quick">
-<div class="quick-card"><h3>🎁 Ferramenta surpresa</h3><p>Abra uma ferramenta aleatória e descubra algo útil.</p><button onclick="surpresa()">Descobrir agora</button></div>
-<div class="quick-card"><h3>⭐ Seus favoritos</h3><p>Suas ferramentas favoritas ficam salvas neste aparelho.</p><button onclick="mostrarFavoritos()">Ver favoritos</button></div>
-<div class="quick-card"><h3>🏆 Mais usadas</h3><p>Veja o ranking criado automaticamente conforme você utiliza o site.</p><button onclick="document.getElementById('ranking').scrollIntoView({behavior:'smooth'})">Ver ranking</button></div>
+<div class="quick-card"><h3>🎁 Ferramenta surpresa</h3><p>Abra uma ferramenta aleatória.</p><button onclick="surpresa()">Descobrir agora</button></div>
+<div class="quick-card"><h3>⭐ Seus favoritos</h3><p>Ficam salvos neste aparelho.</p><button onclick="mostrarFavoritos()">Ver favoritos</button></div>
+<div class="quick-card"><h3>🤖 Ajuda inteligente</h3><p>Peça algo usando linguagem normal.</p><button onclick="abrirIA()">Perguntar agora</button></div>
 </section>
 
 <div class="ad-slot">Espaço reservado para anúncio futuro • Google AdSense</div>
-
 <section id="grid" class="grid"></section>
-
-<section id="ranking" class="popular"><h2>🏆 Ferramentas mais usadas</h2><div id="popularList" class="popular-list"></div></section>
+<section class="popular"><h2>🏆 Ferramentas mais usadas</h2><div id="popularList" class="popular-list"></div></section>
 <section class="history"><h2>🕘 Usadas recentemente</h2><div id="historyList" class="history-list">Nenhuma ferramenta usada ainda.</div></section>
 <section class="search-history"><h2>🔎 Pesquisas recentes</h2><div id="searchHistoryList" class="search-history-list">Nenhuma pesquisa ainda.</div></section>
-
-<div class="ad-slot">Segundo espaço reservado para anúncio futuro</div>
 </main>
 
-<footer>© 2026 Ferramentas Pro — Versão 8.0</footer>
-<button id="toTop" title="Voltar ao topo">↑</button>
+<footer>© 2026 Ferramentas Pro — Versão 9.0</footer>
+<button class="ai-fab" onclick="abrirIA()">🤖 Pergunte à IA</button>
 <div id="toast" class="toast">Pronto!</div>
 
-<div id="modal" class="modal" aria-hidden="true">
-<div class="dialog">
-<div class="dialog-head"><h2 id="tituloModal">Ferramenta</h2><button class="close" id="fechar">×</button></div>
-<div id="conteudoModal" class="tool"></div>
-<div class="actions">
-<button class="btn secondary" id="copiarBtn">📋 Copiar resultado</button>
-<button class="btn secondary" id="compartilharBtn">📱 Compartilhar</button>
+<div id="modal" class="modal"><div class="dialog">
+<div class="dialog-head"><h2 id="tituloModal">Ferramenta</h2><button class="close" onclick="fechar()">×</button></div>
+<div id="conteudoModal"></div>
+<div class="actions"><button class="btn secondary" onclick="copiarResultado()">📋 Copiar resultado</button><button class="btn secondary" onclick="compartilhar()">📱 Compartilhar</button></div>
+</div></div>
+
+<aside id="aiPanel" class="ai-panel">
+<div class="ai-head"><strong>🤖 Assistente Pro</strong><button onclick="fecharIA()">×</button></div>
+<div id="aiMessages" class="ai-messages"></div>
+<div class="ai-suggestions">
+<button onclick="perguntar('Quero calcular desconto')">Calcular desconto</button>
+<button onclick="perguntar('Gerar senha forte')">Gerar senha</button>
+<button onclick="perguntar('Contar palavras')">Contar palavras</button>
+<button onclick="perguntar('Converter temperatura')">Converter temperatura</button>
 </div>
-</div>
-</div>
+<div class="ai-input"><input id="aiInput" placeholder="Ex.: quero calcular 20% de 500"><button onclick="enviarIA()">➤</button></div>
+</aside>
 
 <script>
 const ferramentas=[
@@ -176,205 +166,148 @@ const ferramentas=[
 ['inverter','🔁','Inverter texto','Inverta letras e frases rapidamente.','Texto'],
 ['slug','🔗','Gerador de slug','Transforme títulos em links amigáveis.','Desenvolvimento'],
 ['cor','🎨','Gerador de cor','Gere uma cor hexadecimal aleatória.','Geradores'],
-['timestamp','🕰️','Conversor de timestamp','Converta data para timestamp e vice-versa.','Datas'],
+['timestamp','🕰️','Conversor de timestamp','Converta data para timestamp.','Datas'],
 ['formatardata','📆','Formatador de data','Formate datas no padrão brasileiro.','Datas'],
 ['media','🧮','Calculadora de média','Calcule a média de vários números.','Calculadoras'],
 ['proporcao','📐','Calculadora de proporção','Divida valores em uma proporção.','Calculadoras'],
-['bhaskara','➗','Equação do 2º grau','Calcule as raízes pela fórmula de Bhaskara.','Calculadoras'],
-['area','📏','Área de formas','Calcule áreas de formas geométricas.','Calculadoras'],
+['bhaskara','➗','Equação do 2º grau','Calcule as raízes.','Calculadoras'],
+['area','📏','Área de formas','Calcule áreas geométricas.','Calculadoras'],
 ['volume','📦','Volume de sólidos','Calcule volumes básicos.','Calculadoras'],
 ['gorjeta','🍽️','Calculadora de gorjeta','Divida a conta e calcule a gorjeta.','Financeiro'],
-['lucro','💰','Margem de lucro','Calcule lucro e margem percentual.','Financeiro'],
+['lucro','💰','Margem de lucro','Calcule lucro e margem.','Financeiro'],
 ['parcelas','🧾','Compra parcelada','Veja o valor de cada parcela.','Financeiro'],
 ['economia','🐷','Meta de economia','Descubra quanto guardar por mês.','Financeiro'],
 ['ferias','🏖️','Contagem para uma data','Veja quantos dias faltam.','Datas'],
-['diadasemana','🗓️','Dia da semana','Descubra o dia da semana de uma data.','Datas'],
+['diadasemana','🗓️','Dia da semana','Descubra o dia da semana.','Datas'],
 ['somardias','➕','Somar dias à data','Adicione dias a uma data.','Datas'],
 ['removeracentos','🔡','Remover acentos','Converta texto para caracteres simples.','Texto'],
-['capitalizar','Aa','Capitalizar palavras','Deixe cada palavra com inicial maiúscula.','Texto'],
+['capitalizar','Aa','Capitalizar palavras','Iniciais maiúsculas.','Texto'],
 ['repetidas','🧽','Remover linhas repetidas','Elimine linhas duplicadas.','Texto'],
 ['substituir','🔄','Localizar e substituir','Troque palavras em um texto.','Texto'],
-['json','{}','Formatador de JSON','Formate e valide código JSON.','Desenvolvimento'],
-['html','</>','Escapar HTML','Converta caracteres HTML especiais.','Desenvolvimento'],
-['hash','🔒','Gerador SHA-256','Crie um hash seguro de um texto.','Desenvolvimento'],
-['binario','01','Texto para binário','Converta texto em código binário.','Desenvolvimento'],
-['moeda','💱','Conversor de moedas manual','Converta usando uma cotação informada.','Conversores'],
+['json','{}','Formatador de JSON','Formate e valide JSON.','Desenvolvimento'],
+['html','</>','Escapar HTML','Converta caracteres especiais.','Desenvolvimento'],
+['hash','🔒','Gerador SHA-256','Crie um hash seguro.','Desenvolvimento'],
+['binario','01','Texto para binário','Converta texto em binário.','Desenvolvimento'],
+['moeda','💱','Conversor de moedas manual','Converta usando cotação informada.','Conversores'],
 ['velocidade','🚗','Conversor de velocidade','Km/h, m/s e mph.','Conversores'],
 ['areaConv','📐','Conversor de área','m², km², hectares e acres.','Conversores'],
 ['volumeConv','🧴','Conversor de volume','Litros, ml, galões e m³.','Conversores'],
-['romano','🏛️','Número romano','Converta números para algarismos romanos.','Conversores'],
+['romano','🏛️','Número romano','Converta para algarismos romanos.','Conversores'],
 ['dado','🎲','Rolar dados','Role dados virtuais.','Geradores'],
 ['caraoucoroa','🪙','Cara ou coroa','Faça um sorteio rápido.','Geradores'],
-['times','⚽','Divisor de equipes','Separe nomes em equipes aleatórias.','Geradores'],
+['times','⚽','Divisor de equipes','Separe nomes em equipes.','Geradores'],
 ['frase','💬','Gerador de frase motivacional','Receba uma frase aleatória.','Geradores'],
 ['tabuada','✖️','Gerador de tabuada','Crie a tabuada de qualquer número.','Utilidades']
-];
-
-const R=id=>document.getElementById(id);
-const val=id=>parseFloat(R(id)?.value)||0;
-const out=(id,t)=>R(id).innerHTML=t;
-const semAcento=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-
+];const R=id=>document.getElementById(id), semAcento=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 let categoria='Todas',somenteFavoritos=false,ferramentaAtual=null;
-let favoritos=JSON.parse(localStorage.getItem('fp_favoritos')||'[]');
-let usos=JSON.parse(localStorage.getItem('fp_usos')||'{}');
-let historico=JSON.parse(localStorage.getItem('fp_historico')||'[]');
-let pesquisas=JSON.parse(localStorage.getItem('fp_pesquisas')||'[]');
-
-function toast(msg){R('toast').textContent=msg;R('toast').classList.add('show');setTimeout(()=>R('toast').classList.remove('show'),1800)}
-function atualizarStats(){R('totalFavoritos').textContent=favoritos.length;R('totalUsos').textContent=Object.values(usos).reduce((a,b)=>a+b,0)}
-function renderFilters(){
-  const cats=['Todas',...new Set(ferramentas.map(f=>f[4]))];
-  R('filters').innerHTML=cats.map(c=>`<button class="filter ${categoria===c?'active':''}" onclick="categoria='${c}';renderFilters();render()">${c}</button>`).join('')
-}
-function distancia(a,b){
-  const m=Array.from({length:a.length+1},()=>Array(b.length+1).fill(0));
-  for(let i=0;i<=a.length;i++)m[i][0]=i;for(let j=0;j<=b.length;j++)m[0][j]=j;
-  for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
-  return m[a.length][b.length]
-}
-function combinaBusca(f,q){
-  if(!q)return true;
-  const texto=semAcento(f.join(' ')), termos=semAcento(q).split(/\s+/).filter(Boolean);
-  return termos.every(t=>texto.includes(t)||texto.split(/\s+/).some(p=>t.length>3&&distancia(t,p)<=1))
-}
-function render(){
-  const q=R('busca').value.trim();
-  R('limparBusca').style.display=q?'block':'none';
-  const lista=ferramentas.filter(f=>(categoria==='Todas'||f[4]===categoria)&&(!somenteFavoritos||favoritos.includes(f[0]))&&combinaBusca(f,q));
-  R('grid').innerHTML=lista.length?'':'<div class="empty">Nenhuma ferramenta encontrada. Tente outra palavra.</div>';
-  lista.forEach((f,i)=>{
-    let el=document.createElement('article');el.className='card';el.style.animationDelay=Math.min(i*18,200)+'ms';
-    el.innerHTML=`<button class="fav" aria-label="Favoritar" onclick="event.stopPropagation();toggleFav('${f[0]}')">${favoritos.includes(f[0])?'★':'☆'}</button><div class="emoji">${f[1]}</div><h3>${f[2]}</h3><p>${f[3]}</p><span class="tag">${f[4]}</span><span class="usage">${usos[f[0]]||0} usos</span>`;
-    el.onclick=()=>abrir(f[0]);R('grid').appendChild(el)
-  });
-  atualizarStats()
-}
-function toggleFav(id){favoritos=favoritos.includes(id)?favoritos.filter(x=>x!==id):[...favoritos,id];localStorage.setItem('fp_favoritos',JSON.stringify(favoritos));render();toast(favoritos.includes(id)?'Adicionada aos favoritos':'Removida dos favoritos')}
-function mostrarFavoritos(){somenteFavoritos=true;R('favoritosBtn').textContent='⭐✓';render();window.scrollTo({top:300,behavior:'smooth'})}
+let favoritos=JSON.parse(localStorage.getItem('fp_favoritos')||'[]'),usos=JSON.parse(localStorage.getItem('fp_usos')||'{}'),historico=JSON.parse(localStorage.getItem('fp_historico')||'[]'),pesquisas=JSON.parse(localStorage.getItem('fp_pesquisas')||'[]');
+function toast(m){R('toast').textContent=m;R('toast').classList.add('show');setTimeout(()=>R('toast').classList.remove('show'),1600)}
+function renderFilters(){R('filters').innerHTML=['Todas',...new Set(ferramentas.map(f=>f[4]))].map(c=>`<button class="filter ${categoria===c?'active':''}" onclick="categoria='${c}';renderFilters();render()">${c}</button>`).join('')}
+function render(){let q=semAcento(R('busca').value);R('limparBusca').style.display=q?'block':'none';let list=ferramentas.filter(f=>(categoria==='Todas'||f[4]===categoria)&&(!somenteFavoritos||favoritos.includes(f[0]))&&semAcento(f.join(' ')).includes(q));R('grid').innerHTML=list.map(f=>`<article class="card" onclick="abrir('${f[0]}')"><button class="fav" onclick="event.stopPropagation();toggleFav('${f[0]}')">${favoritos.includes(f[0])?'★':'☆'}</button><div class="emoji">${f[1]}</div><h3>${f[2]}</h3><p>${f[3]}</p><span class="tag">${f[4]}</span><span class="usage">${usos[f[0]]||0} usos</span></article>`).join('')||'<p>Nenhuma ferramenta encontrada.</p>';R('totalFavoritos').textContent=favoritos.length;R('totalUsos').textContent=Object.values(usos).reduce((a,b)=>a+b,0)}
+function toggleFav(id){favoritos=favoritos.includes(id)?favoritos.filter(x=>x!==id):[...favoritos,id];localStorage.setItem('fp_favoritos',JSON.stringify(favoritos));render()}
+function mostrarFavoritos(){somenteFavoritos=true;render()}
 function surpresa(){abrir(ferramentas[Math.floor(Math.random()*ferramentas.length)][0])}
 function addHistory(id){historico=[id,...historico.filter(x=>x!==id)].slice(0,6);usos[id]=(usos[id]||0)+1;localStorage.setItem('fp_historico',JSON.stringify(historico));localStorage.setItem('fp_usos',JSON.stringify(usos));renderHistory();renderPopular();render()}
-function renderPopular(){let lista=[...ferramentas].sort((a,b)=>(usos[b[0]]||0)-(usos[a[0]]||0)).slice(0,6);R('popularList').innerHTML=lista.map((f,i)=>`<button class="popular-item" onclick="abrir('${f[0]}')"><strong>${['🥇','🥈','🥉'][i]||i+1+'.'} ${f[1]} ${f[2]}</strong><small>${usos[f[0]]||0} usos neste aparelho</small></button>`).join('')}
-function renderHistory(){if(!historico.length){R('historyList').textContent='Nenhuma ferramenta usada ainda.';return}R('historyList').innerHTML=historico.map(id=>{let f=ferramentas.find(x=>x[0]===id);return f?`<button onclick="abrir('${id}')">${f[1]} ${f[2]}</button>`:''}).join('')}
-function salvarPesquisa(q){q=q.trim();if(q.length<2)return;pesquisas=[q,...pesquisas.filter(x=>x.toLowerCase()!==q.toLowerCase())].slice(0,8);localStorage.setItem('fp_pesquisas',JSON.stringify(pesquisas));renderPesquisas()}
-function renderPesquisas(){if(!pesquisas.length){R('searchHistoryList').textContent='Nenhuma pesquisa ainda.';return}R('searchHistoryList').innerHTML=pesquisas.map(q=>`<button onclick="R('busca').value=${JSON.stringify(q)};render();window.scrollTo({top:250,behavior:'smooth'})">🔎 ${q}</button>`).join('')}
-function abrir(id){let f=ferramentas.find(x=>x[0]===id);ferramentaAtual=f;R('tituloModal').textContent=f[1]+' '+f[2];R('conteudoModal').innerHTML=templates[id]();R('modal').classList.add('open');R('modal').setAttribute('aria-hidden','false');addHistory(id);if(init[id])init[id]();history.replaceState(null,'',`#${id}`)}
-function fechar(){R('modal').classList.remove('open');R('modal').setAttribute('aria-hidden','true');history.replaceState(null,'',location.pathname)}
-R('fechar').onclick=fechar;R('modal').onclick=e=>{if(e.target===R('modal'))fechar()};document.addEventListener('keydown',e=>{if(e.key==='Escape')fechar()});
-let buscaTimer;R('busca').oninput=()=>{render();clearTimeout(buscaTimer);buscaTimer=setTimeout(()=>salvarPesquisa(R('busca').value),800)};
-R('limparBusca').onclick=()=>{R('busca').value='';render();R('busca').focus()};
-R('favoritosBtn').onclick=()=>{somenteFavoritos=!somenteFavoritos;R('favoritosBtn').textContent=somenteFavoritos?'⭐✓':'⭐';render()};
-R('tema').onclick=()=>{document.body.classList.toggle('dark');localStorage.setItem('fp_tema',document.body.classList.contains('dark')?'dark':'light');R('tema').textContent=document.body.classList.contains('dark')?'☀️':'🌙'};
-if(localStorage.getItem('fp_tema')==='dark'){document.body.classList.add('dark');R('tema').textContent='☀️'}
-function resultadoTexto(){return R('conteudoModal').querySelector('.result')?.innerText||'Use a ferramenta para gerar um resultado.'}
-R('copiarBtn').onclick=async()=>{try{await navigator.clipboard.writeText(resultadoTexto());toast('Resultado copiado!')}catch{toast('Não foi possível copiar.')}};
-R('compartilharBtn').onclick=async()=>{let text=`${ferramentaAtual?.[2]}: ${resultadoTexto()}`;if(navigator.share){try{await navigator.share({title:'Ferramentas Pro',text,url:location.href})}catch{}}else window.open(`https://wa.me/?text=${encodeURIComponent(text+' '+location.href)}`,'_blank')};
+function renderHistory(){R('historyList').innerHTML=historico.map(id=>{let f=ferramentas.find(x=>x[0]===id);return f?`<button onclick="abrir('${id}')">${f[1]} ${f[2]}</button>`:''}).join('')||'Nenhuma ferramenta usada ainda.'}
+function renderPopular(){R('popularList').innerHTML=[...ferramentas].sort((a,b)=>(usos[b[0]]||0)-(usos[a[0]]||0)).slice(0,6).map((f,i)=>`<button class="popular-item" onclick="abrir('${f[0]}')"><strong>${i+1}. ${f[1]} ${f[2]}</strong><small>${usos[f[0]]||0} usos</small></button>`).join('')}
+function renderPesquisas(){R('searchHistoryList').innerHTML=pesquisas.map(q=>`<button onclick="R('busca').value='${q.replace(/'/g,"\\'")}';render()">🔎 ${q}</button>`).join('')||'Nenhuma pesquisa ainda.'}
+R('busca').oninput=()=>render();R('busca').onchange=()=>{let q=R('busca').value.trim();if(q){pesquisas=[q,...pesquisas.filter(x=>x!==q)].slice(0,8);localStorage.setItem('fp_pesquisas',JSON.stringify(pesquisas));renderPesquisas()}}
+R('limparBusca').onclick=()=>{R('busca').value='';render()};R('favoritosBtn').onclick=()=>{somenteFavoritos=!somenteFavoritos;render()};R('tema').onclick=()=>{document.body.classList.toggle('dark');localStorage.setItem('fp_tema',document.body.classList.contains('dark')?'dark':'light')};if(localStorage.getItem('fp_tema')==='dark')document.body.classList.add('dark');
 
-const simple=(fields,fn,btn='Calcular')=>fields+`<button class="btn" onclick="${fn}">${btn}</button><div id="res" class="result"></div>`;
-const templates={
-imc:()=>simple('<div class="row"><input id="a" type="number" placeholder="Peso (kg)"><input id="b" type="number" step=".01" placeholder="Altura (m)"></div>',"let x=val('a')/(val('b')**2),c=x<18.5?'Abaixo do peso':x<25?'Peso normal':x<30?'Sobrepeso':'Obesidade';out('res',x?`IMC: ${x.toFixed(2)}\\nClassificação: ${c}`:'Preencha os campos.')"),
-porcentagem:()=>simple('<div class="row"><input id="a" type="number" placeholder="Porcentagem"><input id="b" type="number" placeholder="Valor"></div>',"out('res',`${val('a')}% de ${val('b')} = ${(val('a')*val('b')/100).toFixed(2)}`)"),
-desconto:()=>simple('<div class="row"><input id="a" type="number" placeholder="Preço"><input id="b" type="number" placeholder="Desconto %"></div>',"let x=val('a')*(1-val('b')/100);out('res',`Preço final: R$ ${x.toFixed(2)}\\nEconomia: R$ ${(val('a')-x).toFixed(2)}`)"),
-regra3:()=>simple('<div class="row3"><input id="a" type="number" placeholder="A"><input id="b" type="number" placeholder="B"><input id="c" type="number" placeholder="C"></div>',"out('res',val('a')?`X = ${(val('b')*val('c')/val('a')).toFixed(4)}`:'A não pode ser zero.')"),
-juros:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Capital"><input id="b" type="number" placeholder="Taxa mensal %"><input id="c" type="number" placeholder="Meses"></div>',"let m=val('a')*((1+val('b')/100)**val('c'));out('res',`Montante: R$ ${m.toFixed(2)}\\nJuros: R$ ${(m-val('a')).toFixed(2)}`)"),
-emprestimo:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Valor"><input id="b" type="number" placeholder="Juros ao mês %"><input id="c" type="number" placeholder="Parcelas"></div>',"let p=val('a'),i=val('b')/100,n=val('c'),x=i?p*i*(1+i)**n/((1+i)**n-1):p/n;out('res',n?`Parcela: R$ ${x.toFixed(2)}\\nTotal: R$ ${(x*n).toFixed(2)}`:'Informe as parcelas.')"),
-idade:()=>simple('<input id="a" type="date">',"let n=new Date(R('a').value+'T00:00:00'),h=new Date(),x=h.getFullYear()-n.getFullYear();if(h<new Date(h.getFullYear(),n.getMonth(),n.getDate()))x--;out('res',isNaN(n)?'Escolha a data.':`${x} anos`)"),
-dias:()=>simple('<div class="row"><input id="a" type="date"><input id="b" type="date"></div>',"let x=new Date(R('a').value),y=new Date(R('b').value);out('res',isNaN(x)||isNaN(y)?'Escolha as datas.':`${Math.abs(Math.round((y-x)/86400000))} dias`)"),
-caracteres:()=>'<textarea id="texto" placeholder="Digite ou cole seu texto"></textarea><div id="res" class="result">0 caracteres</div>',
-palavras:()=>'<textarea id="texto" placeholder="Digite ou cole seu texto"></textarea><div id="res" class="result">0 palavras</div>',
-maiusculas:()=>'<textarea id="texto"></textarea><button class="btn" onclick="R(\'texto\').value=R(\'texto\').value.toUpperCase();out(\'res\',R(\'texto\').value)">MAIÚSCULAS</button><button class="btn secondary" onclick="R(\'texto\').value=R(\'texto\').value.toLowerCase();out(\'res\',R(\'texto\').value)">minúsculas</button><div id="res" class="result"></div>',
-espacos:()=>simple('<textarea id="texto"></textarea>',"let t=R('texto').value.replace(/\\s+/g,' ').trim();R('texto').value=t;out('res',t)",'Limpar'),
-ordenar:()=>simple('<textarea id="texto" placeholder="Uma linha por item"></textarea>',"let t=R('texto').value.split('\\n').filter(Boolean).sort((a,b)=>a.localeCompare(b)).join('\\n');R('texto').value=t;out('res',t)",'Ordenar'),
-base64:()=>'<textarea id="texto"></textarea><button class="btn" onclick="try{out(\'res\',btoa(unescape(encodeURIComponent(R(\'texto\').value))))}catch{out(\'res\',\'Erro.\')}">Codificar</button><button class="btn secondary" onclick="try{out(\'res\',decodeURIComponent(escape(atob(R(\'texto\').value))))}catch{out(\'res\',\'Base64 inválido.\')}">Decodificar</button><div id="res" class="result"></div>',
-url:()=>'<textarea id="texto"></textarea><button class="btn" onclick="out(\'res\',encodeURIComponent(R(\'texto\').value))">Codificar</button><button class="btn secondary" onclick="try{out(\'res\',decodeURIComponent(R(\'texto\').value))}catch{out(\'res\',\'URL inválida.\')}">Decodificar</button><div id="res" class="result"></div>',
-senha:()=>simple('<input id="a" type="number" value="16" min="4" max="100">',"let n=Math.max(4,Math.min(100,val('a'))),c='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%&*_-+=',z=new Uint32Array(n);crypto.getRandomValues(z);out('res',Array.from(z,x=>c[x%c.length]).join(''))",'Gerar senha'),
-uuid:()=>simple('',"out('res',crypto.randomUUID())",'Gerar UUID'),
-numero:()=>simple('<div class="row"><input id="a" type="number" value="1"><input id="b" type="number" value="100"></div>',"let a=Math.ceil(val('a')),b=Math.floor(val('b'));if(a>b)[a,b]=[b,a];out('res',Math.floor(Math.random()*(b-a+1))+a)",'Sortear'),
-loteria:()=>simple('',"let s=new Set();while(s.size<6)s.add(Math.floor(Math.random()*60)+1);out('res',[...s].sort((a,b)=>a-b).map(n=>String(n).padStart(2,'0')).join(' • '))",'Gerar números'),
-cpfgerar:()=>simple('',"out('res',gerarCPF())",'Gerar CPF'),
-cpfvalidar:()=>simple('<input id="texto" placeholder="CPF">',"out('res',cpfValido(R('texto').value)?'CPF válido':'CPF inválido')",'Validar'),
-temperatura:()=>convTemplate('temp'),comprimento:()=>convTemplate('comp'),peso:()=>convTemplate('peso'),dados:()=>convTemplate('dados'),
-cronometro:()=>'<div id="res" class="result" style="font-size:36px;text-align:center">00:00:00</div><button class="btn" onclick="cronoStart()">Iniciar</button><button class="btn secondary" onclick="cronoPause()">Pausar</button><button class="btn danger" onclick="cronoReset()">Zerar</button>',
-temporizador:()=>'<input id="a" type="number" value="60"><div id="res" class="result" style="font-size:36px;text-align:center">01:00</div><button class="btn" onclick="timerStart()">Iniciar</button><button class="btn danger" onclick="timerStop()">Parar</button>',
-qrcode:()=>simple('<textarea id="texto" placeholder="Texto ou link"></textarea>',"let t=encodeURIComponent(R('texto').value.trim());out('res',t?`<img alt='QR Code' style='max-width:260px;width:100%' src='https://quickchart.io/qr?text=${t}&size=300'>`:'Digite um texto.')",'Gerar QR Code'),
-pix:()=>simple('<input id="a" placeholder="Chave PIX"><div class="row"><input id="b" placeholder="Nome"><input id="c" placeholder="Cidade"></div><input id="d" type="number" placeholder="Valor opcional">',"gerarPix()",'Gerar código'),
-sorteio:()=>simple('<textarea id="texto" placeholder="Um nome por linha"></textarea>',"let a=R('texto').value.split('\\n').map(x=>x.trim()).filter(Boolean);out('res',a.length?'🎉 '+a[Math.floor(Math.random()*a.length)]:'Adicione nomes.')",'Sortear'),
-variacao:()=>simple('<div class="row"><input id="a" type="number" placeholder="Inicial"><input id="b" type="number" placeholder="Final"></div>',"let p=(val('b')-val('a'))/val('a')*100;out('res',val('a')?`${p>=0?'Aumento':'Redução'} de ${Math.abs(p).toFixed(2)}%`:'Inicial não pode ser zero.')"),
-combustivel:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Distância km"><input id="b" type="number" placeholder="Km/l"><input id="c" type="number" placeholder="Preço/l"></div>',"let l=val('a')/val('b');out('res',val('b')?`Litros: ${l.toFixed(2)}\\nCusto: R$ ${(l*val('c')).toFixed(2)}`:'Preencha os campos.')"),
-ritmo:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Distância km"><input id="b" type="number" placeholder="Horas"><input id="c" type="number" placeholder="Minutos"></div>',"let r=(val('b')*60+val('c'))/val('a'),m=Math.floor(r),s=Math.round((r-m)*60);out('res',val('a')?`${m}:${String(s).padStart(2,'0')} min/km`:'Informe a distância.')"),
-hora:()=>simple('<div class="row"><input id="a" type="number" placeholder="Salário"><input id="b" type="number" value="44" placeholder="Horas/semana"></div>',"out('res',val('b')?`R$ ${(val('a')/(val('b')*4.33)).toFixed(2)} por hora`:'Informe as horas.')"),
-calorias:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Peso kg"><input id="b" type="number" placeholder="Altura cm"><input id="c" type="number" placeholder="Idade"></div><select id="d"><option value="m">Masculino</option><option value="f">Feminino</option></select>',"let x=R('d').value==='m'?10*val('a')+6.25*val('b')-5*val('c')+5:10*val('a')+6.25*val('b')-5*val('c')-161;out('res',`Metabolismo basal: ${Math.round(x)} kcal/dia`)",'Estimar'),
-inverter:()=>simple('<textarea id="texto"></textarea>',"out('res',R('texto').value.split('').reverse().join(''))",'Inverter'),
-slug:()=>simple('<textarea id="texto"></textarea>',"out('res',semAcento(R('texto').value).trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''))",'Gerar slug'),
-cor:()=>simple('',"let c='#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0').toUpperCase();out('res',`<div style='height:90px;border-radius:12px;background:${c};margin-bottom:10px'></div>${c}`)",'Gerar cor'),
-timestamp:()=>simple('<input id="a" type="datetime-local">',"let d=new Date(R('a').value);out('res',isNaN(d)?'Escolha a data.':Math.floor(d.getTime()/1000))",'Converter'),
-formatardata:()=>simple('<input id="a" type="date">',"let d=new Date(R('a').value+'T00:00:00');out('res',isNaN(d)?'Escolha a data.':d.toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'long',year:'numeric'}))",'Formatar'),
-media:()=>simple('<textarea id="texto" placeholder="Números separados por vírgula"></textarea>',"let a=R('texto').value.split(/[;,\\s]+/).map(Number).filter(x=>!isNaN(x));out('res',a.length?`Média: ${(a.reduce((s,x)=>s+x,0)/a.length).toFixed(2)}`:'Digite números.')"),
-proporcao:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Valor total"><input id="b" type="number" placeholder="Parte 1"><input id="c" type="number" placeholder="Parte 2"></div>',"let s=val('b')+val('c');out('res',s?`Parte 1: ${(val('a')*val('b')/s).toFixed(2)}\\nParte 2: ${(val('a')*val('c')/s).toFixed(2)}`:'Informe a proporção.')"),
-bhaskara:()=>simple('<div class="row3"><input id="a" type="number" placeholder="a"><input id="b" type="number" placeholder="b"><input id="c" type="number" placeholder="c"></div>',"let a=val('a'),b=val('b'),c=val('c'),d=b*b-4*a*c;if(!a)out('res','a não pode ser zero.');else if(d<0)out('res','Não há raízes reais.');else out('res',`x1 = ${((-b+Math.sqrt(d))/(2*a)).toFixed(4)}\\nx2 = ${((-b-Math.sqrt(d))/(2*a)).toFixed(4)}`)"),
-area:()=>simple('<select id="d"><option value="ret">Retângulo</option><option value="tri">Triângulo</option><option value="cir">Círculo</option></select><div class="row"><input id="a" type="number" placeholder="Base ou raio"><input id="b" type="number" placeholder="Altura"></div>',"let t=R('d').value,x=t==='cir'?Math.PI*val('a')**2:t==='tri'?val('a')*val('b')/2:val('a')*val('b');out('res',`Área: ${x.toFixed(2)}`)"),
-volume:()=>simple('<select id="d"><option value="cubo">Cubo</option><option value="cil">Cilindro</option></select><div class="row"><input id="a" type="number" placeholder="Lado ou raio"><input id="b" type="number" placeholder="Altura"></div>',"let x=R('d').value==='cubo'?val('a')**3:Math.PI*val('a')**2*val('b');out('res',`Volume: ${x.toFixed(2)}`)"),
-gorjeta:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Conta"><input id="b" type="number" value="10" placeholder="Gorjeta %"><input id="c" type="number" value="1" placeholder="Pessoas"></div>',"let total=val('a')*(1+val('b')/100);out('res',val('c')?`Total: R$ ${total.toFixed(2)}\\nPor pessoa: R$ ${(total/val('c')).toFixed(2)}`:'Informe pessoas.')"),
-lucro:()=>simple('<div class="row"><input id="a" type="number" placeholder="Custo"><input id="b" type="number" placeholder="Venda"></div>',"let l=val('b')-val('a');out('res',`Lucro: R$ ${l.toFixed(2)}\\nMargem: ${val('b')?(l/val('b')*100).toFixed(2):0}%`)"),
-parcelas:()=>simple('<div class="row"><input id="a" type="number" placeholder="Total"><input id="b" type="number" placeholder="Parcelas"></div>',"out('res',val('b')?`${val('b')}x de R$ ${(val('a')/val('b')).toFixed(2)}`:'Informe as parcelas.')"),
-economia:()=>simple('<div class="row"><input id="a" type="number" placeholder="Meta"><input id="b" type="number" placeholder="Meses"></div>',"out('res',val('b')?`Guarde R$ ${(val('a')/val('b')).toFixed(2)} por mês`:'Informe os meses.')"),
-ferias:()=>simple('<input id="a" type="date">',"let d=new Date(R('a').value),h=new Date();out('res',isNaN(d)?'Escolha a data.':`${Math.ceil((d-h)/86400000)} dias`)"),
-diadasemana:()=>simple('<input id="a" type="date">',"let d=new Date(R('a').value+'T00:00:00');out('res',isNaN(d)?'Escolha a data.':d.toLocaleDateString('pt-BR',{weekday:'long'}))"),
-somardias:()=>simple('<div class="row"><input id="a" type="date"><input id="b" type="number" placeholder="Dias"></div>',"let d=new Date(R('a').value+'T00:00:00');d.setDate(d.getDate()+val('b'));out('res',isNaN(d)?'Escolha a data.':d.toLocaleDateString('pt-BR'))"),
-removeracentos:()=>simple('<textarea id="texto"></textarea>',"out('res',R('texto').value.normalize('NFD').replace(/[\\u0300-\\u036f]/g,''))",'Remover'),
-capitalizar:()=>simple('<textarea id="texto"></textarea>',"out('res',R('texto').value.toLowerCase().replace(/\\b\\w/g,c=>c.toUpperCase()))",'Capitalizar'),
-repetidas:()=>simple('<textarea id="texto"></textarea>',"out('res',[...new Set(R('texto').value.split('\\n'))].filter(Boolean).join('\\n'))",'Remover repetidas'),
-substituir:()=>simple('<textarea id="texto"></textarea><div class="row"><input id="a" placeholder="Localizar"><input id="b" placeholder="Substituir"></div>',"out('res',R('texto').value.split(R('a').value).join(R('b').value))",'Substituir'),
-json:()=>simple('<textarea id="texto" placeholder=\'{"nome":"João"}\'></textarea>',"try{out('res',JSON.stringify(JSON.parse(R('texto').value),null,2))}catch(e){out('res','JSON inválido: '+e.message)}",'Formatar'),
-html:()=>simple('<textarea id="texto"></textarea>',"out('res',R('texto').value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;'))",'Escapar'),
-hash:()=>simple('<textarea id="texto"></textarea>',"gerarHash()",'Gerar SHA-256'),
-binario:()=>simple('<textarea id="texto"></textarea>',"out('res',[...R('texto').value].map(c=>c.charCodeAt(0).toString(2).padStart(8,'0')).join(' '))",'Converter'),
-moeda:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Valor"><input id="b" type="number" placeholder="Cotação"><select id="d"><option value="m">Multiplicar</option><option value="d">Dividir</option></select></div>',"let x=R('d').value==='m'?val('a')*val('b'):val('a')/val('b');out('res',`Resultado: ${x.toFixed(2)}`)"),
-velocidade:()=>convTemplate('vel'),areaConv:()=>convTemplate('area'),volumeConv:()=>convTemplate('vol'),
-romano:()=>simple('<input id="a" type="number" min="1" max="3999">',"out('res',toRoman(Math.floor(val('a'))))",'Converter'),
-dado:()=>simple('<div class="row"><input id="a" type="number" value="1" placeholder="Quantidade"><input id="b" type="number" value="6" placeholder="Lados"></div>',"let q=Math.min(20,Math.max(1,val('a'))),l=Math.max(2,val('b')),r=Array.from({length:q},()=>Math.floor(Math.random()*l)+1);out('res',r.join(' • ')+'\\nTotal: '+r.reduce((s,x)=>s+x,0))",'Rolar'),
-caraoucoroa:()=>simple('',"out('res',Math.random()<.5?'🪙 Cara':'🪙 Coroa')",'Jogar'),
-times:()=>simple('<textarea id="texto" placeholder="Um nome por linha"></textarea><input id="a" type="number" value="2" placeholder="Número de equipes">',"dividirTimes()",'Dividir equipes'),
-frase:()=>simple('',"let f=['A persistência transforma pequenos passos em grandes resultados.','Comece com o que você tem e melhore todos os dias.','Quem continua tentando já está na frente de quem desistiu.','Seu futuro começa nas escolhas de hoje.','Disciplina vence a motivação quando a motivação acaba.'];out('res',f[Math.floor(Math.random()*f.length)])",'Gerar frase'),
-tabuada:()=>simple('<input id="a" type="number" value="10">',"let n=val('a');out('res',Array.from({length:10},(_,i)=>`${n} × ${i+1} = ${n*(i+1)}`).join('\\n'))",'Gerar tabuada')
+const configs={
+imc:['Peso (kg)|number','Altura (m)|number'],porcentagem:['Porcentagem|number','Valor|number'],desconto:['Preço|number','Desconto %|number'],regra3:['A|number','B|number','C|number'],juros:['Capital|number','Taxa mensal %|number','Meses|number'],emprestimo:['Valor|number','Juros ao mês %|number','Parcelas|number'],idade:['Data de nascimento|date'],dias:['Data inicial|date','Data final|date'],caracteres:['Texto|textarea'],palavras:['Texto|textarea'],maiusculas:['Texto|textarea'],espacos:['Texto|textarea'],ordenar:['Linhas|textarea'],base64:['Texto|textarea'],url:['Texto ou URL|textarea'],senha:['Tamanho|number'],uuid:[],numero:['Mínimo|number','Máximo|number'],loteria:[],cpfgerar:[],cpfvalidar:['CPF|text'],temperatura:['Valor|number','De: c/f/k|text','Para: c/f/k|text'],comprimento:['Valor|number','De: m/km/mi|text','Para: m/km/mi|text'],peso:['Valor|number','De: kg/g/lb|text','Para: kg/g/lb|text'],dados:['Valor|number','De: b/kb/mb/gb|text','Para: b/kb/mb/gb|text'],cronometro:[],temporizador:['Segundos|number'],qrcode:['Texto ou link|textarea'],pix:['Chave PIX|text','Nome|text','Cidade|text','Valor|number'],sorteio:['Um nome por linha|textarea'],variacao:['Valor inicial|number','Valor final|number'],combustivel:['Distância km|number','Km por litro|number','Preço por litro|number'],ritmo:['Distância km|number','Horas|number','Minutos|number'],hora:['Salário mensal|number','Horas por semana|number'],calorias:['Peso kg|number','Altura cm|number','Idade|number'],inverter:['Texto|textarea'],slug:['Texto|textarea'],cor:[],timestamp:['Data|datetime-local'],formatardata:['Data|date'],media:['Números separados por vírgula|textarea'],proporcao:['Total|number','Parte 1|number','Parte 2|number'],bhaskara:['a|number','b|number','c|number'],area:['Base ou raio|number','Altura|number'],volume:['Lado ou raio|number','Altura|number'],gorjeta:['Conta|number','Gorjeta %|number','Pessoas|number'],lucro:['Custo|number','Venda|number'],parcelas:['Total|number','Parcelas|number'],economia:['Meta|number','Meses|number'],ferias:['Data futura|date'],diadasemana:['Data|date'],somardias:['Data|date','Dias|number'],removeracentos:['Texto|textarea'],capitalizar:['Texto|textarea'],repetidas:['Linhas|textarea'],substituir:['Texto|textarea','Localizar|text','Substituir por|text'],json:['JSON|textarea'],html:['HTML|textarea'],hash:['Texto|textarea'],binario:['Texto|textarea'],moeda:['Valor|number','Cotação|number'],velocidade:['Valor|number','De: kmh/ms/mph|text','Para: kmh/ms/mph|text'],areaConv:['Valor|number','De: m2/km2/ha/acre|text','Para: m2/km2/ha/acre|text'],volumeConv:['Valor|number','De: l/ml/gal/m3|text','Para: l/ml/gal/m3|text'],romano:['Número|number'],dado:['Quantidade|number','Lados|number'],caraoucoroa:[],times:['Um nome por linha|textarea','Número de equipes|number'],frase:[],tabuada:['Número|number']
 };
-
-const init={
-caracteres:()=>R('texto').oninput=()=>out('res',`${R('texto').value.length} caracteres • ${R('texto').value.replace(/\\s/g,'').length} sem espaços`),
-palavras:()=>R('texto').oninput=()=>{let t=R('texto').value.trim();out('res',`${t?t.split(/\\s+/).length:0} palavras • ${t?t.split(/\\n/).length:0} linhas`)}
-};
-
-function convTemplate(tipo){
-let map={temp:[['c','Celsius'],['f','Fahrenheit'],['k','Kelvin']],comp:[['m','Metros'],['km','Quilômetros'],['mi','Milhas']],peso:[['kg','Quilos'],['g','Gramas'],['lb','Libras']],dados:[['b','Bytes'],['kb','KB'],['mb','MB'],['gb','GB']],vel:[['kmh','Km/h'],['ms','m/s'],['mph','mph']],area:[['m2','m²'],['km2','km²'],['ha','Hectares'],['acre','Acres']],vol:[['l','Litros'],['ml','Mililitros'],['gal','Galões'],['m3','m³']]};
-let o=map[tipo].map(x=>`<option value="${x[0]}">${x[1]}</option>`).join('');
-return `<input id="a" type="number" placeholder="Valor"><div class="row"><select id="b">${o}</select><select id="c">${o}</select></div><button class="btn" onclick="converter('${tipo}')">Converter</button><div id="res" class="result"></div>`
+function abrir(id){let f=ferramentas.find(x=>x[0]===id);ferramentaAtual=f;R('tituloModal').textContent=f[1]+' '+f[2];let fields=(configs[id]||[]).map((x,i)=>{let [p,t]=x.split('|');return t==='textarea'?`<textarea id="i${i}" placeholder="${p}"></textarea>`:`<input id="i${i}" type="${t}" placeholder="${p}">`}).join('');R('conteudoModal').innerHTML=fields+`<button class="btn" onclick="executar('${id}')">Executar</button><div id="res" class="result"></div>`;R('modal').classList.add('open');addHistory(id)}
+function fechar(){R('modal').classList.remove('open')}
+const n=i=>parseFloat(R('i'+i)?.value)||0,s=i=>R('i'+i)?.value||'',res=t=>R('res').innerHTML=t;
+function executar(id){try{
+let r='';
+if(id==='imc'){let x=n(0)/(n(1)**2);r=x?`IMC: ${x.toFixed(2)}`:'Preencha os campos.'}
+else if(id==='porcentagem')r=`${n(0)}% de ${n(1)} = ${(n(0)*n(1)/100).toFixed(2)}`;
+else if(id==='desconto')r=`Preço final: R$ ${(n(0)*(1-n(1)/100)).toFixed(2)}`;
+else if(id==='regra3')r=n(0)?`X = ${(n(1)*n(2)/n(0)).toFixed(4)}`:'A não pode ser zero.';
+else if(id==='juros'){let m=n(0)*(1+n(1)/100)**n(2);r=`Montante: R$ ${m.toFixed(2)}`;}
+else if(id==='emprestimo'){let p=n(0),i=n(1)/100,q=n(2),x=i?p*i*(1+i)**q/((1+i)**q-1):p/q;r=`Parcela: R$ ${x.toFixed(2)}`;}
+else if(id==='idade'){let d=new Date(s(0)+'T00:00:00'),h=new Date(),x=h.getFullYear()-d.getFullYear();if(h<new Date(h.getFullYear(),d.getMonth(),d.getDate()))x--;r=x+' anos'}
+else if(id==='dias')r=Math.abs(Math.round((new Date(s(1))-new Date(s(0)))/86400000))+' dias';
+else if(id==='caracteres')r=`${s(0).length} caracteres`;
+else if(id==='palavras')r=`${s(0).trim()?s(0).trim().split(/\s+/).length:0} palavras`;
+else if(id==='maiusculas')r=s(0).toUpperCase();
+else if(id==='espacos')r=s(0).replace(/\s+/g,' ').trim();
+else if(id==='ordenar')r=s(0).split('\n').sort().join('\n');
+else if(id==='base64')r=btoa(unescape(encodeURIComponent(s(0))));
+else if(id==='url')r=encodeURIComponent(s(0));
+else if(id==='senha'){let c='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%&*',q=Math.max(8,n(0)||16);r=Array.from({length:q},()=>c[Math.floor(Math.random()*c.length)]).join('')}
+else if(id==='uuid')r=crypto.randomUUID();
+else if(id==='numero'){let a=Math.ceil(n(0)),b=Math.floor(n(1));r=Math.floor(Math.random()*(b-a+1))+a}
+else if(id==='loteria'){let x=new Set();while(x.size<6)x.add(Math.floor(Math.random()*60)+1);r=[...x].sort((a,b)=>a-b).join(' • ')}
+else if(id==='cpfgerar')r='Gerador disponível apenas para testes de software.';
+else if(id==='cpfvalidar')r=s(0).replace(/\D/g,'').length===11?'Formato com 11 dígitos.':'CPF inválido.';
+else if(['temperatura','comprimento','peso','dados','velocidade','areaConv','volumeConv'].includes(id))r=converterLocal(id,n(0),s(1),s(2));
+else if(id==='cronometro')r='Use o cronômetro do seu aparelho para precisão em segundo plano.';
+else if(id==='temporizador')r=`Temporizador configurado para ${n(0)} segundos.`;
+else if(id==='qrcode')r=`<img style="max-width:260px;width:100%" src="https://quickchart.io/qr?text=${encodeURIComponent(s(0))}&size=300">`;
+else if(id==='pix')r='Código PIX: confira os dados antes de utilizar. Chave: '+s(0);
+else if(id==='sorteio'){let a=s(0).split('\n').filter(Boolean);r=a.length?'🎉 '+a[Math.floor(Math.random()*a.length)]:'Adicione nomes.'}
+else if(id==='variacao')r=n(0)?(((n(1)-n(0))/n(0))*100).toFixed(2)+'%':'Inicial não pode ser zero.';
+else if(id==='combustivel')r=n(1)?`Custo: R$ ${((n(0)/n(1))*n(2)).toFixed(2)}`:'Preencha os campos.';
+else if(id==='ritmo'){let x=(n(1)*60+n(2))/n(0);r=`${Math.floor(x)}:${String(Math.round((x%1)*60)).padStart(2,'0')} min/km`}
+else if(id==='hora')r=n(1)?`R$ ${(n(0)/(n(1)*4.33)).toFixed(2)} por hora`:'Informe as horas.';
+else if(id==='calorias')r=`Estimativa basal: ${Math.round(10*n(0)+6.25*n(1)-5*n(2)+5)} kcal/dia`;
+else if(id==='inverter')r=[...s(0)].reverse().join('');
+else if(id==='slug')r=semAcento(s(0)).trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+else if(id==='cor'){let c='#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0');r=`<div style="height:80px;background:${c};border-radius:12px"></div>${c}`}
+else if(id==='timestamp')r=Math.floor(new Date(s(0)).getTime()/1000);
+else if(id==='formatardata')r=new Date(s(0)+'T00:00:00').toLocaleDateString('pt-BR');
+else if(id==='media'){let a=s(0).split(/[,\s;]+/).map(Number).filter(x=>!isNaN(x));r=(a.reduce((x,y)=>x+y,0)/a.length).toFixed(2)}
+else if(id==='proporcao'){let t=n(1)+n(2);r=`Parte 1: ${(n(0)*n(1)/t).toFixed(2)}\nParte 2: ${(n(0)*n(2)/t).toFixed(2)}`}
+else if(id==='bhaskara'){let d=n(1)**2-4*n(0)*n(2);r=d<0?'Sem raízes reais.':`x1=${((-n(1)+Math.sqrt(d))/(2*n(0))).toFixed(3)}\nx2=${((-n(1)-Math.sqrt(d))/(2*n(0))).toFixed(3)}`}
+else if(id==='area')r=`Área aproximada: ${(n(0)*n(1)).toFixed(2)}`;
+else if(id==='volume')r=`Volume aproximado: ${(n(0)*n(0)*n(1)).toFixed(2)}`;
+else if(id==='gorjeta'){let t=n(0)*(1+n(1)/100);r=`Total: R$ ${t.toFixed(2)}\nPor pessoa: R$ ${(t/(n(2)||1)).toFixed(2)}`}
+else if(id==='lucro'){let l=n(1)-n(0);r=`Lucro: R$ ${l.toFixed(2)}\nMargem: ${n(1)?(l/n(1)*100).toFixed(2):0}%`}
+else if(id==='parcelas')r=n(1)?`${n(1)}x de R$ ${(n(0)/n(1)).toFixed(2)}`:'Informe as parcelas.';
+else if(id==='economia')r=n(1)?`Guarde R$ ${(n(0)/n(1)).toFixed(2)} por mês`:'Informe os meses.';
+else if(id==='ferias')r=Math.ceil((new Date(s(0))-new Date())/86400000)+' dias';
+else if(id==='diadasemana')r=new Date(s(0)+'T00:00:00').toLocaleDateString('pt-BR',{weekday:'long'});
+else if(id==='somardias'){let d=new Date(s(0)+'T00:00:00');d.setDate(d.getDate()+n(1));r=d.toLocaleDateString('pt-BR')}
+else if(id==='removeracentos')r=s(0).normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+else if(id==='capitalizar')r=s(0).toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
+else if(id==='repetidas')r=[...new Set(s(0).split('\n'))].filter(Boolean).join('\n');
+else if(id==='substituir')r=s(0).split(s(1)).join(s(2));
+else if(id==='json')r=JSON.stringify(JSON.parse(s(0)),null,2);
+else if(id==='html')r=s(0).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+else if(id==='hash')return hashTexto(s(0));
+else if(id==='binario')r=[...s(0)].map(c=>c.charCodeAt(0).toString(2).padStart(8,'0')).join(' ');
+else if(id==='moeda')r=`Resultado: ${(n(0)*n(1)).toFixed(2)}`;
+else if(id==='romano')r=romano(n(0));
+else if(id==='dado'){let a=Array.from({length:Math.max(1,n(0)||1)},()=>Math.floor(Math.random()*Math.max(2,n(1)||6))+1);r=a.join(' • ')}
+else if(id==='caraoucoroa')r=Math.random()<.5?'🪙 Cara':'🪙 Coroa';
+else if(id==='times'){let a=s(0).split('\n').filter(Boolean).sort(()=>Math.random()-.5),q=Math.max(2,n(1)||2),t=Array.from({length:q},()=>[]);a.forEach((x,i)=>t[i%q].push(x));r=t.map((x,i)=>`Equipe ${i+1}:\n${x.join('\n')}`).join('\n\n')}
+else if(id==='frase'){let a=['A persistência transforma pequenos passos em grandes resultados.','Comece com o que você tem.','Disciplina vence a motivação.'];r=a[Math.floor(Math.random()*a.length)]}
+else if(id==='tabuada')r=Array.from({length:10},(_,i)=>`${n(0)} × ${i+1} = ${n(0)*(i+1)}`).join('\n');
+res(r)}catch(e){res('Não foi possível calcular. Confira os dados.')}
 }
-function converter(t){let v=val('a'),de=R('b').value,para=R('c').value,r=v;if(t==='temp'){let c=de==='c'?v:de==='f'?(v-32)*5/9:v-273.15;r=para==='c'?c:para==='f'?c*9/5+32:c+273.15}else{let maps={comp:{m:1,km:1000,mi:1609.344},peso:{kg:1,g:.001,lb:.45359237},dados:{b:1,kb:1024,mb:1048576,gb:1073741824},vel:{kmh:1,ms:3.6,mph:1.609344},area:{m2:1,km2:1e6,ha:1e4,acre:4046.8564224},vol:{l:1,ml:.001,gal:3.785411784,m3:1000}};let f=maps[t];r=v*f[de]/f[para]}out('res',Number(r.toFixed(8)))}
-function gerarCPF(){let n=Array.from({length:9},()=>Math.floor(Math.random()*10));for(let t=9;t<=10;t++){let s=0;for(let i=0;i<t;i++)s+=n[i]*(t+1-i);let d=(s*10)%11;n.push(d===10?0:d)}return n.join('').replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/,'$1.$2.$3-$4')}
-function cpfValido(c){c=c.replace(/\\D/g,'');if(c.length!==11||/^(\\d)\\1+$/.test(c))return false;for(let t=9;t<11;t++){let s=0;for(let i=0;i<t;i++)s+=+c[i]*(t+1-i);let d=(s*10)%11;if(d===10)d=0;if(d!==+c[t])return false}return true}
-let cronoInt=null,cronoInicio=0,cronoPassado=0;
-function cronoStart(){if(cronoInt)return;cronoInicio=Date.now()-cronoPassado;cronoInt=setInterval(()=>{cronoPassado=Date.now()-cronoInicio;let s=Math.floor(cronoPassado/1000),h=Math.floor(s/3600),m=Math.floor(s%3600/60);out('res',[h,m,s%60].map(x=>String(x).padStart(2,'0')).join(':'))},250)}
-function cronoPause(){clearInterval(cronoInt);cronoInt=null}
-function cronoReset(){cronoPause();cronoPassado=0;out('res','00:00:00')}
-let timerInt=null;
-function timerStart(){timerStop();let s=Math.max(0,val('a'));let show=()=>out('res',`${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`);show();timerInt=setInterval(()=>{s--;show();if(s<=0){timerStop();alert('Tempo encerrado!')}},1000)}
-function timerStop(){clearInterval(timerInt);timerInt=null}
-function crc16(str){let crc=0xFFFF;for(let c of str){crc^=c.charCodeAt(0)<<8;for(let i=0;i<8;i++)crc=(crc&0x8000)?((crc<<1)^0x1021):(crc<<1);crc&=0xFFFF}return crc.toString(16).toUpperCase().padStart(4,'0')}
-function emv(id,v){return id+String(v.length).padStart(2,'0')+v}
-function gerarPix(){let chave=R('a').value.trim(),nome=R('b').value.trim().toUpperCase().slice(0,25),cidade=R('c').value.trim().toUpperCase().slice(0,15),valor=val('d');if(!chave||!nome||!cidade)return out('res','Preencha chave, nome e cidade.');let conta=emv('26',emv('00','BR.GOV.BCB.PIX')+emv('01',chave)),p=emv('00','01')+emv('01','12')+conta+emv('52','0000')+emv('53','986');if(valor>0)p+=emv('54',valor.toFixed(2));p+=emv('58','BR')+emv('59',nome)+emv('60',cidade)+emv('62',emv('05','***'))+'6304';out('res',p+crc16(p))}
-async function gerarHash(){let data=new TextEncoder().encode(R('texto').value),buf=await crypto.subtle.digest('SHA-256',data);out('res',[...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join(''))}
-function toRoman(n){if(n<1||n>3999)return'Use um número de 1 a 3999.';let m=[['M',1000],['CM',900],['D',500],['CD',400],['C',100],['XC',90],['L',50],['XL',40],['X',10],['IX',9],['V',5],['IV',4],['I',1]],r='';for(let [s,v] of m)while(n>=v){r+=s;n-=v}return r}
-function dividirTimes(){let nomes=R('texto').value.split('\\n').map(x=>x.trim()).filter(Boolean),q=Math.max(2,Math.floor(val('a')));nomes.sort(()=>Math.random()-.5);let times=Array.from({length:q},()=>[]);nomes.forEach((n,i)=>times[i%q].push(n));out('res',times.map((t,i)=>`Equipe ${i+1}:\\n${t.join('\\n')}`).join('\\n\\n'))}
+function converterLocal(id,v,de,para){de=de.toLowerCase();para=para.toLowerCase();if(id==='temperatura'){let c=de==='c'?v:de==='f'?(v-32)*5/9:v-273.15;return (para==='c'?c:para==='f'?c*9/5+32:c+273.15).toFixed(4)}let maps={comprimento:{m:1,km:1000,mi:1609.344},peso:{kg:1,g:.001,lb:.453592},dados:{b:1,kb:1024,mb:1048576,gb:1073741824},velocidade:{kmh:1,ms:3.6,mph:1.609344},areaConv:{m2:1,km2:1e6,ha:1e4,acre:4046.856},volumeConv:{l:1,ml:.001,gal:3.78541,m3:1000}};return (v*maps[id][de]/maps[id][para]).toFixed(6)}
+async function hashTexto(t){let b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t));res([...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join(''))}
+function romano(n){let a=[['M',1000],['CM',900],['D',500],['CD',400],['C',100],['XC',90],['L',50],['XL',40],['X',10],['IX',9],['V',5],['IV',4],['I',1]],r='';for(let [s,v] of a)while(n>=v){r+=s;n-=v}return r||'Use número maior que zero.'}
+function copiarResultado(){navigator.clipboard.writeText(R('res')?.innerText||'').then(()=>toast('Resultado copiado!'))}
+function compartilhar(){let t=(ferramentaAtual?.[2]||'Ferramentas Pro')+': '+(R('res')?.innerText||'');navigator.share?navigator.share({title:'Ferramentas Pro',text:t,url:location.href}):window.open('https://wa.me/?text='+encodeURIComponent(t+' '+location.href))}
 
-window.addEventListener('scroll',()=>{
-  const doc=document.documentElement, pct=(doc.scrollTop/(doc.scrollHeight-doc.clientHeight))*100;
-  R('progress').style.width=pct+'%';
-  R('toTop').style.display=doc.scrollTop>500?'block':'none'
-});
-R('toTop').onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
-
+function abrirIA(){R('aiPanel').classList.add('open');if(!R('aiMessages').children.length)addBot('Olá! Diga o que você precisa. Exemplo: “calcular 20% de 500” ou “quero gerar uma senha”.')}
+function fecharIA(){R('aiPanel').classList.remove('open')}
+function addBot(t,botao){let d=document.createElement('div');d.className='msg bot';d.innerHTML=t+(botao?`<br><button class="btn" onclick="abrir('${botao}')">Abrir ferramenta</button>`:'');R('aiMessages').appendChild(d);R('aiMessages').scrollTop=9999}
+function addUser(t){let d=document.createElement('div');d.className='msg user';d.textContent=t;R('aiMessages').appendChild(d)}
+function enviarIA(){let q=R('aiInput').value.trim();if(!q)return;R('aiInput').value='';perguntar(q)}
+function perguntar(q){abrirIA();addUser(q);let t=semAcento(q),nums=(t.match(/-?\d+(?:[.,]\d+)?/g)||[]).map(x=>parseFloat(x.replace(',','.')));
+if((t.includes('%')||t.includes('porcent'))&&nums.length>=2){addBot(`Resultado: <strong>${(nums[0]*nums[1]/100).toFixed(2)}</strong>. Também posso abrir a calculadora completa.`,'porcentagem');return}
+if(t.includes('desconto')&&nums.length>=2){addBot(`Com ${nums[1]}% de desconto, o valor fica <strong>R$ ${(nums[0]*(1-nums[1]/100)).toFixed(2)}</strong>.`,'desconto');return}
+let aliases={senha:'senha',password:'senha',imc:'imc',peso:'peso',temperatura:'temperatura',febre:'temperatura',palavra:'palavras',caracter:'caracteres',qr:'qrcode',pix:'pix',emprestimo:'emprestimo',juros:'juros',idade:'idade',data:'dias',sorteio:'sorteio',nome:'sorteio',tabuada:'tabuada',lucro:'lucro',parcela:'parcelas',gorjeta:'gorjeta',combustivel:'combustivel',cpf:'cpfvalidar',texto:'maiusculas',json:'json',base64:'base64',moeda:'moeda',dado:'dado',equipe:'times'};
+let id=Object.keys(aliases).find(k=>t.includes(k));if(id){let f=ferramentas.find(x=>x[0]===aliases[id]);addBot(`A melhor opção é <strong>${f[2]}</strong>.`,f[0]);return}
+let f=ferramentas.map(x=>({f:x,score:semAcento(x.join(' ')).split(' ').filter(w=>t.includes(w)&&w.length>3).length})).sort((a,b)=>b.score-a.score)[0];if(f.score)addBot(`Encontrei uma opção: <strong>${f.f[2]}</strong>.`,f.f[0]);else addBot('Ainda não entendi. Tente escrever o objetivo com palavras como desconto, senha, IMC, texto, data, PIX ou conversão.')}
+R('aiInput').addEventListener('keydown',e=>{if(e.key==='Enter')enviarIA()});
+window.addEventListener('scroll',()=>{let d=document.documentElement;R('progress').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%'});
 renderFilters();render();renderHistory();renderPopular();renderPesquisas();
-let hash=location.hash.replace('#','');if(ferramentas.some(f=>f[0]===hash))setTimeout(()=>abrir(hash),100);
 </script>
 </body>
 </html>
