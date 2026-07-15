@@ -3,132 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="description" content="Ferramentas online gratuitas para cálculos, textos, segurança e produtividade.">
+  <meta name="theme-color" content="#2563eb">
   <title>Ferramentas Pro</title>
-  <meta name="description" content="Ferramentas gratuitas para cálculos, textos e segurança.">
 
   <style>
+    :root {
+      --bg: #f3f6fb;
+      --card: #ffffff;
+      --text: #172033;
+      --muted: #64748b;
+      --primary: #2563eb;
+      --primary-dark: #1e3a8a;
+      --border: #dbe3ef;
+      --result: #eff6ff;
+      --shadow: 0 10px 30px rgba(15, 23, 42, .08);
+    }
+
+    body.dark {
+      --bg: #0f172a;
+      --card: #172033;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --border: #334155;
+      --result: #1e293b;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .28);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    :root {
-      --azul: #2563eb;
-      --azul-escuro: #1e3a8a;
-      --fundo: #f4f7fb;
-      --texto: #172033;
-      --cinza: #64748b;
-      --branco: #ffffff;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: var(--fundo);
-      color: var(--texto);
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background .25s, color .25s;
     }
 
     header {
-      background: linear-gradient(135deg, var(--azul-escuro), var(--azul));
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
       color: white;
-      padding: 20px;
+      padding: 18px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 4px 18px rgba(15, 23, 42, .18);
     }
 
-    .topo {
-      max-width: 1100px;
+    .topbar {
+      max-width: 1150px;
       margin: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 15px;
+      gap: 14px;
     }
 
     .logo {
-      font-size: 23px;
-      font-weight: bold;
+      font-size: 22px;
+      font-weight: 800;
+      white-space: nowrap;
     }
 
-    nav a {
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .small-btn {
+      border: 1px solid rgba(255,255,255,.35);
+      background: rgba(255,255,255,.14);
       color: white;
-      text-decoration: none;
-      margin-left: 15px;
-      font-weight: bold;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
     }
 
     .hero {
-      background: linear-gradient(135deg, var(--azul-escuro), var(--azul));
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
       color: white;
+      padding: 55px 18px 75px;
       text-align: center;
-      padding: 60px 20px 80px;
     }
 
     .hero h1 {
-      font-size: 38px;
-      margin-bottom: 15px;
+      font-size: clamp(30px, 6vw, 48px);
+      margin-bottom: 12px;
     }
 
     .hero p {
-      max-width: 650px;
+      max-width: 720px;
       margin: auto;
-      font-size: 18px;
       line-height: 1.6;
+      font-size: 18px;
+      opacity: .95;
     }
 
-    .pesquisa {
-      width: 100%;
-      max-width: 600px;
-      margin-top: 28px;
-      padding: 16px;
-      border: none;
-      border-radius: 12px;
+    .search {
+      width: min(680px, 100%);
+      margin-top: 25px;
+      border: 0;
+      border-radius: 14px;
+      padding: 16px 18px;
       font-size: 17px;
       outline: none;
+      box-shadow: 0 10px 25px rgba(0,0,0,.18);
     }
 
     main {
-      max-width: 1100px;
-      margin: -38px auto 40px;
-      padding: 0 18px;
+      max-width: 1150px;
+      margin: -42px auto 0;
+      padding: 0 18px 42px;
     }
 
-    .titulo {
-      margin: 25px 0 18px;
+    .section-title {
       text-align: center;
+      margin: 24px 0 20px;
     }
 
-    .grade {
+    .section-title p {
+      color: var(--muted);
+      margin-top: 7px;
+    }
+
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
       gap: 18px;
     }
 
     .card {
-      background: var(--branco);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: transform .2s, background .25s, border .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
     }
 
     .card h2 {
       font-size: 21px;
-      margin-bottom: 10px;
+      margin-bottom: 9px;
     }
 
     .card p {
-      color: var(--cinza);
+      color: var(--muted);
       line-height: 1.5;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
-    input,
-    textarea {
+    input, textarea, select {
       width: 100%;
       padding: 12px;
       margin-bottom: 10px;
-      border: 1px solid #cbd5e1;
-      border-radius: 9px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--card);
+      color: var(--text);
       font-size: 16px;
+      outline: none;
     }
 
     textarea {
@@ -136,258 +182,323 @@
       resize: vertical;
     }
 
-    button {
+    button.main-btn {
       width: 100%;
+      border: 0;
+      border-radius: 10px;
       padding: 12px;
-      border: none;
-      border-radius: 9px;
-      background: var(--azul);
+      background: var(--primary);
       color: white;
       font-size: 16px;
-      font-weight: bold;
+      font-weight: 800;
       cursor: pointer;
     }
 
-    button:active {
-      transform: scale(0.98);
+    button.main-btn:active {
+      transform: scale(.98);
     }
 
-    .resultado {
+    .result {
       margin-top: 12px;
+      min-height: 47px;
       padding: 12px;
-      min-height: 45px;
-      border-radius: 9px;
-      background: #eff6ff;
-      color: var(--azul-escuro);
-      font-weight: bold;
+      border-radius: 10px;
+      background: var(--result);
+      color: var(--text);
+      font-weight: 700;
       word-break: break-word;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .about {
+      margin-top: 24px;
     }
 
     footer {
       text-align: center;
-      padding: 30px 20px;
-      background: #0f172a;
+      padding: 30px 18px;
+      background: #0b1220;
       color: #cbd5e1;
     }
 
-    @media (max-width: 600px) {
-      .topo {
+    @media (max-width: 560px) {
+      .topbar {
         flex-direction: column;
       }
 
-      nav a {
-        margin: 0 7px;
-      }
-
-      .hero h1 {
-        font-size: 31px;
+      .hero {
+        padding-top: 42px;
       }
     }
   </style>
 </head>
 
 <body>
-
   <header>
-    <div class="topo">
+    <div class="topbar">
       <div class="logo">🛠️ Ferramentas Pro</div>
-
-      <nav>
-        <a href="#ferramentas">Ferramentas</a>
-        <a href="#sobre">Sobre</a>
-      </nav>
+      <div class="actions">
+        <button class="small-btn" onclick="alternarTema()">🌙 Modo escuro</button>
+      </div>
     </div>
   </header>
 
   <section class="hero">
-    <h1>Ferramentas gratuitas para facilitar seu dia</h1>
-
-    <p>
-      Faça cálculos, crie senhas e analise textos rapidamente,
-      sem precisar instalar aplicativos.
-    </p>
-
-    <input
-      class="pesquisa"
-      id="pesquisa"
-      type="text"
-      placeholder="Pesquisar uma ferramenta..."
-      oninput="pesquisarFerramentas()"
-    >
+    <h1>Ferramentas gratuitas para o seu dia</h1>
+    <p>Faça cálculos, crie senhas, analise textos e resolva tarefas rapidamente, direto pelo celular.</p>
+    <input id="pesquisa" class="search" type="search" placeholder="Digite o nome de uma ferramenta..." oninput="pesquisar()">
   </section>
 
-  <main id="ferramentas">
-    <h2 class="titulo">Ferramentas disponíveis</h2>
+  <main>
+    <div class="section-title">
+      <h2>Ferramentas disponíveis</h2>
+      <p>Versão 2.0 — 10 ferramentas funcionando</p>
+    </div>
 
-    <section class="grade">
+    <section class="grid">
 
       <article class="card ferramenta">
         <h2>🔐 Gerador de senha</h2>
-        <p>Crie uma senha forte e segura automaticamente.</p>
-
-        <input id="tamanhoSenha" type="number" value="12" min="6" max="40">
-
-        <button onclick="gerarSenha()">Gerar senha</button>
-
-        <div class="resultado" id="resultadoSenha">
-          Sua senha aparecerá aqui.
-        </div>
+        <p>Crie uma senha forte com letras, números e símbolos.</p>
+        <input id="senhaTamanho" type="number" min="6" max="40" value="12">
+        <button class="main-btn" onclick="gerarSenha()">Gerar senha</button>
+        <div class="result" id="senhaResultado">Sua senha aparecerá aqui.</div>
       </article>
 
       <article class="card ferramenta">
         <h2>📊 Calculadora de porcentagem</h2>
-        <p>Descubra rapidamente uma porcentagem de qualquer valor.</p>
+        <p>Descubra uma porcentagem de qualquer valor.</p>
+        <input id="porcentagem" type="number" placeholder="Porcentagem, ex.: 20">
+        <input id="valorPorcentagem" type="number" placeholder="Valor, ex.: 500">
+        <button class="main-btn" onclick="calcularPorcentagem()">Calcular</button>
+        <div class="result" id="porcentagemResultado">O resultado aparecerá aqui.</div>
+      </article>
 
-        <input id="porcentagem" type="number" placeholder="Porcentagem. Ex.: 20">
-        <input id="valor" type="number" placeholder="Valor. Ex.: 500">
-
-        <button onclick="calcularPorcentagem()">Calcular</button>
-
-        <div class="resultado" id="resultadoPorcentagem">
-          O resultado aparecerá aqui.
-        </div>
+      <article class="card ferramenta">
+        <h2>🏷️ Calculadora de desconto</h2>
+        <p>Calcule o preço final depois do desconto.</p>
+        <input id="precoOriginal" type="number" placeholder="Preço original">
+        <input id="desconto" type="number" placeholder="Desconto em %">
+        <button class="main-btn" onclick="calcularDesconto()">Calcular desconto</button>
+        <div class="result" id="descontoResultado">O resultado aparecerá aqui.</div>
       </article>
 
       <article class="card ferramenta">
         <h2>⚖️ Calculadora de IMC</h2>
-        <p>Calcule a relação entre seu peso e sua altura.</p>
-
+        <p>Calcule a relação entre peso e altura.</p>
         <input id="peso" type="number" step="0.1" placeholder="Peso em kg">
         <input id="altura" type="number" step="0.01" placeholder="Altura em metros">
-
-        <button onclick="calcularIMC()">Calcular IMC</button>
-
-        <div class="resultado" id="resultadoIMC">
-          O resultado aparecerá aqui.
-        </div>
+        <button class="main-btn" onclick="calcularIMC()">Calcular IMC</button>
+        <div class="result" id="imcResultado">O resultado aparecerá aqui.</div>
       </article>
 
       <article class="card ferramenta">
-        <h2>✍️ Contador de caracteres</h2>
-        <p>Conte caracteres e palavras enquanto escreve.</p>
+        <h2>📅 Calculadora de idade</h2>
+        <p>Descubra sua idade em anos completos.</p>
+        <input id="nascimento" type="date">
+        <button class="main-btn" onclick="calcularIdade()">Calcular idade</button>
+        <div class="result" id="idadeResultado">Sua idade aparecerá aqui.</div>
+      </article>
 
-        <textarea
-          id="texto"
-          placeholder="Digite ou cole seu texto aqui..."
-          oninput="contarTexto()"
-        ></textarea>
+      <article class="card ferramenta">
+        <h2>✍️ Contador de texto</h2>
+        <p>Conte caracteres, palavras e linhas.</p>
+        <textarea id="texto" placeholder="Digite ou cole seu texto..." oninput="contarTexto()"></textarea>
+        <div class="result" id="textoResultado">0 caracteres, 0 palavras e 0 linhas.</div>
+      </article>
 
-        <div class="resultado" id="resultadoTexto">
-          0 caracteres e 0 palavras.
-        </div>
+      <article class="card ferramenta">
+        <h2>🧮 Regra de três</h2>
+        <p>Resolva: A está para B, assim como C está para X.</p>
+        <input id="regraA" type="number" placeholder="Valor A">
+        <input id="regraB" type="number" placeholder="Valor B">
+        <input id="regraC" type="number" placeholder="Valor C">
+        <button class="main-btn" onclick="regraDeTres()">Calcular X</button>
+        <div class="result" id="regraResultado">O resultado aparecerá aqui.</div>
+      </article>
+
+      <article class="card ferramenta">
+        <h2>💰 Juros simples</h2>
+        <p>Calcule juros e valor total de uma aplicação.</p>
+        <input id="capital" type="number" placeholder="Capital inicial">
+        <input id="taxa" type="number" placeholder="Taxa por período em %">
+        <input id="tempo" type="number" placeholder="Quantidade de períodos">
+        <button class="main-btn" onclick="jurosSimples()">Calcular juros</button>
+        <div class="result" id="jurosResultado">O resultado aparecerá aqui.</div>
+      </article>
+
+      <article class="card ferramenta">
+        <h2>🔠 Maiúsculas e minúsculas</h2>
+        <p>Converta rapidamente o formato de um texto.</p>
+        <textarea id="textoConverter" placeholder="Digite um texto..."></textarea>
+        <select id="tipoConversao">
+          <option value="maiuscula">MAIÚSCULAS</option>
+          <option value="minuscula">minúsculas</option>
+          <option value="titulo">Primeira Letra Maiúscula</option>
+        </select>
+        <button class="main-btn" onclick="converterTexto()">Converter</button>
+        <div class="result" id="converterResultado">O texto convertido aparecerá aqui.</div>
+      </article>
+
+      <article class="card ferramenta">
+        <h2>🎲 Sorteador de números</h2>
+        <p>Sorteie um número dentro do intervalo escolhido.</p>
+        <input id="minimo" type="number" value="1" placeholder="Número mínimo">
+        <input id="maximo" type="number" value="100" placeholder="Número máximo">
+        <button class="main-btn" onclick="sortearNumero()">Sortear</button>
+        <div class="result" id="sorteioResultado">O número sorteado aparecerá aqui.</div>
       </article>
 
     </section>
 
-    <section id="sobre" class="card" style="margin-top: 25px;">
+    <section class="card about">
       <h2>Sobre o Ferramentas Pro</h2>
-
-      <p style="margin-top: 10px;">
-        Este site reúne ferramentas simples, rápidas e gratuitas.
-        Novas funções serão adicionadas regularmente.
-      </p>
+      <p>Este projeto reúne ferramentas simples, rápidas e gratuitas. Novas funções serão adicionadas nas próximas versões.</p>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 Ferramentas Pro — Todos os direitos reservados.</p>
+    <p>© 2026 Ferramentas Pro — Projeto em desenvolvimento.</p>
   </footer>
 
   <script>
-    function gerarSenha() {
-      const tamanho = Number(document.getElementById("tamanhoSenha").value);
-      const caracteres =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*";
+    function moeda(valor) {
+      return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    }
 
+    function gerarSenha() {
+      const tamanho = Number(document.getElementById("senhaTamanho").value);
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*";
       if (tamanho < 6 || tamanho > 40) {
-        document.getElementById("resultadoSenha").textContent =
-          "Escolha um tamanho entre 6 e 40.";
+        document.getElementById("senhaResultado").textContent = "Escolha um tamanho entre 6 e 40.";
         return;
       }
-
       let senha = "";
-
       for (let i = 0; i < tamanho; i++) {
-        const posicao = Math.floor(Math.random() * caracteres.length);
-        senha += caracteres[posicao];
+        senha += chars[Math.floor(Math.random() * chars.length)];
       }
-
-      document.getElementById("resultadoSenha").textContent = senha;
+      document.getElementById("senhaResultado").textContent = senha;
     }
 
     function calcularPorcentagem() {
-      const porcentagem = Number(document.getElementById("porcentagem").value);
-      const valor = Number(document.getElementById("valor").value);
+      const p = Number(document.getElementById("porcentagem").value);
+      const v = Number(document.getElementById("valorPorcentagem").value);
+      if (!Number.isFinite(p) || !Number.isFinite(v)) return;
+      document.getElementById("porcentagemResultado").textContent =
+        `${p}% de ${v} é ${(p * v / 100).toFixed(2)}.`;
+    }
 
-      if (
-        document.getElementById("porcentagem").value === "" ||
-        document.getElementById("valor").value === ""
-      ) {
-        document.getElementById("resultadoPorcentagem").textContent =
-          "Preencha os dois campos.";
-        return;
-      }
-
-      const resultado = (porcentagem / 100) * valor;
-
-      document.getElementById("resultadoPorcentagem").textContent =
-        porcentagem + "% de " + valor + " é " + resultado.toFixed(2);
+    function calcularDesconto() {
+      const preco = Number(document.getElementById("precoOriginal").value);
+      const desconto = Number(document.getElementById("desconto").value);
+      if (preco < 0 || desconto < 0) return;
+      const economia = preco * desconto / 100;
+      const final = preco - economia;
+      document.getElementById("descontoResultado").textContent =
+        `Preço final: ${moeda(final)} | Economia: ${moeda(economia)}`;
     }
 
     function calcularIMC() {
       const peso = Number(document.getElementById("peso").value);
       const altura = Number(document.getElementById("altura").value);
-
       if (peso <= 0 || altura <= 0) {
-        document.getElementById("resultadoIMC").textContent =
-          "Informe peso e altura válidos.";
+        document.getElementById("imcResultado").textContent = "Informe peso e altura válidos.";
         return;
       }
-
       const imc = peso / (altura * altura);
-      let classificacao = "";
+      let classe = "Obesidade";
+      if (imc < 18.5) classe = "Abaixo do peso";
+      else if (imc < 25) classe = "Peso adequado";
+      else if (imc < 30) classe = "Sobrepeso";
+      document.getElementById("imcResultado").textContent = `Seu IMC é ${imc.toFixed(1)} — ${classe}.`;
+    }
 
-      if (imc < 18.5) {
-        classificacao = "Abaixo do peso";
-      } else if (imc < 25) {
-        classificacao = "Peso adequado";
-      } else if (imc < 30) {
-        classificacao = "Sobrepeso";
-      } else {
-        classificacao = "Obesidade";
+    function calcularIdade() {
+      const valor = document.getElementById("nascimento").value;
+      if (!valor) {
+        document.getElementById("idadeResultado").textContent = "Escolha sua data de nascimento.";
+        return;
       }
-
-      document.getElementById("resultadoIMC").textContent =
-        "Seu IMC é " + imc.toFixed(1) + " — " + classificacao + ".";
+      const hoje = new Date();
+      const nasc = new Date(valor + "T00:00:00");
+      let idade = hoje.getFullYear() - nasc.getFullYear();
+      const mes = hoje.getMonth() - nasc.getMonth();
+      if (mes < 0 || (mes === 0 && hoje.getDate() < nasc.getDate())) idade--;
+      document.getElementById("idadeResultado").textContent =
+        idade >= 0 ? `Você tem ${idade} anos.` : "Informe uma data válida.";
     }
 
     function contarTexto() {
       const texto = document.getElementById("texto").value;
-      const caracteres = texto.length;
-      const palavras = texto.trim()
-        ? texto.trim().split(/\s+/).length
-        : 0;
-
-      document.getElementById("resultadoTexto").textContent =
-        caracteres + " caracteres e " + palavras + " palavras.";
+      const palavras = texto.trim() ? texto.trim().split(/\s+/).length : 0;
+      const linhas = texto ? texto.split(/\n/).length : 0;
+      document.getElementById("textoResultado").textContent =
+        `${texto.length} caracteres, ${palavras} palavras e ${linhas} linhas.`;
     }
 
-    function pesquisarFerramentas() {
-      const busca = document
-        .getElementById("pesquisa")
-        .value
-        .toLowerCase();
+    function regraDeTres() {
+      const a = Number(document.getElementById("regraA").value);
+      const b = Number(document.getElementById("regraB").value);
+      const c = Number(document.getElementById("regraC").value);
+      if (a === 0) {
+        document.getElementById("regraResultado").textContent = "O valor A não pode ser zero.";
+        return;
+      }
+      const x = (b * c) / a;
+      document.getElementById("regraResultado").textContent = `X = ${x.toFixed(2)}`;
+    }
 
-      const ferramentas = document.querySelectorAll(".ferramenta");
+    function jurosSimples() {
+      const capital = Number(document.getElementById("capital").value);
+      const taxa = Number(document.getElementById("taxa").value);
+      const tempo = Number(document.getElementById("tempo").value);
+      const juros = capital * (taxa / 100) * tempo;
+      const total = capital + juros;
+      document.getElementById("jurosResultado").textContent =
+        `Juros: ${moeda(juros)} | Total: ${moeda(total)}`;
+    }
 
-      ferramentas.forEach(function (ferramenta) {
-        const texto = ferramenta.textContent.toLowerCase();
+    function converterTexto() {
+      const texto = document.getElementById("textoConverter").value;
+      const tipo = document.getElementById("tipoConversao").value;
+      let resultado = texto;
+      if (tipo === "maiuscula") resultado = texto.toUpperCase();
+      if (tipo === "minuscula") resultado = texto.toLowerCase();
+      if (tipo === "titulo") {
+        resultado = texto.toLowerCase().replace(/\b\w/g, letra => letra.toUpperCase());
+      }
+      document.getElementById("converterResultado").textContent = resultado || "Digite um texto.";
+    }
 
-        ferramenta.style.display =
-          texto.includes(busca) ? "block" : "none";
+    function sortearNumero() {
+      const min = Math.ceil(Number(document.getElementById("minimo").value));
+      const max = Math.floor(Number(document.getElementById("maximo").value));
+      if (min > max) {
+        document.getElementById("sorteioResultado").textContent = "O mínimo deve ser menor que o máximo.";
+        return;
+      }
+      const numero = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("sorteioResultado").textContent = `Número sorteado: ${numero}`;
+    }
+
+    function pesquisar() {
+      const busca = document.getElementById("pesquisa").value.toLowerCase().trim();
+      document.querySelectorAll(".ferramenta").forEach(card => {
+        card.classList.toggle("hide", !card.textContent.toLowerCase().includes(busca));
       });
     }
-  </script>
 
+    function alternarTema() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("tema", document.body.classList.contains("dark") ? "dark" : "light");
+    }
+
+    if (localStorage.getItem("tema") === "dark") {
+      document.body.classList.add("dark");
+    }
+  </script>
 </body>
 </html>
