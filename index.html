@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="70 ferramentas online gratuitas com Assistente Pro inteligente para cálculos, textos, conversões, geradores e produtividade.">
+<meta name="description" content="100 ferramentas online gratuitas com Assistente Pro inteligente para cálculos, textos, conversões, geradores e produtividade.">
 <meta name="keywords" content="ferramentas online, inteligência artificial, calculadora, conversor, gerador de senha, contador de palavras, QR Code">
 <meta name="theme-color" content="#2563eb">
 <meta property="og:title" content="Ferramentas Pro">
-<meta property="og:description" content="70 ferramentas rápidas com assistente inteligente para ajudar você.">
+<meta property="og:description" content="100 ferramentas rápidas com assistente inteligente para ajudar você.">
 <meta property="og:type" content="website">
-<title>Ferramentas Pro — Versão 9</title>
+<title>Ferramentas Pro — Versão 10</title>
 <style>
 :root{--bg:#f4f7fb;--card:#fff;--text:#14213d;--muted:#64748b;--primary:#2563eb;--primary2:#7c3aed;--border:#dbe4f0;--shadow:0 10px 30px rgba(15,23,42,.08);--ok:#15803d;--danger:#dc2626}
 body.dark{--bg:#0f172a;--card:#182235;--text:#f8fafc;--muted:#a8b3c7;--border:#2a3952;--shadow:0 10px 30px rgba(0,0,0,.25)}
@@ -35,7 +35,7 @@ header h1{margin:0;font-size:clamp(31px,7vw,52px)}header p{margin:8px auto 0;max
 .quick-card h3{margin:0 0 7px}.quick-card p{margin:0;color:var(--muted);font-size:13px}.quick-card button{margin-top:11px;border:0;border-radius:11px;background:var(--primary);color:#fff;padding:9px 12px;font-weight:800;cursor:pointer}
 .ad-slot{margin:18px 0;border:1px dashed var(--border);background:var(--card);border-radius:18px;padding:18px;text-align:center;color:var(--muted);font-size:13px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.card{position:relative;background:var(--card);border:1px solidsolid var(--border);border-radius:20px;padding:18px;box-shadow:var(--shadow);cursor:pointer;transition:.2s}
+.card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:18px;box-shadow:var(--shadow);cursor:pointer;transition:.2s}
 .card:hover{transform:translateY(-4px);border-color:#93b4f5}.fav{position:absolute;right:14px;top:12px;border:0;background:transparent;color:var(--text);font-size:26px;cursor:pointer}
 .card .emoji{font-size:34px}.card h3{margin:10px 35px 6px 0}.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
 .tag,.usage{display:inline-block;margin-top:12px;padding:5px 9px;border-radius:999px;font-size:12px;font-weight:700}.tag{background:rgba(37,99,235,.1);color:var(--primary)}.usage{margin-left:8px;background:rgba(21,128,61,.1);color:var(--ok)}
@@ -62,7 +62,7 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 <div id="progress"></div>
 <header>
 <h1>Ferramentas Pro</h1>
-<p>70 ferramentas rápidas, gratuitas e agora com Assistente Pro inteligente.</p>
+<p>100 ferramentas rápidas, gratuitas e agora com Assistente Pro inteligente.</p>
 <div class="hero-actions">
 <button class="hero-btn" onclick="R('busca').focus()">🔎 Encontrar ferramenta</button>
 <button class="hero-btn" onclick="abrirIA()">🤖 Perguntar à IA</button>
@@ -72,20 +72,20 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 
 <div class="topbar">
 <div class="search-wrap"><input id="busca" class="search" placeholder="Pesquisar ferramenta..."><button id="limparBusca" class="clear-search">×</button></div>
-<button class="iconbtn" id="favoritosBtn">⭐</button><button class="iconbtn" id="tema">🌙</button>
+<button class="iconbtn" id="vozBtn" title="Pesquisar por voz">🎤</button><button class="iconbtn" id="favoritosBtn">⭐</button><button class="iconbtn" id="tema">🌙</button>
 </div>
 
 <main class="wrap">
 <div class="stats">
-<span class="pill"><strong id="totalFerramentas">70</strong> ferramentas</span>
+<span class="pill"><strong id="totalFerramentas">100</strong> ferramentas</span>
 <span class="pill"><strong id="totalUsos">0</strong> usos neste aparelho</span>
 <span class="pill"><strong id="totalFavoritos">0</strong> favoritas</span>
-<span class="pill">Sem cadastro</span><span class="pill">Versão 9</span>
+<span class="pill">Sem cadastro</span><span class="pill">Versão 10</span>
 </div>
 
 <section class="ai-banner">
-<h2>🤖 Novo Assistente Pro</h2>
-<p>Escreva o que precisa. Ele encontra a ferramenta certa, faz cálculos rápidos e orienta você.</p>
+<h2>🚀 Versão 10 com Assistente Pro</h2>
+<p>Pesquise por voz, peça cálculos ao Assistente Pro e use 100 ferramentas em um só lugar.</p>
 <button onclick="abrirIA()">Conversar com o Assistente</button>
 </section>
 
@@ -94,7 +94,7 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 <section class="quick">
 <div class="quick-card"><h3>🎁 Ferramenta surpresa</h3><p>Abra uma ferramenta aleatória.</p><button onclick="surpresa()">Descobrir agora</button></div>
 <div class="quick-card"><h3>⭐ Seus favoritos</h3><p>Ficam salvos neste aparelho.</p><button onclick="mostrarFavoritos()">Ver favoritos</button></div>
-<div class="quick-card"><h3>🤖 Ajuda inteligente</h3><p>Peça algo usando linguagem normal.</p><button onclick="abrirIA()">Perguntar agora</button></div>
+<div class="quick-card"><h3>🤖 Ajuda inteligente</h3><p>Peça algo usando linguagem normal.</p><button onclick="abrirIA()">Perguntar agora</button></div><div class="quick-card"><h3>✨ Ferramenta do dia</h3><p>Uma recomendação nova automaticamente a cada dia.</p><button onclick="ferramentaDoDia()">Abrir recomendação</button></div>
 </section>
 
 <div class="ad-slot">Espaço reservado para anúncio futuro • Google AdSense</div>
@@ -104,7 +104,7 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 <section class="search-history"><h2>🔎 Pesquisas recentes</h2><div id="searchHistoryList" class="search-history-list">Nenhuma pesquisa ainda.</div></section>
 </main>
 
-<footer>© 2026 Ferramentas Pro — Versão 9.0</footer>
+<footer>© 2026 Ferramentas Pro — Versão 10.0</footer>
 <button class="ai-fab" onclick="abrirIA()">🤖 Pergunte à IA</button>
 <div id="toast" class="toast">Pronto!</div>
 
@@ -198,7 +198,40 @@ const ferramentas=[
 ['times','⚽','Divisor de equipes','Separe nomes em equipes.','Geradores'],
 ['frase','💬','Gerador de frase motivacional','Receba uma frase aleatória.','Geradores'],
 ['tabuada','✖️','Gerador de tabuada','Crie a tabuada de qualquer número.','Utilidades']
-];const R=id=>document.getElementById(id), semAcento=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+,['freelancer','🧑‍💻','Preço por projeto freelancer','Calcule um preço usando horas e valor por hora.','Financeiro']
+,['salarioliquido','💵','Estimativa de salário líquido','Estime descontos percentuais do salário.','Financeiro']
+,['horaextra','⏰','Calculadora de hora extra','Calcule o valor aproximado das horas extras.','Financeiro']
+,['comissao','🤝','Calculadora de comissão','Calcule comissão sobre vendas.','Financeiro']
+,['precovenda','🏪','Formador de preço de venda','Calcule preço usando custo e margem desejada.','Financeiro']
+,['cashback','🪙','Calculadora de cashback','Descubra quanto volta de uma compra.','Financeiro']
+,['energia','⚡','Consumo de energia','Estime o custo de um aparelho elétrico.','Financeiro']
+,['rentabilidade','📉','Rentabilidade do investimento','Calcule o retorno percentual.','Financeiro']
+,['inflacao','📊','Correção pela inflação','Atualize um valor por uma taxa informada.','Financeiro']
+,['dividirconta','🍕','Dividir conta','Divida uma conta entre várias pessoas.','Financeiro']
+,['porcentagemreversa','🔄','Porcentagem reversa','Descubra o valor original antes de um percentual.','Calculadoras']
+,['decimalbinario','🔢','Decimal para binário','Converta números decimais para binário.','Conversores']
+,['binariodecimal','0️⃣','Binário para decimal','Converta binário para número decimal.','Conversores']
+,['hexadecimal','#️⃣','Decimal para hexadecimal','Converta números para hexadecimal.','Conversores']
+,['mesesentre','🗓️','Meses entre datas','Calcule meses aproximados entre duas datas.','Datas']
+,['horasentre','🕒','Horas entre datas','Calcule a diferença em horas.','Datas']
+,['aniversario','🎉','Próximo aniversário','Veja quantos dias faltam para o aniversário.','Datas']
+,['iniciais','🔠','Gerador de iniciais','Extraia as iniciais de um nome ou frase.','Texto']
+,['embaralhar','🔀','Embaralhar texto','Misture as letras de uma palavra ou frase.','Texto']
+,['lorem','📄','Gerador de Lorem Ipsum','Gere texto de exemplo para projetos.','Geradores']
+,['quebras','↩️','Remover quebras de linha','Transforme várias linhas em um único texto.','Texto']
+,['mascaraemail','📧','Mascarar e-mail','Oculte parte de um endereço de e-mail.','Texto']
+,['listanumerada','🔢','Criar lista numerada','Numere automaticamente cada linha.','Texto']
+,['vogais','🅰️','Contador de vogais','Conte vogais e consoantes.','Texto']
+,['pin','🔐','Gerador de PIN','Gere um código numérico seguro.','Geradores']
+,['usuario','👤','Gerador de nome de usuário','Crie sugestões de nomes de usuário.','Geradores']
+,['paleta','🎨','Gerador de paleta','Gere cinco cores aleatórias.','Geradores']
+,['gradiente','🌈','Gerador de gradiente CSS','Crie um gradiente pronto para usar.','Desenvolvimento']
+,['aspecto','🖼️','Calculadora de proporção de imagem','Redimensione mantendo a proporção.','Calculadoras']
+,['densidade','📦','Calculadora de densidade','Calcule densidade usando massa e volume.','Calculadoras']
+
+];
+
+const R=id=>document.getElementById(id), semAcento=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 let categoria='Todas',somenteFavoritos=false,ferramentaAtual=null;
 let favoritos=JSON.parse(localStorage.getItem('fp_favoritos')||'[]'),usos=JSON.parse(localStorage.getItem('fp_usos')||'{}'),historico=JSON.parse(localStorage.getItem('fp_historico')||'[]'),pesquisas=JSON.parse(localStorage.getItem('fp_pesquisas')||'[]');
 function toast(m){R('toast').textContent=m;R('toast').classList.add('show');setTimeout(()=>R('toast').classList.remove('show'),1600)}
@@ -215,7 +248,36 @@ R('busca').oninput=()=>render();R('busca').onchange=()=>{let q=R('busca').value.
 R('limparBusca').onclick=()=>{R('busca').value='';render()};R('favoritosBtn').onclick=()=>{somenteFavoritos=!somenteFavoritos;render()};R('tema').onclick=()=>{document.body.classList.toggle('dark');localStorage.setItem('fp_tema',document.body.classList.contains('dark')?'dark':'light')};if(localStorage.getItem('fp_tema')==='dark')document.body.classList.add('dark');
 
 const configs={
-imc:['Peso (kg)|number','Altura (m)|number'],porcentagem:['Porcentagem|number','Valor|number'],desconto:['Preço|number','Desconto %|number'],regra3:['A|number','B|number','C|number'],juros:['Capital|number','Taxa mensal %|number','Meses|number'],emprestimo:['Valor|number','Juros ao mês %|number','Parcelas|number'],idade:['Data de nascimento|date'],dias:['Data inicial|date','Data final|date'],caracteres:['Texto|textarea'],palavras:['Texto|textarea'],maiusculas:['Texto|textarea'],espacos:['Texto|textarea'],ordenar:['Linhas|textarea'],base64:['Texto|textarea'],url:['Texto ou URL|textarea'],senha:['Tamanho|number'],uuid:[],numero:['Mínimo|number','Máximo|number'],loteria:[],cpfgerar:[],cpfvalidar:['CPF|text'],temperatura:['Valor|number','De: c/f/k|text','Para: c/f/k|text'],comprimento:['Valor|number','De: m/km/mi|text','Para: m/km/mi|text'],peso:['Valor|number','De: kg/g/lb|text','Para: kg/g/lb|text'],dados:['Valor|number','De: b/kb/mb/gb|text','Para: b/kb/mb/gb|text'],cronometro:[],temporizador:['Segundos|number'],qrcode:['Texto ou link|textarea'],pix:['Chave PIX|text','Nome|text','Cidade|text','Valor|number'],sorteio:['Um nome por linha|textarea'],variacao:['Valor inicial|number','Valor final|number'],combustivel:['Distância km|number','Km por litro|number','Preço por litro|number'],ritmo:['Distância km|number','Horas|number','Minutos|number'],hora:['Salário mensal|number','Horas por semana|number'],calorias:['Peso kg|number','Altura cm|number','Idade|number'],inverter:['Texto|textarea'],slug:['Texto|textarea'],cor:[],timestamp:['Data|datetime-local'],formatardata:['Data|date'],media:['Números separados por vírgula|textarea'],proporcao:['Total|number','Parte 1|number','Parte 2|number'],bhaskara:['a|number','b|number','c|number'],area:['Base ou raio|number','Altura|number'],volume:['Lado ou raio|number','Altura|number'],gorjeta:['Conta|number','Gorjeta %|number','Pessoas|number'],lucro:['Custo|number','Venda|number'],parcelas:['Total|number','Parcelas|number'],economia:['Meta|number','Meses|number'],ferias:['Data futura|date'],diadasemana:['Data|date'],somardias:['Data|date','Dias|number'],removeracentos:['Texto|textarea'],capitalizar:['Texto|textarea'],repetidas:['Linhas|textarea'],substituir:['Texto|textarea','Localizar|text','Substituir por|text'],json:['JSON|textarea'],html:['HTML|textarea'],hash:['Texto|textarea'],binario:['Texto|textarea'],moeda:['Valor|number','Cotação|number'],velocidade:['Valor|number','De: kmh/ms/mph|text','Para: kmh/ms/mph|text'],areaConv:['Valor|number','De: m2/km2/ha/acre|text','Para: m2/km2/ha/acre|text'],volumeConv:['Valor|number','De: l/ml/gal/m3|text','Para: l/ml/gal/m3|text'],romano:['Número|number'],dado:['Quantidade|number','Lados|number'],caraoucoroa:[],times:['Um nome por linha|textarea','Número de equipes|number'],frase:[],tabuada:['Número|number']
+imc:['Peso (kg)|number','Altura (m)|number'],porcentagem:['Porcentagem|number','Valor|number'],desconto:['Preço|number','Desconto %|number'],regra3:['A|number','B|number','C|number'],juros:['Capital|number','Taxa mensal %|number','Meses|number'],emprestimo:['Valor|number','Juros ao mês %|number','Parcelas|number'],idade:['Data de nascimento|date'],dias:['Data inicial|date','Data final|date'],caracteres:['Texto|textarea'],palavras:['Texto|textarea'],maiusculas:['Texto|textarea'],espacos:['Texto|textarea'],ordenar:['Linhas|textarea'],base64:['Texto|textarea'],url:['Texto ou URL|textarea'],senha:['Tamanho|number'],uuid:[],numero:['Mínimo|number','Máximo|number'],loteria:[],cpfgerar:[],cpfvalidar:['CPF|text'],temperatura:['Valor|number','De: c/f/k|text','Para: c/f/k|text'],comprimento:['Valor|number','De: m/km/mi|text','Para: m/km/mi|text'],peso:['Valor|number','De: kg/g/lb|text','Para: kg/g/lb|text'],dados:['Valor|number','De: b/kb/mb/gb|text','Para: b/kb/mb/gb|text'],cronometro:[],temporizador:['Segundos|number'],qrcode:['Texto ou link|textarea'],pix:['Chave PIX|text','Nome|text','Cidade|text','Valor|number'],sorteio:['Um nome por linha|textarea'],variacao:['Valor inicial|number','Valor final|number'],combustivel:['Distância km|number','Km por litro|number','Preço por litro|number'],ritmo:['Distância km|number','Horas|number','Minutos|number'],hora:['Salário mensal|number','Horas por semana|number'],calorias:['Peso kg|number','Altura cm|number','Idade|number'],inverter:['Texto|textarea'],slug:['Texto|textarea'],cor:[],timestamp:['Data|datetime-local'],formatardata:['Data|date'],media:['Números separados por vírgula|textarea'],proporcao:['Total|number','Parte 1|number','Parte 2|number'],bhaskara:['a|number','b|number','c|number'],area:['Base ou raio|number','Altura|number'],volume:['Lado ou raio|number','Altura|number'],gorjeta:['Conta|number','Gorjeta %|number','Pessoas|number'],lucro:['Custo|number','Venda|number'],parcelas:['Total|number','Parcelas|number'],economia:['Meta|number','Meses|number'],ferias:['Data futura|date'],diadasemana:['Data|date'],somardias:['Data|date','Dias|number'],removeracentos:['Texto|textarea'],capitalizar:['Texto|textarea'],repetidas:['Linhas|textarea'],substituir:['Texto|textarea','Localizar|text','Substituir por|text'],json:['JSON|textarea'],html:['HTML|textarea'],hash:['Texto|textarea'],binario:['Texto|textarea'],moeda:['Valor|number','Cotação|number'],velocidade:['Valor|number','De: kmh/ms/mph|text','Para: kmh/ms/mph|text'],areaConv:['Valor|number','De: m2/km2/ha/acre|text','Para: m2/km2/ha/acre|text'],volumeConv:['Valor|number','De: l/ml/gal/m3|text','Para: l/ml/gal/m3|text'],romano:['Número|number'],dado:['Quantidade|number','Lados|number'],caraoucoroa:[],times:['Um nome por linha|textarea','Número de equipes|number'],frase:[],tabuada:['Número|number'],
+freelancer:['Horas estimadas|number','Valor por hora|number','Custos adicionais|number'],
+salarioliquido:['Salário bruto|number','Descontos totais %|number'],
+horaextra:['Salário mensal|number','Horas mensais|number','Horas extras|number','Adicional %|number'],
+comissao:['Total de vendas|number','Comissão %|number'],
+precovenda:['Custo do produto|number','Margem desejada %|number'],
+cashback:['Valor da compra|number','Cashback %|number'],
+energia:['Potência em watts|number','Horas por dia|number','Dias de uso|number','Preço do kWh|number'],
+rentabilidade:['Valor inicial|number','Valor final|number'],
+inflacao:['Valor atual|number','Inflação %|number'],
+dividirconta:['Valor total|number','Número de pessoas|number'],
+porcentagemreversa:['Valor após alteração|number','Percentual %|number'],
+decimalbinario:['Número decimal|number'],
+binariodecimal:['Número binário|text'],
+hexadecimal:['Número decimal|number'],
+mesesentre:['Data inicial|date','Data final|date'],
+horasentre:['Data e hora inicial|datetime-local','Data e hora final|datetime-local'],
+aniversario:['Data de nascimento|date'],
+iniciais:['Nome ou frase|textarea'],
+embaralhar:['Texto|textarea'],
+lorem:['Número de parágrafos|number'],
+quebras:['Texto com várias linhas|textarea'],
+mascaraemail:['Endereço de e-mail|text'],
+listanumerada:['Um item por linha|textarea'],
+vogais:['Texto|textarea'],
+pin:['Quantidade de dígitos|number'],
+usuario:['Nome completo|text'],
+paleta:[],gradiente:[],
+aspecto:['Largura original|number','Altura original|number','Nova largura|number'],
+densidade:['Massa|number','Volume|number']
 };
 function abrir(id){let f=ferramentas.find(x=>x[0]===id);ferramentaAtual=f;R('tituloModal').textContent=f[1]+' '+f[2];let fields=(configs[id]||[]).map((x,i)=>{let [p,t]=x.split('|');return t==='textarea'?`<textarea id="i${i}" placeholder="${p}"></textarea>`:`<input id="i${i}" type="${t}" placeholder="${p}">`}).join('');R('conteudoModal').innerHTML=fields+`<button class="btn" onclick="executar('${id}')">Executar</button><div id="res" class="result"></div>`;R('modal').classList.add('open');addHistory(id)}
 function fechar(){R('modal').classList.remove('open')}
@@ -286,6 +348,38 @@ else if(id==='caraoucoroa')r=Math.random()<.5?'🪙 Cara':'🪙 Coroa';
 else if(id==='times'){let a=s(0).split('\n').filter(Boolean).sort(()=>Math.random()-.5),q=Math.max(2,n(1)||2),t=Array.from({length:q},()=>[]);a.forEach((x,i)=>t[i%q].push(x));r=t.map((x,i)=>`Equipe ${i+1}:\n${x.join('\n')}`).join('\n\n')}
 else if(id==='frase'){let a=['A persistência transforma pequenos passos em grandes resultados.','Comece com o que você tem.','Disciplina vence a motivação.'];r=a[Math.floor(Math.random()*a.length)]}
 else if(id==='tabuada')r=Array.from({length:10},(_,i)=>`${n(0)} × ${i+1} = ${n(0)*(i+1)}`).join('\n');
+
+else if(id==='freelancer')r=`Preço sugerido: R$ ${(n(0)*n(1)+n(2)).toFixed(2)}`;
+else if(id==='salarioliquido')r=`Salário líquido estimado: R$ ${(n(0)*(1-n(1)/100)).toFixed(2)}`;
+else if(id==='horaextra'){let vh=n(0)/(n(1)||220),total=vh*n(2)*(1+n(3)/100);r=`Valor da hora: R$ ${vh.toFixed(2)}\nHoras extras: R$ ${total.toFixed(2)}`}
+else if(id==='comissao')r=`Comissão: R$ ${(n(0)*n(1)/100).toFixed(2)}`;
+else if(id==='precovenda')r=n(1)<100?`Preço sugerido: R$ ${(n(0)/(1-n(1)/100)).toFixed(2)}`:'A margem deve ser menor que 100%.';
+else if(id==='cashback')r=`Você recebe: R$ ${(n(0)*n(1)/100).toFixed(2)}`;
+else if(id==='energia'){let kwh=n(0)/1000*n(1)*n(2);r=`Consumo: ${kwh.toFixed(2)} kWh\nCusto estimado: R$ ${(kwh*n(3)).toFixed(2)}`}
+else if(id==='rentabilidade')r=n(0)?`Rentabilidade: ${((n(1)-n(0))/n(0)*100).toFixed(2)}%`:'O valor inicial não pode ser zero.';
+else if(id==='inflacao')r=`Valor corrigido: R$ ${(n(0)*(1+n(1)/100)).toFixed(2)}`;
+else if(id==='dividirconta')r=n(1)?`Cada pessoa paga: R$ ${(n(0)/n(1)).toFixed(2)}`:'Informe o número de pessoas.';
+else if(id==='porcentagemreversa')r=`Valor original: ${(n(0)/(1+n(1)/100)).toFixed(2)}`;
+else if(id==='decimalbinario')r=Math.floor(n(0)).toString(2);
+else if(id==='binariodecimal')r=/^[01]+$/.test(s(0))?parseInt(s(0),2):'Digite apenas 0 e 1.';
+else if(id==='hexadecimal')r='0x'+Math.floor(n(0)).toString(16).toUpperCase();
+else if(id==='mesesentre')r=Math.abs((new Date(s(1))-new Date(s(0)))/(1000*60*60*24*30.4375)).toFixed(1)+' meses';
+else if(id==='horasentre')r=Math.abs((new Date(s(1))-new Date(s(0)))/3600000).toFixed(2)+' horas';
+else if(id==='aniversario'){let nasc=new Date(s(0)+'T00:00:00'),hoje=new Date(),prox=new Date(hoje.getFullYear(),nasc.getMonth(),nasc.getDate());if(prox<hoje)prox.setFullYear(prox.getFullYear()+1);r=Math.ceil((prox-hoje)/86400000)+' dias para o próximo aniversário'}
+else if(id==='iniciais')r=s(0).trim().split(/\s+/).map(x=>x[0]?.toUpperCase()||'').join('');
+else if(id==='embaralhar')r=[...s(0)].sort(()=>Math.random()-.5).join('');
+else if(id==='lorem'){let p='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';r=Array.from({length:Math.min(20,Math.max(1,n(0)||3))},()=>p).join('\n\n')}
+else if(id==='quebras')r=s(0).replace(/\s*\n+\s*/g,' ').trim();
+else if(id==='mascaraemail'){let [a,b]=s(0).split('@');r=a&&b?(a.slice(0,2)+'***@'+b):'E-mail inválido.'}
+else if(id==='listanumerada')r=s(0).split('\n').filter(Boolean).map((x,i)=>`${i+1}. ${x}`).join('\n');
+else if(id==='vogais'){let t=semAcento(s(0)),v=(t.match(/[aeiou]/g)||[]).length,c=(t.match(/[a-z]/g)||[]).length-v;r=`Vogais: ${v}\nConsoantes: ${c}`}
+else if(id==='pin'){let q=Math.min(12,Math.max(4,n(0)||6));r=Array.from({length:q},()=>Math.floor(Math.random()*10)).join('')}
+else if(id==='usuario'){let base=semAcento(s(0)).replace(/[^a-z0-9 ]/g,'').trim().split(/\s+/);let a=base[0]||'usuario',b=base.at(-1)||'';r=[a+b,a+'.'+b,a+'_'+Math.floor(Math.random()*9999),b+a].filter(Boolean).join('\n')}
+else if(id==='paleta'){let cores=Array.from({length:5},()=>('#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0')));r=cores.map(c=>`<span style="display:inline-block;width:52px;height:52px;background:${c};border-radius:10px;margin:4px"></span>${c}`).join('<br>')}
+else if(id==='gradiente'){let a='#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0'),b='#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0');r=`<div style="height:100px;border-radius:12px;background:linear-gradient(135deg,${a},${b})"></div>\nbackground: linear-gradient(135deg, ${a}, ${b});`}
+else if(id==='aspecto')r=n(0)&&n(1)?`Nova altura: ${(n(2)*n(1)/n(0)).toFixed(0)} px`:'Preencha as dimensões.';
+else if(id==='densidade')r=n(1)?`Densidade: ${(n(0)/n(1)).toFixed(4)}`:'O volume não pode ser zero.';
+
 res(r)}catch(e){res('Não foi possível calcular. Confira os dados.')}
 }
 function converterLocal(id,v,de,para){de=de.toLowerCase();para=para.toLowerCase();if(id==='temperatura'){let c=de==='c'?v:de==='f'?(v-32)*5/9:v-273.15;return (para==='c'?c:para==='f'?c*9/5+32:c+273.15).toFixed(4)}let maps={comprimento:{m:1,km:1000,mi:1609.344},peso:{kg:1,g:.001,lb:.453592},dados:{b:1,kb:1024,mb:1048576,gb:1073741824},velocidade:{kmh:1,ms:3.6,mph:1.609344},areaConv:{m2:1,km2:1e6,ha:1e4,acre:4046.856},volumeConv:{l:1,ml:.001,gal:3.78541,m3:1000}};return (v*maps[id][de]/maps[id][para]).toFixed(6)}
@@ -302,12 +396,32 @@ function enviarIA(){let q=R('aiInput').value.trim();if(!q)return;R('aiInput').va
 function perguntar(q){abrirIA();addUser(q);let t=semAcento(q),nums=(t.match(/-?\d+(?:[.,]\d+)?/g)||[]).map(x=>parseFloat(x.replace(',','.')));
 if((t.includes('%')||t.includes('porcent'))&&nums.length>=2){addBot(`Resultado: <strong>${(nums[0]*nums[1]/100).toFixed(2)}</strong>. Também posso abrir a calculadora completa.`,'porcentagem');return}
 if(t.includes('desconto')&&nums.length>=2){addBot(`Com ${nums[1]}% de desconto, o valor fica <strong>R$ ${(nums[0]*(1-nums[1]/100)).toFixed(2)}</strong>.`,'desconto');return}
-let aliases={senha:'senha',password:'senha',imc:'imc',peso:'peso',temperatura:'temperatura',febre:'temperatura',palavra:'palavras',caracter:'caracteres',qr:'qrcode',pix:'pix',emprestimo:'emprestimo',juros:'juros',idade:'idade',data:'dias',sorteio:'sorteio',nome:'sorteio',tabuada:'tabuada',lucro:'lucro',parcela:'parcelas',gorjeta:'gorjeta',combustivel:'combustivel',cpf:'cpfvalidar',texto:'maiusculas',json:'json',base64:'base64',moeda:'moeda',dado:'dado',equipe:'times'};
+let aliases={senha:'senha',password:'senha',imc:'imc',peso:'peso',temperatura:'temperatura',febre:'temperatura',palavra:'palavras',caracter:'caracteres',qr:'qrcode',pix:'pix',emprestimo:'emprestimo',juros:'juros',idade:'idade',data:'dias',sorteio:'sorteio',nome:'sorteio',tabuada:'tabuada',lucro:'lucro',parcela:'parcelas',gorjeta:'gorjeta',combustivel:'combustivel',cpf:'cpfvalidar',texto:'maiusculas',json:'json',base64:'base64',moeda:'moeda',dado:'dado',equipe:'times',freelancer:'freelancer',salario:'salarioliquido',comissao:'comissao',cashback:'cashback',energia:'energia',inflacao:'inflacao',binario:'decimalbinario',hexadecimal:'hexadecimal',aniversario:'aniversario',iniciais:'iniciais',email:'mascaraemail',pin:'pin',usuario:'usuario',paleta:'paleta',gradiente:'gradiente'};
 let id=Object.keys(aliases).find(k=>t.includes(k));if(id){let f=ferramentas.find(x=>x[0]===aliases[id]);addBot(`A melhor opção é <strong>${f[2]}</strong>.`,f[0]);return}
 let f=ferramentas.map(x=>({f:x,score:semAcento(x.join(' ')).split(' ').filter(w=>t.includes(w)&&w.length>3).length})).sort((a,b)=>b.score-a.score)[0];if(f.score)addBot(`Encontrei uma opção: <strong>${f.f[2]}</strong>.`,f.f[0]);else addBot('Ainda não entendi. Tente escrever o objetivo com palavras como desconto, senha, IMC, texto, data, PIX ou conversão.')}
 R('aiInput').addEventListener('keydown',e=>{if(e.key==='Enter')enviarIA()});
+
+function ferramentaDoDia(){
+  const hoje=new Date();
+  const chave=hoje.getFullYear()*10000+(hoje.getMonth()+1)*100+hoje.getDate();
+  abrir(ferramentas[chave%ferramentas.length][0]);
+}
+function pesquisarPorVoz(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){toast('Pesquisa por voz não disponível neste navegador.');return}
+  const rec=new SR();
+  rec.lang='pt-BR';
+  rec.interimResults=false;
+  R('vozBtn').textContent='🔴';
+  rec.onresult=e=>{R('busca').value=e.results[0][0].transcript;render();toast('Pesquisa por voz concluída!')};
+  rec.onerror=()=>toast('Não foi possível ouvir.');
+  rec.onend=()=>R('vozBtn').textContent='🎤';
+  rec.start();
+}
+R('vozBtn').onclick=pesquisarPorVoz;
+
 window.addEventListener('scroll',()=>{let d=document.documentElement;R('progress').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%'});
-renderFilters();render();renderHistory();renderPopular();renderPesquisas();
+R('totalFerramentas').textContent=ferramentas.length;renderFilters();render();renderHistory();renderPopular();renderPesquisas();
 </script>
 </body>
 </html>
