@@ -9,67 +9,133 @@
 <meta property="og:title" content="Ferramentas Pro">
 <meta property="og:description" content="70 ferramentas rápidas, gratuitas e fáceis de usar pelo celular.">
 <meta property="og:type" content="website">
-<title>Ferramentas Pro — Versão 7</title>
+<title>Ferramentas Pro — Versão 8</title>
 <style>
-:root{--bg:#f4f7fb;--card:#fff;--text:#14213d;--muted:#64748b;--primary:#2563eb;--primary2:#7c3aed;--border:#dbe4f0;--shadow:0 10px 30px rgba(15,23,42,.08);--ok:#15803d;--danger:#dc2626}
+:root{--bg:#f4f7fb;--card:#fff;--text:#14213d;--muted:#64748b;--primary:#2563eb;--primary2:#7c3aed;--border:#dbe4f0;--shadow:0 10px 30px rgba(15,23,42,.08);--ok:#15803d;--danger:#dc2626;--warning:#f59e0b}
 body.dark{--bg:#0f172a;--card:#182235;--text:#f8fafc;--muted:#a8b3c7;--border:#2a3952;--shadow:0 10px 30px rgba(0,0,0,.25)}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);transition:.2s}
-header{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;padding:34px 16px 28px;text-align:center}
-header h1{margin:0;font-size:clamp(30px,7vw,50px)}header p{margin:8px auto 0;max-width:760px;opacity:.94}
-.hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px}
-.hero-btn{border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.15);color:#fff;padding:9px 13px;border-radius:999px;font-weight:800;cursor:pointer}
-.topbar{max-width:1180px;margin:-18px auto 18px;padding:0 16px;display:flex;gap:10px}
-.search{flex:1;padding:15px 18px;border:1px solid var(--border);border-radius:16px;background:var(--card);color:var(--text);box-shadow:var(--shadow);font-size:16px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);transition:.25s}
+#progress{position:fixed;left:0;top:0;height:4px;width:0;background:#fff;z-index:999;box-shadow:0 0 12px rgba(255,255,255,.8)}
+header{position:relative;overflow:hidden;background:linear-gradient(120deg,#2563eb,#7c3aed,#db2777,#2563eb);background-size:300% 300%;animation:gradiente 10s ease infinite;color:#fff;padding:38px 16px 34px;text-align:center}
+header:before{content:"";position:absolute;inset:-80px;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.20),transparent 30%),radial-gradient(circle at 80% 10%,rgba(255,255,255,.14),transparent 25%);pointer-events:none}
+@keyframes gradiente{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+header h1{position:relative;margin:0;font-size:clamp(31px,7vw,52px);letter-spacing:-1px}
+header p{position:relative;margin:8px auto 0;max-width:760px;opacity:.95}
+.hero-actions{position:relative;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.hero-btn{border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.16);backdrop-filter:blur(10px);color:#fff;padding:10px 14px;border-radius:999px;font-weight:800;cursor:pointer}
+.hero-btn:hover{background:rgba(255,255,255,.25)}
+.topbar{max-width:1180px;margin:-20px auto 18px;padding:0 16px;display:flex;gap:10px;position:relative;z-index:2}
+.search-wrap{position:relative;flex:1}
+.search{width:100%;padding:15px 48px 15px 18px;border:1px solid var(--border);border-radius:17px;background:var(--card);color:var(--text);box-shadow:var(--shadow);font-size:16px}
+.clear-search{position:absolute;right:12px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:var(--muted);font-size:22px;cursor:pointer;display:none}
 .iconbtn{border:0;border-radius:16px;background:var(--card);color:var(--text);box-shadow:var(--shadow);padding:0 17px;font-size:21px;cursor:pointer}
-.wrap{max-width:1180px;margin:auto;padding:0 16px 44px}.stats,.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}
+.wrap{max-width:1180px;margin:auto;padding:0 16px 70px}
+.stats,.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}
 .pill,.filter{background:var(--card);border:1px solid var(--border);padding:9px 13px;border-radius:999px;color:var(--muted)}
+.pill strong{color:var(--text)}
 .filter{cursor:pointer;font-weight:700}.filter.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:18px 0}
+.quick-card{border:1px solid var(--border);background:var(--card);border-radius:18px;padding:15px;box-shadow:var(--shadow)}
+.quick-card h3{margin:0 0 7px;font-size:16px}.quick-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
+.quick-card button{margin-top:11px;border:0;border-radius:11px;background:var(--primary);color:#fff;padding:9px 12px;font-weight:800;cursor:pointer}
+.ad-slot{margin:18px 0;border:1px dashed var(--border);background:var(--card);border-radius:18px;padding:18px;text-align:center;color:var(--muted);font-size:13px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:18px;box-shadow:var(--shadow);cursor:pointer;transition:.2s}
-.card:hover{transform:translateY(-4px);border-color:#93b4f5}.fav{position:absolute;right:14px;top:12px;border:0;background:transparent;font-size:26px;cursor:pointer}
+.card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:18px;box-shadow:var(--shadow);cursor:pointer;transition:.2s;animation:cardIn .28s ease both}
+@keyframes cardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.card:hover{transform:translateY(-4px);border-color:#93b4f5}
+.fav{position:absolute;right:14px;top:12px;border:0;background:transparent;color:var(--text);font-size:26px;cursor:pointer}
 .card .emoji{font-size:34px}.card h3{margin:10px 35px 6px 0}.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
 .tag{display:inline-block;margin-top:12px;padding:5px 9px;border-radius:999px;background:rgba(37,99,235,.1);color:var(--primary);font-size:12px;font-weight:700}
 .usage{display:inline-block;margin-left:8px;padding:4px 8px;border-radius:999px;background:rgba(21,128,61,.1);color:var(--ok);font-size:11px;font-weight:800}
 .empty{grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)}
-.popular,.history{margin:22px 0;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
-.popular h2,.history h2{margin:0 0 12px;font-size:20px}.popular-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
-.popular-item,.history button{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:12px;cursor:pointer;color:var(--text);text-align:left}
-.popular-item strong{display:block;margin-bottom:4px}.popular-item small{color:var(--muted)}.history-list{display:flex;gap:8px;flex-wrap:wrap}.history button{border-radius:999px;padding:8px 11px}
+.popular,.history,.search-history{margin:22px 0;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+.popular h2,.history h2,.search-history h2{margin:0 0 12px;font-size:20px}
+.popular-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.popular-item,.history button,.search-history button{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:12px;cursor:pointer;color:var(--text);text-align:left}
+.popular-item strong{display:block;margin-bottom:4px}.popular-item small{color:var(--muted)}
+.history-list,.search-history-list{display:flex;gap:8px;flex-wrap:wrap}.history button,.search-history button{border-radius:999px;padding:8px 11px}
 .modal{position:fixed;inset:0;background:rgba(2,6,23,.72);display:none;align-items:center;justify-content:center;padding:16px;z-index:99}
-.modal.open{display:flex}.dialog{width:min(680px,100%);max-height:92vh;overflow:auto;background:var(--card);border-radius:22px;padding:20px;border:1px solid var(--border);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.modal.open{display:flex}.dialog{width:min(700px,100%);max-height:92vh;overflow:auto;background:var(--card);border-radius:22px;padding:20px;border:1px solid var(--border);box-shadow:0 30px 80px rgba(0,0,0,.35);animation:dialogIn .2s ease}
+@keyframes dialogIn{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
 .dialog-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.dialog-head h2{margin:0}.close{border:0;background:transparent;color:var(--text);font-size:30px;cursor:pointer}
 .tool{margin-top:18px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 label{display:block;margin:10px 0 6px;font-weight:700;font-size:14px}input,select,textarea,button{font:inherit}
 input,select,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--bg);color:var(--text)}
 textarea{min-height:120px;resize:vertical}.btn{margin-top:12px;border:0;border-radius:12px;background:var(--primary);color:#fff;padding:12px 16px;font-weight:800;cursor:pointer}
 .btn.secondary{background:#475569}.btn.danger{background:var(--danger)}.result{margin-top:14px;padding:14px;border-radius:14px;background:var(--bg);border:1px dashed var(--border);white-space:pre-wrap;word-break:break-word;min-height:48px}
-.actions{display:flex;gap:8px;flex-wrap:wrap}footer{text-align:center;padding:24px;color:var(--muted)}
-@media(max-width:600px){.row,.row3{grid-template-columns:1fr}.dialog{padding:16px}.topbar{margin-top:-12px}.iconbtn{padding:0 14px}}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+#toTop{position:fixed;right:18px;bottom:18px;border:0;background:var(--primary);color:#fff;width:48px;height:48px;border-radius:50%;font-size:22px;box-shadow:var(--shadow);cursor:pointer;display:none;z-index:20}
+.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%) translateY(30px);background:#111827;color:#fff;padding:11px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:.2s;z-index:150}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+footer{text-align:center;padding:24px;color:var(--muted)}
+@media(max-width:600px){.row,.row3{grid-template-columns:1fr}.dialog{padding:16px}.topbar{margin-top:-14px}.iconbtn{padding:0 14px}.quick{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<div id="progress"></div>
 <header>
 <h1>Ferramentas Pro</h1>
 <p>70 ferramentas rápidas, gratuitas e fáceis de usar no celular.</p>
 <div class="hero-actions">
 <button class="hero-btn" onclick="document.getElementById('busca').focus()">🔎 Encontrar ferramenta</button>
 <button class="hero-btn" onclick="document.getElementById('ranking').scrollIntoView({behavior:'smooth'})">🏆 Mais usadas</button>
+<button class="hero-btn" onclick="surpresa()">🎁 Ferramenta surpresa</button>
 </div>
 </header>
+
 <div class="topbar">
+<div class="search-wrap">
 <input id="busca" class="search" placeholder="Pesquisar ferramenta..." aria-label="Pesquisar ferramenta">
+<button id="limparBusca" class="clear-search" title="Limpar busca">×</button>
+</div>
 <button class="iconbtn" id="favoritosBtn" title="Mostrar favoritos">⭐</button>
 <button class="iconbtn" id="tema" title="Mudar tema">🌙</button>
 </div>
+
 <main class="wrap">
-<div class="stats"><span class="pill"><strong>70</strong> ferramentas</span><span class="pill">Sem cadastro</span><span class="pill">Funciona no celular</span><span class="pill">Versão 7</span></div>
+<div class="stats">
+<span class="pill"><strong id="totalFerramentas">70</strong> ferramentas</span>
+<span class="pill"><strong id="totalUsos">0</strong> usos neste aparelho</span>
+<span class="pill"><strong id="totalFavoritos">0</strong> favoritas</span>
+<span class="pill">Sem cadastro</span>
+<span class="pill">Versão 8</span>
+</div>
+
 <div id="filters" class="filters"></div>
+
+<section class="quick">
+<div class="quick-card"><h3>🎁 Ferramenta surpresa</h3><p>Abra uma ferramenta aleatória e descubra algo útil.</p><button onclick="surpresa()">Descobrir agora</button></div>
+<div class="quick-card"><h3>⭐ Seus favoritos</h3><p>Suas ferramentas favoritas ficam salvas neste aparelho.</p><button onclick="mostrarFavoritos()">Ver favoritos</button></div>
+<div class="quick-card"><h3>🏆 Mais usadas</h3><p>Veja o ranking criado automaticamente conforme você utiliza o site.</p><button onclick="document.getElementById('ranking').scrollIntoView({behavior:'smooth'})">Ver ranking</button></div>
+</section>
+
+<div class="ad-slot">Espaço reservado para anúncio futuro • Google AdSense</div>
+
 <section id="grid" class="grid"></section>
+
 <section id="ranking" class="popular"><h2>🏆 Ferramentas mais usadas</h2><div id="popularList" class="popular-list"></div></section>
 <section class="history"><h2>🕘 Usadas recentemente</h2><div id="historyList" class="history-list">Nenhuma ferramenta usada ainda.</div></section>
+<section class="search-history"><h2>🔎 Pesquisas recentes</h2><div id="searchHistoryList" class="search-history-list">Nenhuma pesquisa ainda.</div></section>
+
+<div class="ad-slot">Segundo espaço reservado para anúncio futuro</div>
 </main>
-<footer>© 2026 Ferramentas Pro — Versão 7.0</footer>
-<div id="modal" class="modal" aria-hidden="true"><div class="dialog"><div class="dialog-head"><h2 id="tituloModal">Ferramenta</h2><button class="close" id="fechar">×</button></div><div id="conteudoModal" class="tool"></div><div class="actions"><button class="btn secondary" id="copiarBtn">📋 Copiar resultado</button><button class="btn secondary" id="compartilharBtn">📱 Compartilhar</button></div></div></div>
+
+<footer>© 2026 Ferramentas Pro — Versão 8.0</footer>
+<button id="toTop" title="Voltar ao topo">↑</button>
+<div id="toast" class="toast">Pronto!</div>
+
+<div id="modal" class="modal" aria-hidden="true">
+<div class="dialog">
+<div class="dialog-head"><h2 id="tituloModal">Ferramenta</h2><button class="close" id="fechar">×</button></div>
+<div id="conteudoModal" class="tool"></div>
+<div class="actions">
+<button class="btn secondary" id="copiarBtn">📋 Copiar resultado</button>
+<button class="btn secondary" id="compartilharBtn">📱 Compartilhar</button>
+</div>
+</div>
+</div>
+
 <script>
 const ferramentas=[
 ['imc','🧍','Calculadora de IMC','Descubra seu índice de massa corporal.','Calculadoras'],
@@ -144,44 +210,84 @@ const ferramentas=[
 ['tabuada','✖️','Gerador de tabuada','Crie a tabuada de qualquer número.','Utilidades']
 ];
 
-const R=id=>document.getElementById(id), val=id=>parseFloat(R(id)?.value)||0, out=(id,t)=>R(id).innerHTML=t;
-let categoria='Todas',somenteFavoritos=false,ferramentaAtual=null;
-let favoritos=JSON.parse(localStorage.getItem('fp_favoritos')||'[]'),usos=JSON.parse(localStorage.getItem('fp_usos')||'{}'),historico=JSON.parse(localStorage.getItem('fp_historico')||'[]');
+const R=id=>document.getElementById(id);
+const val=id=>parseFloat(R(id)?.value)||0;
+const out=(id,t)=>R(id).innerHTML=t;
+const semAcento=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 
-function renderFilters(){const cats=['Todas',...new Set(ferramentas.map(f=>f[4]))];R('filters').innerHTML=cats.map(c=>`<button class="filter ${categoria===c?'active':''}" onclick="categoria='${c}';renderFilters();render()">${c}</button>`).join('')}
-function render(){const q=R('busca').value.toLowerCase();const lista=ferramentas.filter(f=>(categoria==='Todas'||f[4]===categoria)&&(!somenteFavoritos||favoritos.includes(f[0]))&&f.join(' ').toLowerCase().includes(q));R('grid').innerHTML=lista.length?'':'<div class="empty">Nenhuma ferramenta encontrada.</div>';lista.forEach(f=>{let el=document.createElement('article');el.className='card';el.innerHTML=`<button class="fav" onclick="event.stopPropagation();toggleFav('${f[0]}')">${favoritos.includes(f[0])?'★':'☆'}</button><div class="emoji">${f[1]}</div><h3>${f[2]}</h3><p>${f[3]}</p><span class="tag">${f[4]}</span><span class="usage">${usos[f[0]]||0} usos</span>`;el.onclick=()=>abrir(f[0]);R('grid').appendChild(el)})}
-function toggleFav(id){favoritos=favoritos.includes(id)?favoritos.filter(x=>x!==id):[...favoritos,id];localStorage.setItem('fp_favoritos',JSON.stringify(favoritos));render()}
+let categoria='Todas',somenteFavoritos=false,ferramentaAtual=null;
+let favoritos=JSON.parse(localStorage.getItem('fp_favoritos')||'[]');
+let usos=JSON.parse(localStorage.getItem('fp_usos')||'{}');
+let historico=JSON.parse(localStorage.getItem('fp_historico')||'[]');
+let pesquisas=JSON.parse(localStorage.getItem('fp_pesquisas')||'[]');
+
+function toast(msg){R('toast').textContent=msg;R('toast').classList.add('show');setTimeout(()=>R('toast').classList.remove('show'),1800)}
+function atualizarStats(){R('totalFavoritos').textContent=favoritos.length;R('totalUsos').textContent=Object.values(usos).reduce((a,b)=>a+b,0)}
+function renderFilters(){
+  const cats=['Todas',...new Set(ferramentas.map(f=>f[4]))];
+  R('filters').innerHTML=cats.map(c=>`<button class="filter ${categoria===c?'active':''}" onclick="categoria='${c}';renderFilters();render()">${c}</button>`).join('')
+}
+function distancia(a,b){
+  const m=Array.from({length:a.length+1},()=>Array(b.length+1).fill(0));
+  for(let i=0;i<=a.length;i++)m[i][0]=i;for(let j=0;j<=b.length;j++)m[0][j]=j;
+  for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+  return m[a.length][b.length]
+}
+function combinaBusca(f,q){
+  if(!q)return true;
+  const texto=semAcento(f.join(' ')), termos=semAcento(q).split(/\s+/).filter(Boolean);
+  return termos.every(t=>texto.includes(t)||texto.split(/\s+/).some(p=>t.length>3&&distancia(t,p)<=1))
+}
+function render(){
+  const q=R('busca').value.trim();
+  R('limparBusca').style.display=q?'block':'none';
+  const lista=ferramentas.filter(f=>(categoria==='Todas'||f[4]===categoria)&&(!somenteFavoritos||favoritos.includes(f[0]))&&combinaBusca(f,q));
+  R('grid').innerHTML=lista.length?'':'<div class="empty">Nenhuma ferramenta encontrada. Tente outra palavra.</div>';
+  lista.forEach((f,i)=>{
+    let el=document.createElement('article');el.className='card';el.style.animationDelay=Math.min(i*18,200)+'ms';
+    el.innerHTML=`<button class="fav" aria-label="Favoritar" onclick="event.stopPropagation();toggleFav('${f[0]}')">${favoritos.includes(f[0])?'★':'☆'}</button><div class="emoji">${f[1]}</div><h3>${f[2]}</h3><p>${f[3]}</p><span class="tag">${f[4]}</span><span class="usage">${usos[f[0]]||0} usos</span>`;
+    el.onclick=()=>abrir(f[0]);R('grid').appendChild(el)
+  });
+  atualizarStats()
+}
+function toggleFav(id){favoritos=favoritos.includes(id)?favoritos.filter(x=>x!==id):[...favoritos,id];localStorage.setItem('fp_favoritos',JSON.stringify(favoritos));render();toast(favoritos.includes(id)?'Adicionada aos favoritos':'Removida dos favoritos')}
+function mostrarFavoritos(){somenteFavoritos=true;R('favoritosBtn').textContent='⭐✓';render();window.scrollTo({top:300,behavior:'smooth'})}
+function surpresa(){abrir(ferramentas[Math.floor(Math.random()*ferramentas.length)][0])}
 function addHistory(id){historico=[id,...historico.filter(x=>x!==id)].slice(0,6);usos[id]=(usos[id]||0)+1;localStorage.setItem('fp_historico',JSON.stringify(historico));localStorage.setItem('fp_usos',JSON.stringify(usos));renderHistory();renderPopular();render()}
-function renderPopular(){let lista=[...ferramentas].sort((a,b)=>(usos[b[0]]||0)-(usos[a[0]]||0)).slice(0,6);R('popularList').innerHTML=lista.map((f,i)=>`<button class="popular-item" onclick="abrir('${f[0]}')"><strong>${i+1}. ${f[1]} ${f[2]}</strong><small>${usos[f[0]]||0} usos neste aparelho</small></button>`).join('')}
+function renderPopular(){let lista=[...ferramentas].sort((a,b)=>(usos[b[0]]||0)-(usos[a[0]]||0)).slice(0,6);R('popularList').innerHTML=lista.map((f,i)=>`<button class="popular-item" onclick="abrir('${f[0]}')"><strong>${['🥇','🥈','🥉'][i]||i+1+'.'} ${f[1]} ${f[2]}</strong><small>${usos[f[0]]||0} usos neste aparelho</small></button>`).join('')}
 function renderHistory(){if(!historico.length){R('historyList').textContent='Nenhuma ferramenta usada ainda.';return}R('historyList').innerHTML=historico.map(id=>{let f=ferramentas.find(x=>x[0]===id);return f?`<button onclick="abrir('${id}')">${f[1]} ${f[2]}</button>`:''}).join('')}
-function abrir(id){let f=ferramentas.find(x=>x[0]===id);ferramentaAtual=f;R('tituloModal').textContent=f[2];R('conteudoModal').innerHTML=templates[id]();R('modal').classList.add('open');addHistory(id);if(init[id])init[id]();history.replaceState(null,'',`#${id}`)}
-function fechar(){R('modal').classList.remove('open');history.replaceState(null,'',location.pathname)}
+function salvarPesquisa(q){q=q.trim();if(q.length<2)return;pesquisas=[q,...pesquisas.filter(x=>x.toLowerCase()!==q.toLowerCase())].slice(0,8);localStorage.setItem('fp_pesquisas',JSON.stringify(pesquisas));renderPesquisas()}
+function renderPesquisas(){if(!pesquisas.length){R('searchHistoryList').textContent='Nenhuma pesquisa ainda.';return}R('searchHistoryList').innerHTML=pesquisas.map(q=>`<button onclick="R('busca').value=${JSON.stringify(q)};render();window.scrollTo({top:250,behavior:'smooth'})">🔎 ${q}</button>`).join('')}
+function abrir(id){let f=ferramentas.find(x=>x[0]===id);ferramentaAtual=f;R('tituloModal').textContent=f[1]+' '+f[2];R('conteudoModal').innerHTML=templates[id]();R('modal').classList.add('open');R('modal').setAttribute('aria-hidden','false');addHistory(id);if(init[id])init[id]();history.replaceState(null,'',`#${id}`)}
+function fechar(){R('modal').classList.remove('open');R('modal').setAttribute('aria-hidden','true');history.replaceState(null,'',location.pathname)}
 R('fechar').onclick=fechar;R('modal').onclick=e=>{if(e.target===R('modal'))fechar()};document.addEventListener('keydown',e=>{if(e.key==='Escape')fechar()});
-R('busca').oninput=render;R('favoritosBtn').onclick=()=>{somenteFavoritos=!somenteFavoritos;R('favoritosBtn').textContent=somenteFavoritos?'⭐✓':'⭐';render()};
+let buscaTimer;R('busca').oninput=()=>{render();clearTimeout(buscaTimer);buscaTimer=setTimeout(()=>salvarPesquisa(R('busca').value),800)};
+R('limparBusca').onclick=()=>{R('busca').value='';render();R('busca').focus()};
+R('favoritosBtn').onclick=()=>{somenteFavoritos=!somenteFavoritos;R('favoritosBtn').textContent=somenteFavoritos?'⭐✓':'⭐';render()};
 R('tema').onclick=()=>{document.body.classList.toggle('dark');localStorage.setItem('fp_tema',document.body.classList.contains('dark')?'dark':'light');R('tema').textContent=document.body.classList.contains('dark')?'☀️':'🌙'};
 if(localStorage.getItem('fp_tema')==='dark'){document.body.classList.add('dark');R('tema').textContent='☀️'}
 function resultadoTexto(){return R('conteudoModal').querySelector('.result')?.innerText||'Use a ferramenta para gerar um resultado.'}
-R('copiarBtn').onclick=async()=>{try{await navigator.clipboard.writeText(resultadoTexto());alert('Resultado copiado!')}catch{alert('Não foi possível copiar.')}};
+R('copiarBtn').onclick=async()=>{try{await navigator.clipboard.writeText(resultadoTexto());toast('Resultado copiado!')}catch{toast('Não foi possível copiar.')}};
 R('compartilharBtn').onclick=async()=>{let text=`${ferramentaAtual?.[2]}: ${resultadoTexto()}`;if(navigator.share){try{await navigator.share({title:'Ferramentas Pro',text,url:location.href})}catch{}}else window.open(`https://wa.me/?text=${encodeURIComponent(text+' '+location.href)}`,'_blank')};
 
 const simple=(fields,fn,btn='Calcular')=>fields+`<button class="btn" onclick="${fn}">${btn}</button><div id="res" class="result"></div>`;
 const templates={
-imc:()=>simple('<div class="row"><input id="a" type="number" placeholder="Peso (kg)"><input id="b" type="number" step=".01" placeholder="Altura (m)"></div>',"let x=val('a')/(val('b')**2);out('res',x?`IMC: ${x.toFixed(2)}`:'Preencha os campos.')"),
+imc:()=>simple('<div class="row"><input id="a" type="number" placeholder="Peso (kg)"><input id="b" type="number" step=".01" placeholder="Altura (m)"></div>',"let x=val('a')/(val('b')**2),c=x<18.5?'Abaixo do peso':x<25?'Peso normal':x<30?'Sobrepeso':'Obesidade';out('res',x?`IMC: ${x.toFixed(2)}\\nClassificação: ${c}`:'Preencha os campos.')"),
 porcentagem:()=>simple('<div class="row"><input id="a" type="number" placeholder="Porcentagem"><input id="b" type="number" placeholder="Valor"></div>',"out('res',`${val('a')}% de ${val('b')} = ${(val('a')*val('b')/100).toFixed(2)}`)"),
-desconto:()=>simple('<div class="row"><input id="a" type="number" placeholder="Preço"><input id="b" type="number" placeholder="Desconto %"></div>',"let x=val('a')*(1-val('b')/100);out('res',`Preço final: R$ ${x.toFixed(2)}`)"),
+desconto:()=>simple('<div class="row"><input id="a" type="number" placeholder="Preço"><input id="b" type="number" placeholder="Desconto %"></div>',"let x=val('a')*(1-val('b')/100);out('res',`Preço final: R$ ${x.toFixed(2)}\\nEconomia: R$ ${(val('a')-x).toFixed(2)}`)"),
 regra3:()=>simple('<div class="row3"><input id="a" type="number" placeholder="A"><input id="b" type="number" placeholder="B"><input id="c" type="number" placeholder="C"></div>',"out('res',val('a')?`X = ${(val('b')*val('c')/val('a')).toFixed(4)}`:'A não pode ser zero.')"),
 juros:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Capital"><input id="b" type="number" placeholder="Taxa mensal %"><input id="c" type="number" placeholder="Meses"></div>',"let m=val('a')*((1+val('b')/100)**val('c'));out('res',`Montante: R$ ${m.toFixed(2)}\\nJuros: R$ ${(m-val('a')).toFixed(2)}`)"),
 emprestimo:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Valor"><input id="b" type="number" placeholder="Juros ao mês %"><input id="c" type="number" placeholder="Parcelas"></div>',"let p=val('a'),i=val('b')/100,n=val('c'),x=i?p*i*(1+i)**n/((1+i)**n-1):p/n;out('res',n?`Parcela: R$ ${x.toFixed(2)}\\nTotal: R$ ${(x*n).toFixed(2)}`:'Informe as parcelas.')"),
 idade:()=>simple('<input id="a" type="date">',"let n=new Date(R('a').value+'T00:00:00'),h=new Date(),x=h.getFullYear()-n.getFullYear();if(h<new Date(h.getFullYear(),n.getMonth(),n.getDate()))x--;out('res',isNaN(n)?'Escolha a data.':`${x} anos`)"),
 dias:()=>simple('<div class="row"><input id="a" type="date"><input id="b" type="date"></div>',"let x=new Date(R('a').value),y=new Date(R('b').value);out('res',isNaN(x)||isNaN(y)?'Escolha as datas.':`${Math.abs(Math.round((y-x)/86400000))} dias`)"),
-caracteres:()=>'<textarea id="texto"></textarea><div id="res" class="result">0 caracteres</div>',
-palavras:()=>'<textarea id="texto"></textarea><div id="res" class="result">0 palavras</div>',
+caracteres:()=>'<textarea id="texto" placeholder="Digite ou cole seu texto"></textarea><div id="res" class="result">0 caracteres</div>',
+palavras:()=>'<textarea id="texto" placeholder="Digite ou cole seu texto"></textarea><div id="res" class="result">0 palavras</div>',
 maiusculas:()=>'<textarea id="texto"></textarea><button class="btn" onclick="R(\'texto\').value=R(\'texto\').value.toUpperCase();out(\'res\',R(\'texto\').value)">MAIÚSCULAS</button><button class="btn secondary" onclick="R(\'texto\').value=R(\'texto\').value.toLowerCase();out(\'res\',R(\'texto\').value)">minúsculas</button><div id="res" class="result"></div>',
 espacos:()=>simple('<textarea id="texto"></textarea>',"let t=R('texto').value.replace(/\\s+/g,' ').trim();R('texto').value=t;out('res',t)",'Limpar'),
 ordenar:()=>simple('<textarea id="texto" placeholder="Uma linha por item"></textarea>',"let t=R('texto').value.split('\\n').filter(Boolean).sort((a,b)=>a.localeCompare(b)).join('\\n');R('texto').value=t;out('res',t)",'Ordenar'),
 base64:()=>'<textarea id="texto"></textarea><button class="btn" onclick="try{out(\'res\',btoa(unescape(encodeURIComponent(R(\'texto\').value))))}catch{out(\'res\',\'Erro.\')}">Codificar</button><button class="btn secondary" onclick="try{out(\'res\',decodeURIComponent(escape(atob(R(\'texto\').value))))}catch{out(\'res\',\'Base64 inválido.\')}">Decodificar</button><div id="res" class="result"></div>',
 url:()=>'<textarea id="texto"></textarea><button class="btn" onclick="out(\'res\',encodeURIComponent(R(\'texto\').value))">Codificar</button><button class="btn secondary" onclick="try{out(\'res\',decodeURIComponent(R(\'texto\').value))}catch{out(\'res\',\'URL inválida.\')}">Decodificar</button><div id="res" class="result"></div>',
-senha:()=>simple('<input id="a" type="number" value="16">',"let n=Math.max(4,Math.min(100,val('a'))),c='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%&*_-+=',z=new Uint32Array(n);crypto.getRandomValues(z);out('res',Array.from(z,x=>c[x%c.length]).join(''))",'Gerar senha'),
+senha:()=>simple('<input id="a" type="number" value="16" min="4" max="100">',"let n=Math.max(4,Math.min(100,val('a'))),c='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%&*_-+=',z=new Uint32Array(n);crypto.getRandomValues(z);out('res',Array.from(z,x=>c[x%c.length]).join(''))",'Gerar senha'),
 uuid:()=>simple('',"out('res',crypto.randomUUID())",'Gerar UUID'),
 numero:()=>simple('<div class="row"><input id="a" type="number" value="1"><input id="b" type="number" value="100"></div>',"let a=Math.ceil(val('a')),b=Math.floor(val('b'));if(a>b)[a,b]=[b,a];out('res',Math.floor(Math.random()*(b-a+1))+a)",'Sortear'),
 loteria:()=>simple('',"let s=new Set();while(s.size<6)s.add(Math.floor(Math.random()*60)+1);out('res',[...s].sort((a,b)=>a-b).map(n=>String(n).padStart(2,'0')).join(' • '))",'Gerar números'),
@@ -199,7 +305,7 @@ ritmo:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Dis
 hora:()=>simple('<div class="row"><input id="a" type="number" placeholder="Salário"><input id="b" type="number" value="44" placeholder="Horas/semana"></div>',"out('res',val('b')?`R$ ${(val('a')/(val('b')*4.33)).toFixed(2)} por hora`:'Informe as horas.')"),
 calorias:()=>simple('<div class="row3"><input id="a" type="number" placeholder="Peso kg"><input id="b" type="number" placeholder="Altura cm"><input id="c" type="number" placeholder="Idade"></div><select id="d"><option value="m">Masculino</option><option value="f">Feminino</option></select>',"let x=R('d').value==='m'?10*val('a')+6.25*val('b')-5*val('c')+5:10*val('a')+6.25*val('b')-5*val('c')-161;out('res',`Metabolismo basal: ${Math.round(x)} kcal/dia`)",'Estimar'),
 inverter:()=>simple('<textarea id="texto"></textarea>',"out('res',R('texto').value.split('').reverse().join(''))",'Inverter'),
-slug:()=>simple('<textarea id="texto"></textarea>',"out('res',R('texto').value.normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''))",'Gerar slug'),
+slug:()=>simple('<textarea id="texto"></textarea>',"out('res',semAcento(R('texto').value).trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''))",'Gerar slug'),
 cor:()=>simple('',"let c='#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0').toUpperCase();out('res',`<div style='height:90px;border-radius:12px;background:${c};margin-bottom:10px'></div>${c}`)",'Gerar cor'),
 timestamp:()=>simple('<input id="a" type="datetime-local">',"let d=new Date(R('a').value);out('res',isNaN(d)?'Escolha a data.':Math.floor(d.getTime()/1000))",'Converter'),
 formatardata:()=>simple('<input id="a" type="date">',"let d=new Date(R('a').value+'T00:00:00');out('res',isNaN(d)?'Escolha a data.':d.toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'long',year:'numeric'}))",'Formatar'),
@@ -238,19 +344,37 @@ caracteres:()=>R('texto').oninput=()=>out('res',`${R('texto').value.length} cara
 palavras:()=>R('texto').oninput=()=>{let t=R('texto').value.trim();out('res',`${t?t.split(/\\s+/).length:0} palavras • ${t?t.split(/\\n/).length:0} linhas`)}
 };
 
-function convTemplate(tipo){let map={temp:[['c','Celsius'],['f','Fahrenheit'],['k','Kelvin']],comp:[['m','Metros'],['km','Quilômetros'],['mi','Milhas']],peso:[['kg','Quilos'],['g','Gramas'],['lb','Libras']],dados:[['b','Bytes'],['kb','KB'],['mb','MB'],['gb','GB']],vel:[['kmh','Km/h'],['ms','m/s'],['mph','mph']],area:[['m2','m²'],['km2','km²'],['ha','Hectares'],['acre','Acres']],vol:[['l','Litros'],['ml','Mililitros'],['gal','Galões'],['m3','m³']]};let o=map[tipo].map(x=>`<option value="${x[0]}">${x[1]}</option>`).join('');return `<input id="a" type="number" placeholder="Valor"><div class="row"><select id="b">${o}</select><select id="c">${o}</select></div><button class="btn" onclick="converter('${tipo}')">Converter</button><div id="res" class="result"></div>`}
+function convTemplate(tipo){
+let map={temp:[['c','Celsius'],['f','Fahrenheit'],['k','Kelvin']],comp:[['m','Metros'],['km','Quilômetros'],['mi','Milhas']],peso:[['kg','Quilos'],['g','Gramas'],['lb','Libras']],dados:[['b','Bytes'],['kb','KB'],['mb','MB'],['gb','GB']],vel:[['kmh','Km/h'],['ms','m/s'],['mph','mph']],area:[['m2','m²'],['km2','km²'],['ha','Hectares'],['acre','Acres']],vol:[['l','Litros'],['ml','Mililitros'],['gal','Galões'],['m3','m³']]};
+let o=map[tipo].map(x=>`<option value="${x[0]}">${x[1]}</option>`).join('');
+return `<input id="a" type="number" placeholder="Valor"><div class="row"><select id="b">${o}</select><select id="c">${o}</select></div><button class="btn" onclick="converter('${tipo}')">Converter</button><div id="res" class="result"></div>`
+}
 function converter(t){let v=val('a'),de=R('b').value,para=R('c').value,r=v;if(t==='temp'){let c=de==='c'?v:de==='f'?(v-32)*5/9:v-273.15;r=para==='c'?c:para==='f'?c*9/5+32:c+273.15}else{let maps={comp:{m:1,km:1000,mi:1609.344},peso:{kg:1,g:.001,lb:.45359237},dados:{b:1,kb:1024,mb:1048576,gb:1073741824},vel:{kmh:1,ms:3.6,mph:1.609344},area:{m2:1,km2:1e6,ha:1e4,acre:4046.8564224},vol:{l:1,ml:.001,gal:3.785411784,m3:1000}};let f=maps[t];r=v*f[de]/f[para]}out('res',Number(r.toFixed(8)))}
 function gerarCPF(){let n=Array.from({length:9},()=>Math.floor(Math.random()*10));for(let t=9;t<=10;t++){let s=0;for(let i=0;i<t;i++)s+=n[i]*(t+1-i);let d=(s*10)%11;n.push(d===10?0:d)}return n.join('').replace(/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/,'$1.$2.$3-$4')}
 function cpfValido(c){c=c.replace(/\\D/g,'');if(c.length!==11||/^(\\d)\\1+$/.test(c))return false;for(let t=9;t<11;t++){let s=0;for(let i=0;i<t;i++)s+=+c[i]*(t+1-i);let d=(s*10)%11;if(d===10)d=0;if(d!==+c[t])return false}return true}
-let cronoInt=null,cronoInicio=0,cronoPassado=0;function cronoStart(){if(cronoInt)return;cronoInicio=Date.now()-cronoPassado;cronoInt=setInterval(()=>{cronoPassado=Date.now()-cronoInicio;let s=Math.floor(cronoPassado/1000),h=Math.floor(s/3600),m=Math.floor(s%3600/60);out('res',[h,m,s%60].map(x=>String(x).padStart(2,'0')).join(':'))},250)}function cronoPause(){clearInterval(cronoInt);cronoInt=null}function cronoReset(){cronoPause();cronoPassado=0;out('res','00:00:00')}
-let timerInt=null;function timerStart(){timerStop();let s=Math.max(0,val('a'));let show=()=>out('res',`${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`);show();timerInt=setInterval(()=>{s--;show();if(s<=0){timerStop();alert('Tempo encerrado!')}},1000)}function timerStop(){clearInterval(timerInt);timerInt=null}
+let cronoInt=null,cronoInicio=0,cronoPassado=0;
+function cronoStart(){if(cronoInt)return;cronoInicio=Date.now()-cronoPassado;cronoInt=setInterval(()=>{cronoPassado=Date.now()-cronoInicio;let s=Math.floor(cronoPassado/1000),h=Math.floor(s/3600),m=Math.floor(s%3600/60);out('res',[h,m,s%60].map(x=>String(x).padStart(2,'0')).join(':'))},250)}
+function cronoPause(){clearInterval(cronoInt);cronoInt=null}
+function cronoReset(){cronoPause();cronoPassado=0;out('res','00:00:00')}
+let timerInt=null;
+function timerStart(){timerStop();let s=Math.max(0,val('a'));let show=()=>out('res',`${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`);show();timerInt=setInterval(()=>{s--;show();if(s<=0){timerStop();alert('Tempo encerrado!')}},1000)}
+function timerStop(){clearInterval(timerInt);timerInt=null}
 function crc16(str){let crc=0xFFFF;for(let c of str){crc^=c.charCodeAt(0)<<8;for(let i=0;i<8;i++)crc=(crc&0x8000)?((crc<<1)^0x1021):(crc<<1);crc&=0xFFFF}return crc.toString(16).toUpperCase().padStart(4,'0')}
 function emv(id,v){return id+String(v.length).padStart(2,'0')+v}
 function gerarPix(){let chave=R('a').value.trim(),nome=R('b').value.trim().toUpperCase().slice(0,25),cidade=R('c').value.trim().toUpperCase().slice(0,15),valor=val('d');if(!chave||!nome||!cidade)return out('res','Preencha chave, nome e cidade.');let conta=emv('26',emv('00','BR.GOV.BCB.PIX')+emv('01',chave)),p=emv('00','01')+emv('01','12')+conta+emv('52','0000')+emv('53','986');if(valor>0)p+=emv('54',valor.toFixed(2));p+=emv('58','BR')+emv('59',nome)+emv('60',cidade)+emv('62',emv('05','***'))+'6304';out('res',p+crc16(p))}
 async function gerarHash(){let data=new TextEncoder().encode(R('texto').value),buf=await crypto.subtle.digest('SHA-256',data);out('res',[...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join(''))}
 function toRoman(n){if(n<1||n>3999)return'Use um número de 1 a 3999.';let m=[['M',1000],['CM',900],['D',500],['CD',400],['C',100],['XC',90],['L',50],['XL',40],['X',10],['IX',9],['V',5],['IV',4],['I',1]],r='';for(let [s,v] of m)while(n>=v){r+=s;n-=v}return r}
 function dividirTimes(){let nomes=R('texto').value.split('\\n').map(x=>x.trim()).filter(Boolean),q=Math.max(2,Math.floor(val('a')));nomes.sort(()=>Math.random()-.5);let times=Array.from({length:q},()=>[]);nomes.forEach((n,i)=>times[i%q].push(n));out('res',times.map((t,i)=>`Equipe ${i+1}:\\n${t.join('\\n')}`).join('\\n\\n'))}
-renderFilters();render();renderHistory();renderPopular();let hash=location.hash.replace('#','');if(ferramentas.some(f=>f[0]===hash))setTimeout(()=>abrir(hash),100);
+
+window.addEventListener('scroll',()=>{
+  const doc=document.documentElement, pct=(doc.scrollTop/(doc.scrollHeight-doc.clientHeight))*100;
+  R('progress').style.width=pct+'%';
+  R('toTop').style.display=doc.scrollTop>500?'block':'none'
+});
+R('toTop').onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+
+renderFilters();render();renderHistory();renderPopular();renderPesquisas();
+let hash=location.hash.replace('#','');if(ferramentas.some(f=>f[0]===hash))setTimeout(()=>abrir(hash),100);
 </script>
 </body>
 </html>
