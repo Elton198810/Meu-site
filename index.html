@@ -3,31 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ferramentas online gratuitas para cálculos, textos, segurança e produtividade.">
+  <meta name="description" content="Ferramentas online gratuitas para cálculos, textos, produtividade e segurança.">
   <meta name="theme-color" content="#2563eb">
   <title>Ferramentas Pro</title>
 
   <style>
     :root {
-      --bg: #f3f6fb;
+      --fundo: #f3f6fb;
       --card: #ffffff;
-      --text: #172033;
-      --muted: #64748b;
-      --primary: #2563eb;
-      --primary-dark: #1e3a8a;
-      --border: #dbe3ef;
-      --result: #eff6ff;
-      --shadow: 0 10px 30px rgba(15, 23, 42, .08);
+      --texto: #172033;
+      --cinza: #64748b;
+      --azul: #2563eb;
+      --azul-escuro: #1e3a8a;
+      --borda: #dbe3ef;
+      --resultado: #eff6ff;
+      --sombra: 0 10px 30px rgba(15, 23, 42, .08);
     }
 
-    body.dark {
-      --bg: #0f172a;
+    body.escuro {
+      --fundo: #0f172a;
       --card: #172033;
-      --text: #f8fafc;
-      --muted: #cbd5e1;
-      --border: #334155;
-      --result: #1e293b;
-      --shadow: 0 10px 30px rgba(0, 0, 0, .28);
+      --texto: #f8fafc;
+      --cinza: #cbd5e1;
+      --borda: #334155;
+      --resultado: #1e293b;
+      --sombra: 0 10px 30px rgba(0, 0, 0, .28);
     }
 
     * {
@@ -43,24 +43,27 @@
     body {
       min-height: 100vh;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: var(--fundo);
+      color: var(--texto);
       transition: background .25s, color .25s;
     }
 
+    .container {
+      width: min(1150px, calc(100% - 36px));
+      margin: auto;
+    }
+
     header {
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-      color: white;
-      padding: 18px;
       position: sticky;
       top: 0;
       z-index: 20;
+      padding: 18px 0;
+      background: linear-gradient(135deg, var(--azul-escuro), var(--azul));
+      color: white;
       box-shadow: 0 4px 18px rgba(15, 23, 42, .18);
     }
 
-    .topbar {
-      max-width: 1150px;
-      margin: auto;
+    .topo {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -70,28 +73,22 @@
     .logo {
       font-size: 22px;
       font-weight: 800;
-      white-space: nowrap;
     }
 
-    .actions {
-      display: flex;
-      gap: 10px;
-    }
-
-    .small-btn {
+    .botao-tema {
       border: 1px solid rgba(255,255,255,.35);
       background: rgba(255,255,255,.14);
       color: white;
       padding: 10px 14px;
       border-radius: 10px;
-      cursor: pointer;
       font-weight: 700;
+      cursor: pointer;
     }
 
     .hero {
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      background: linear-gradient(135deg, var(--azul-escuro), var(--azul));
       color: white;
-      padding: 55px 18px 75px;
+      padding: 55px 0 75px;
       text-align: center;
     }
 
@@ -105,10 +102,9 @@
       margin: auto;
       line-height: 1.6;
       font-size: 18px;
-      opacity: .95;
     }
 
-    .search {
+    .pesquisa {
       width: min(680px, 100%);
       margin-top: 25px;
       border: 0;
@@ -120,22 +116,21 @@
     }
 
     main {
-      max-width: 1150px;
-      margin: -42px auto 0;
-      padding: 0 18px 42px;
+      margin-top: -42px;
+      padding-bottom: 42px;
     }
 
-    .section-title {
+    .titulo-secao {
       text-align: center;
       margin: 24px 0 20px;
     }
 
-    .section-title p {
-      color: var(--muted);
+    .titulo-secao p {
+      color: var(--cinza);
       margin-top: 7px;
     }
 
-    .grid {
+    .grade {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
       gap: 18px;
@@ -143,10 +138,10 @@
 
     .card {
       background: var(--card);
-      border: 1px solid var(--border);
+      border: 1px solid var(--borda);
       border-radius: 18px;
       padding: 22px;
-      box-shadow: var(--shadow);
+      box-shadow: var(--sombra);
       transition: transform .2s, background .25s, border .25s;
     }
 
@@ -160,7 +155,7 @@
     }
 
     .card p {
-      color: var(--muted);
+      color: var(--cinza);
       line-height: 1.5;
       margin-bottom: 14px;
     }
@@ -169,10 +164,10 @@
       width: 100%;
       padding: 12px;
       margin-bottom: 10px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--borda);
       border-radius: 10px;
       background: var(--card);
-      color: var(--text);
+      color: var(--texto);
       font-size: 16px;
       outline: none;
     }
@@ -182,38 +177,60 @@
       resize: vertical;
     }
 
-    button.main-btn {
+    button.acao {
       width: 100%;
       border: 0;
       border-radius: 10px;
       padding: 12px;
-      background: var(--primary);
+      background: var(--azul);
       color: white;
       font-size: 16px;
       font-weight: 800;
       cursor: pointer;
     }
 
-    button.main-btn:active {
+    button.acao:active {
       transform: scale(.98);
     }
 
-    .result {
+    .resultado {
       margin-top: 12px;
       min-height: 47px;
       padding: 12px;
       border-radius: 10px;
-      background: var(--result);
-      color: var(--text);
+      background: var(--resultado);
+      color: var(--texto);
       font-weight: 700;
       word-break: break-word;
     }
 
-    .hide {
+    .cronometro {
+      font-size: 35px;
+      text-align: center;
+      font-weight: 800;
+      padding: 15px;
+    }
+
+    .botoes-linha {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .botoes-linha button {
+      border: 0;
+      border-radius: 10px;
+      padding: 11px 6px;
+      background: var(--azul);
+      color: white;
+      font-weight: 800;
+    }
+
+    .oculta {
       display: none;
     }
 
-    .about {
+    .sobre {
       margin-top: 24px;
     }
 
@@ -225,7 +242,7 @@
     }
 
     @media (max-width: 560px) {
-      .topbar {
+      .topo {
         flex-direction: column;
       }
 
@@ -238,76 +255,90 @@
 
 <body>
   <header>
-    <div class="topbar">
+    <div class="container topo">
       <div class="logo">🛠️ Ferramentas Pro</div>
-      <div class="actions">
-        <button class="small-btn" onclick="alternarTema()">🌙 Modo escuro</button>
-      </div>
+      <button id="botaoTema" class="botao-tema" type="button">🌙 Modo escuro</button>
     </div>
   </header>
 
   <section class="hero">
-    <h1>Ferramentas gratuitas para o seu dia</h1>
-    <p>Faça cálculos, crie senhas, analise textos e resolva tarefas rapidamente, direto pelo celular.</p>
-    <input id="pesquisa" class="search" type="search" placeholder="Digite o nome de uma ferramenta..." oninput="pesquisar()">
+    <div class="container">
+      <h1>Ferramentas gratuitas para facilitar seu dia</h1>
+      <p>Faça cálculos, analise textos e resolva tarefas rapidamente pelo celular.</p>
+      <input id="pesquisa" class="pesquisa" type="search" placeholder="Pesquise uma ferramenta...">
+    </div>
   </section>
 
-  <main>
-    <div class="section-title">
+  <main class="container">
+    <div class="titulo-secao">
       <h2>Ferramentas disponíveis</h2>
-      <p>Versão 2.0 — 10 ferramentas funcionando</p>
+      <p>Versão 3.1 — 18 ferramentas funcionando</p>
     </div>
 
-    <section class="grid">
+    <section class="grade">
 
       <article class="card ferramenta">
         <h2>🔐 Gerador de senha</h2>
         <p>Crie uma senha forte com letras, números e símbolos.</p>
         <input id="senhaTamanho" type="number" min="6" max="40" value="12">
-        <button class="main-btn" onclick="gerarSenha()">Gerar senha</button>
-        <div class="result" id="senhaResultado">Sua senha aparecerá aqui.</div>
+        <button class="acao" onclick="gerarSenha()">Gerar senha</button>
+        <div class="resultado" id="senhaResultado">Sua senha aparecerá aqui.</div>
       </article>
 
       <article class="card ferramenta">
-        <h2>📊 Calculadora de porcentagem</h2>
+        <h2>🆔 Gerador de CPF</h2>
+        <p>Gere um CPF válido para testes de sistema.</p>
+        <button class="acao" onclick="gerarCPF()">Gerar CPF</button>
+        <div class="resultado" id="cpfResultado">O CPF aparecerá aqui.</div>
+      </article>
+
+      <article class="card ferramenta">
+        <h2>🏢 Gerador de CNPJ</h2>
+        <p>Gere um CNPJ válido para testes de sistema.</p>
+        <button class="acao" onclick="gerarCNPJ()">Gerar CNPJ</button>
+        <div class="resultado" id="cnpjResultado">O CNPJ aparecerá aqui.</div>
+      </article>
+
+      <article class="card ferramenta">
+        <h2>📊 Porcentagem</h2>
         <p>Descubra uma porcentagem de qualquer valor.</p>
-        <input id="porcentagem" type="number" placeholder="Porcentagem, ex.: 20">
-        <input id="valorPorcentagem" type="number" placeholder="Valor, ex.: 500">
-        <button class="main-btn" onclick="calcularPorcentagem()">Calcular</button>
-        <div class="result" id="porcentagemResultado">O resultado aparecerá aqui.</div>
+        <input id="porcentagem" type="number" placeholder="Porcentagem">
+        <input id="valorPorcentagem" type="number" placeholder="Valor">
+        <button class="acao" onclick="calcularPorcentagem()">Calcular</button>
+        <div class="resultado" id="porcentagemResultado">O resultado aparecerá aqui.</div>
       </article>
 
       <article class="card ferramenta">
-        <h2>🏷️ Calculadora de desconto</h2>
+        <h2>🏷️ Desconto</h2>
         <p>Calcule o preço final depois do desconto.</p>
         <input id="precoOriginal" type="number" placeholder="Preço original">
         <input id="desconto" type="number" placeholder="Desconto em %">
-        <button class="main-btn" onclick="calcularDesconto()">Calcular desconto</button>
-        <div class="result" id="descontoResultado">O resultado aparecerá aqui.</div>
+        <button class="acao" onclick="calcularDesconto()">Calcular desconto</button>
+        <div class="resultado" id="descontoResultado">O resultado aparecerá aqui.</div>
       </article>
 
       <article class="card ferramenta">
-        <h2>⚖️ Calculadora de IMC</h2>
+        <h2>⚖️ IMC</h2>
         <p>Calcule a relação entre peso e altura.</p>
         <input id="peso" type="number" step="0.1" placeholder="Peso em kg">
         <input id="altura" type="number" step="0.01" placeholder="Altura em metros">
-        <button class="main-btn" onclick="calcularIMC()">Calcular IMC</button>
-        <div class="result" id="imcResultado">O resultado aparecerá aqui.</div>
+        <button class="acao" onclick="calcularIMC()">Calcular IMC</button>
+        <div class="resultado" id="imcResultado">O resultado aparecerá aqui.</div>
       </article>
 
       <article class="card ferramenta">
-        <h2>📅 Calculadora de idade</h2>
+        <h2>📅 Idade</h2>
         <p>Descubra sua idade em anos completos.</p>
         <input id="nascimento" type="date">
-        <button class="main-btn" onclick="calcularIdade()">Calcular idade</button>
-        <div class="result" id="idadeResultado">Sua idade aparecerá aqui.</div>
+        <button class="acao" onclick="calcularIdade()">Calcular idade</button>
+        <div class="resultado" id="idadeResultado">Sua idade aparecerá aqui.</div>
       </article>
 
       <article class="card ferramenta">
         <h2>✍️ Contador de texto</h2>
         <p>Conte caracteres, palavras e linhas.</p>
-        <textarea id="texto" placeholder="Digite ou cole seu texto..." oninput="contarTexto()"></textarea>
-        <div class="result" id="textoResultado">0 caracteres, 0 palavras e 0 linhas.</div>
+        <textarea id="texto" placeholder="Digite ou cole seu texto..."></textarea>
+        <div class="resultado" id="textoResultado">0 caracteres, 0 palavras e 0 linhas.</div>
       </article>
 
       <article class="card ferramenta">
@@ -316,45 +347,110 @@
         <input id="regraA" type="number" placeholder="Valor A">
         <input id="regraB" type="number" placeholder="Valor B">
         <input id="regraC" type="number" placeholder="Valor C">
-        <button class="main-btn" onclick="regraDeTres()">Calcular X</button>
-        <div class="result" id="regraResultado">O resultado aparecerá aqui.</div>
+        <button class="acao" onclick="regraDeTres()">Calcular X</button>
+        <div class="resultado" id="regraResultado">O resultado aparecerá aqui.</div>
       </article>
 
       <article class="card ferramenta">
         <h2>💰 Juros simples</h2>
-        <p>Calcule juros e valor total de uma aplicação.</p>
-        <input id="capital" type="number" placeholder="Capital inicial">
-        <input id="taxa" type="number" placeholder="Taxa por período em %">
-        <input id="tempo" type="number" placeholder="Quantidade de períodos">
-        <button class="main-btn" onclick="jurosSimples()">Calcular juros</button>
-        <div class="result" id="jurosResultado">O resultado aparecerá aqui.</div>
+        <p>Calcule juros e valor total.</p>
+        <input id="capitalSimples" type="number" placeholder="Capital inicial">
+        <input id="taxaSimples" type="number" placeholder="Taxa por período em %">
+        <input id="tempoSimples" type="number" placeholder="Quantidade de períodos">
+        <button class="acao" onclick="jurosSimples()">Calcular</button>
+        <div class="resultado" id="jurosSimplesResultado">O resultado aparecerá aqui.</div>
       </article>
 
       <article class="card ferramenta">
-        <h2>🔠 Maiúsculas e minúsculas</h2>
-        <p>Converta rapidamente o formato de um texto.</p>
+        <h2>📈 Juros compostos</h2>
+        <p>Calcule o crescimento de um valor ao longo do tempo.</p>
+        <input id="capitalComposto" type="number" placeholder="Capital inicial">
+        <input id="taxaComposta" type="number" placeholder="Taxa por período em %">
+        <input id="tempoComposto" type="number" placeholder="Quantidade de períodos">
+        <button class="acao" onclick="jurosCompostos()">Calcular</button>
+        <div class="resultado" id="jurosCompostosResultado">O resultado aparecerá aqui.</div>
+      </article>
+
+      <article class="card ferramenta">
+        <h2>🌡️ Temperatura</h2>
+        <p>Converta Celsius e Fahrenheit.</p>
+        <input id="temperaturaValor" type="number" placeholder="Temperatura">
+        <select id="temperaturaTipo">
+          <option value="c-f">Celsius para Fahrenheit</option>
+          <option value="f-c">Fahrenheit para Celsius</option>
+        </select>
+        <button class="acao" onclick="converterTemperatura()">Converter</button>
+        <div class="resultado" id="temperaturaResultado">O resultado aparecerá aqui.</div>
+      </article>
+
+      <article class="card ferramenta">
+        <h2>📏 Comprimento</h2>
+        <p>Converta metros, quilômetros e centímetros.</p>
+        <input id="comprimentoValor" type="number" placeholder="Valor">
+        <select id="comprimentoTipo">
+          <option value="m-km">Metros para quilômetros</option>
+          <option value="km-m">Quilômetros para metros</option>
+          <option value="m-cm">Metros para centímetros</option>
+          <option value="cm-m">Centímetros para metros</option>
+        </select>
+        <button class="acao" onclick="converterComprimento()">Converter</button>
+        <div class="resultado" id="comprimentoResultado">O resultado aparecerá aqui.</div>
+      </article>
+
+      <article class="card ferramenta">
+        <h2>📆 Dias entre datas</h2>
+        <p>Calcule quantos dias existem entre duas datas.</p>
+        <input id="dataInicial" type="date">
+        <input id="dataFinal" type="date">
+        <button class="acao" onclick="diasEntreDatas()">Calcular dias</button>
+        <div class="resultado" id="diasResultado">O resultado aparecerá aqui.</div>
+      </article>
+
+      <article class="card ferramenta">
+        <h2>🔠 Converter texto</h2>
+        <p>Transforme o texto em maiúsculas ou minúsculas.</p>
         <textarea id="textoConverter" placeholder="Digite um texto..."></textarea>
         <select id="tipoConversao">
           <option value="maiuscula">MAIÚSCULAS</option>
           <option value="minuscula">minúsculas</option>
           <option value="titulo">Primeira Letra Maiúscula</option>
         </select>
-        <button class="main-btn" onclick="converterTexto()">Converter</button>
-        <div class="result" id="converterResultado">O texto convertido aparecerá aqui.</div>
+        <button class="acao" onclick="converterTexto()">Converter</button>
+        <div class="resultado" id="converterResultado">O texto convertido aparecerá aqui.</div>
       </article>
 
       <article class="card ferramenta">
-        <h2>🎲 Sorteador de números</h2>
-        <p>Sorteie um número dentro do intervalo escolhido.</p>
-        <input id="minimo" type="number" value="1" placeholder="Número mínimo">
-        <input id="maximo" type="number" value="100" placeholder="Número máximo">
-        <button class="main-btn" onclick="sortearNumero()">Sortear</button>
-        <div class="result" id="sorteioResultado">O número sorteado aparecerá aqui.</div>
+        <h2>🎲 Sorteador</h2>
+        <p>Sorteie um número dentro de um intervalo.</p>
+        <input id="minimo" type="number" value="1">
+        <input id="maximo" type="number" value="100">
+        <button class="acao" onclick="sortearNumero()">Sortear</button>
+        <div class="resultado" id="sorteioResultado">O número aparecerá aqui.</div>
+      </article>
+
+      <article class="card ferramenta">
+        <h2>⏱️ Cronômetro</h2>
+        <p>Inicie, pause e zere o tempo.</p>
+        <div class="cronometro" id="cronometro">00:00:00</div>
+        <div class="botoes-linha">
+          <button onclick="iniciarCronometro()">Iniciar</button>
+          <button onclick="pausarCronometro()">Pausar</button>
+          <button onclick="zerarCronometro()">Zerar</button>
+        </div>
+      </article>
+
+      <article class="card ferramenta">
+        <h2>💱 Conversor de moeda</h2>
+        <p>Converta usando a cotação que você informar.</p>
+        <input id="moedaValor" type="number" placeholder="Valor">
+        <input id="moedaCotacao" type="number" step="0.0001" placeholder="Cotação">
+        <button class="acao" onclick="converterMoeda()">Converter</button>
+        <div class="resultado" id="moedaResultado">O resultado aparecerá aqui.</div>
       </article>
 
     </section>
 
-    <section class="card about">
+    <section class="card sobre">
       <h2>Sobre o Ferramentas Pro</h2>
       <p>Este projeto reúne ferramentas simples, rápidas e gratuitas. Novas funções serão adicionadas nas próximas versões.</p>
     </section>
@@ -365,139 +461,279 @@
   </footer>
 
   <script>
-    function moeda(valor) {
+    function numero(id) {
+      return Number(document.getElementById(id).value);
+    }
+
+    function dinheiro(valor) {
       return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
     }
 
     function gerarSenha() {
-      const tamanho = Number(document.getElementById("senhaTamanho").value);
-      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*";
+      const tamanho = numero("senhaTamanho");
+      const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*";
       if (tamanho < 6 || tamanho > 40) {
-        document.getElementById("senhaResultado").textContent = "Escolha um tamanho entre 6 e 40.";
+        senhaResultado.textContent = "Escolha um tamanho entre 6 e 40.";
         return;
       }
       let senha = "";
       for (let i = 0; i < tamanho; i++) {
-        senha += chars[Math.floor(Math.random() * chars.length)];
+        senha += caracteres[Math.floor(Math.random() * caracteres.length)];
       }
-      document.getElementById("senhaResultado").textContent = senha;
+      senhaResultado.textContent = senha;
+    }
+
+    function calcularDigito(base, pesos) {
+      const soma = base.reduce((total, numero, i) => total + numero * pesos[i], 0);
+      const resto = soma % 11;
+      return resto < 2 ? 0 : 11 - resto;
+    }
+
+    function gerarCPF() {
+      const base = Array.from({ length: 9 }, () => Math.floor(Math.random() * 10));
+      const d1 = calcularDigito(base, [10,9,8,7,6,5,4,3,2]);
+      const d2 = calcularDigito([...base, d1], [11,10,9,8,7,6,5,4,3,2]);
+      const cpf = [...base, d1, d2].join("");
+      cpfResultado.textContent =
+        cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+    }
+
+    function gerarCNPJ() {
+      const base = Array.from({ length: 8 }, () => Math.floor(Math.random() * 10));
+      base.push(0, 0, 0, 1);
+      const d1 = calcularDigito(base, [5,4,3,2,9,8,7,6,5,4,3,2]);
+      const d2 = calcularDigito([...base, d1], [6,5,4,3,2,9,8,7,6,5,4,3,2]);
+      const cnpj = [...base, d1, d2].join("");
+      cnpjResultado.textContent =
+        cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
     }
 
     function calcularPorcentagem() {
-      const p = Number(document.getElementById("porcentagem").value);
-      const v = Number(document.getElementById("valorPorcentagem").value);
-      if (!Number.isFinite(p) || !Number.isFinite(v)) return;
-      document.getElementById("porcentagemResultado").textContent =
-        `${p}% de ${v} é ${(p * v / 100).toFixed(2)}.`;
+      const p = numero("porcentagem");
+      const v = numero("valorPorcentagem");
+      porcentagemResultado.textContent = `${p}% de ${v} é ${(p * v / 100).toFixed(2)}.`;
     }
 
     function calcularDesconto() {
-      const preco = Number(document.getElementById("precoOriginal").value);
-      const desconto = Number(document.getElementById("desconto").value);
-      if (preco < 0 || desconto < 0) return;
-      const economia = preco * desconto / 100;
-      const final = preco - economia;
-      document.getElementById("descontoResultado").textContent =
-        `Preço final: ${moeda(final)} | Economia: ${moeda(economia)}`;
+      const preco = numero("precoOriginal");
+      const d = numero("desconto");
+      const economia = preco * d / 100;
+      descontoResultado.textContent =
+        `Preço final: ${dinheiro(preco - economia)} | Economia: ${dinheiro(economia)}`;
     }
 
     function calcularIMC() {
-      const peso = Number(document.getElementById("peso").value);
-      const altura = Number(document.getElementById("altura").value);
-      if (peso <= 0 || altura <= 0) {
-        document.getElementById("imcResultado").textContent = "Informe peso e altura válidos.";
+      const pesoValor = numero("peso");
+      const alturaValor = numero("altura");
+
+      if (pesoValor <= 0 || alturaValor <= 0) {
+        imcResultado.textContent = "Informe peso e altura válidos.";
         return;
       }
-      const imc = peso / (altura * altura);
+
+      const imc = pesoValor / (alturaValor * alturaValor);
       let classe = "Obesidade";
+
       if (imc < 18.5) classe = "Abaixo do peso";
       else if (imc < 25) classe = "Peso adequado";
       else if (imc < 30) classe = "Sobrepeso";
-      document.getElementById("imcResultado").textContent = `Seu IMC é ${imc.toFixed(1)} — ${classe}.`;
+
+      imcResultado.textContent = `Seu IMC é ${imc.toFixed(1)} — ${classe}.`;
     }
 
     function calcularIdade() {
-      const valor = document.getElementById("nascimento").value;
+      const valor = nascimento.value;
+
       if (!valor) {
-        document.getElementById("idadeResultado").textContent = "Escolha sua data de nascimento.";
+        idadeResultado.textContent = "Escolha uma data.";
         return;
       }
+
       const hoje = new Date();
       const nasc = new Date(valor + "T00:00:00");
       let idade = hoje.getFullYear() - nasc.getFullYear();
       const mes = hoje.getMonth() - nasc.getMonth();
-      if (mes < 0 || (mes === 0 && hoje.getDate() < nasc.getDate())) idade--;
-      document.getElementById("idadeResultado").textContent =
-        idade >= 0 ? `Você tem ${idade} anos.` : "Informe uma data válida.";
+
+      if (mes < 0 || (mes === 0 && hoje.getDate() < nasc.getDate())) {
+        idade--;
+      }
+
+      idadeResultado.textContent =
+        idade >= 0 ? `Você tem ${idade} anos.` : "Data inválida.";
     }
 
     function contarTexto() {
-      const texto = document.getElementById("texto").value;
-      const palavras = texto.trim() ? texto.trim().split(/\s+/).length : 0;
-      const linhas = texto ? texto.split(/\n/).length : 0;
-      document.getElementById("textoResultado").textContent =
-        `${texto.length} caracteres, ${palavras} palavras e ${linhas} linhas.`;
+      const valor = texto.value;
+      const palavras = valor.trim() ? valor.trim().split(/\s+/).length : 0;
+      const linhas = valor ? valor.split(/\n/).length : 0;
+
+      textoResultado.textContent =
+        `${valor.length} caracteres, ${palavras} palavras e ${linhas} linhas.`;
     }
 
     function regraDeTres() {
-      const a = Number(document.getElementById("regraA").value);
-      const b = Number(document.getElementById("regraB").value);
-      const c = Number(document.getElementById("regraC").value);
+      const a = numero("regraA");
+      const b = numero("regraB");
+      const c = numero("regraC");
+
       if (a === 0) {
-        document.getElementById("regraResultado").textContent = "O valor A não pode ser zero.";
+        regraResultado.textContent = "O valor A não pode ser zero.";
         return;
       }
-      const x = (b * c) / a;
-      document.getElementById("regraResultado").textContent = `X = ${x.toFixed(2)}`;
+
+      regraResultado.textContent = `X = ${((b * c) / a).toFixed(2)}`;
     }
 
     function jurosSimples() {
-      const capital = Number(document.getElementById("capital").value);
-      const taxa = Number(document.getElementById("taxa").value);
-      const tempo = Number(document.getElementById("tempo").value);
+      const capital = numero("capitalSimples");
+      const taxa = numero("taxaSimples");
+      const tempo = numero("tempoSimples");
       const juros = capital * (taxa / 100) * tempo;
-      const total = capital + juros;
-      document.getElementById("jurosResultado").textContent =
-        `Juros: ${moeda(juros)} | Total: ${moeda(total)}`;
+
+      jurosSimplesResultado.textContent =
+        `Juros: ${dinheiro(juros)} | Total: ${dinheiro(capital + juros)}`;
+    }
+
+    function jurosCompostos() {
+      const capital = numero("capitalComposto");
+      const taxa = numero("taxaComposta");
+      const tempo = numero("tempoComposto");
+      const total = capital * Math.pow(1 + taxa / 100, tempo);
+
+      jurosCompostosResultado.textContent =
+        `Total: ${dinheiro(total)} | Rendimento: ${dinheiro(total - capital)}`;
+    }
+
+    function converterTemperatura() {
+      const valor = numero("temperaturaValor");
+      const resultado = temperaturaTipo.value === "c-f"
+        ? (valor * 9 / 5) + 32
+        : (valor - 32) * 5 / 9;
+
+      temperaturaResultado.textContent = `${resultado.toFixed(2)}°`;
+    }
+
+    function converterComprimento() {
+      const valor = numero("comprimentoValor");
+      const tipo = comprimentoTipo.value;
+
+      const resultados = {
+        "m-km": valor / 1000,
+        "km-m": valor * 1000,
+        "m-cm": valor * 100,
+        "cm-m": valor / 100
+      };
+
+      comprimentoResultado.textContent =
+        resultados[tipo].toFixed(4).replace(/\.?0+$/, "");
+    }
+
+    function diasEntreDatas() {
+      if (!dataInicial.value || !dataFinal.value) {
+        diasResultado.textContent = "Escolha as duas datas.";
+        return;
+      }
+
+      const inicio = new Date(dataInicial.value + "T00:00:00");
+      const fim = new Date(dataFinal.value + "T00:00:00");
+      const dias = Math.abs(fim - inicio) / 86400000;
+
+      diasResultado.textContent = `${dias} dia(s).`;
     }
 
     function converterTexto() {
-      const texto = document.getElementById("textoConverter").value;
-      const tipo = document.getElementById("tipoConversao").value;
-      let resultado = texto;
-      if (tipo === "maiuscula") resultado = texto.toUpperCase();
-      if (tipo === "minuscula") resultado = texto.toLowerCase();
-      if (tipo === "titulo") {
-        resultado = texto.toLowerCase().replace(/\b\w/g, letra => letra.toUpperCase());
+      const valor = textoConverter.value;
+      let resultado = valor;
+
+      if (tipoConversao.value === "maiuscula") resultado = valor.toUpperCase();
+      if (tipoConversao.value === "minuscula") resultado = valor.toLowerCase();
+      if (tipoConversao.value === "titulo") {
+        resultado = valor.toLowerCase().replace(/\b\w/g, letra => letra.toUpperCase());
       }
-      document.getElementById("converterResultado").textContent = resultado || "Digite um texto.";
+
+      converterResultado.textContent = resultado || "Digite um texto.";
     }
 
     function sortearNumero() {
-      const min = Math.ceil(Number(document.getElementById("minimo").value));
-      const max = Math.floor(Number(document.getElementById("maximo").value));
+      const min = Math.ceil(numero("minimo"));
+      const max = Math.floor(numero("maximo"));
+
       if (min > max) {
-        document.getElementById("sorteioResultado").textContent = "O mínimo deve ser menor que o máximo.";
+        sorteioResultado.textContent = "O mínimo deve ser menor que o máximo.";
         return;
       }
-      const numero = Math.floor(Math.random() * (max - min + 1)) + min;
-      document.getElementById("sorteioResultado").textContent = `Número sorteado: ${numero}`;
+
+      const sorteado = Math.floor(Math.random() * (max - min + 1)) + min;
+      sorteioResultado.textContent = `Número sorteado: ${sorteado}`;
     }
 
-    function pesquisar() {
-      const busca = document.getElementById("pesquisa").value.toLowerCase().trim();
+    let segundos = 0;
+    let intervalo = null;
+
+    function atualizarCronometro() {
+      const h = String(Math.floor(segundos / 3600)).padStart(2, "0");
+      const m = String(Math.floor((segundos % 3600) / 60)).padStart(2, "0");
+      const s = String(segundos % 60).padStart(2, "0");
+      cronometro.textContent = `${h}:${m}:${s}`;
+    }
+
+    function iniciarCronometro() {
+      if (intervalo) return;
+
+      intervalo = setInterval(() => {
+        segundos++;
+        atualizarCronometro();
+      }, 1000);
+    }
+
+    function pausarCronometro() {
+      clearInterval(intervalo);
+      intervalo = null;
+    }
+
+    function zerarCronometro() {
+      pausarCronometro();
+      segundos = 0;
+      atualizarCronometro();
+    }
+
+    function converterMoeda() {
+      const valor = numero("moedaValor");
+      const cotacao = numero("moedaCotacao");
+
+      if (valor < 0 || cotacao <= 0) {
+        moedaResultado.textContent = "Informe valores válidos.";
+        return;
+      }
+
+      moedaResultado.textContent = `Resultado: ${(valor * cotacao).toFixed(2)}`;
+    }
+
+    pesquisa.addEventListener("input", () => {
+      const busca = pesquisa.value.toLowerCase().trim();
+
       document.querySelectorAll(".ferramenta").forEach(card => {
-        card.classList.toggle("hide", !card.textContent.toLowerCase().includes(busca));
+        card.classList.toggle(
+          "oculta",
+          !card.textContent.toLowerCase().includes(busca)
+        );
       });
-    }
+    });
 
-    function alternarTema() {
-      document.body.classList.toggle("dark");
-      localStorage.setItem("tema", document.body.classList.contains("dark") ? "dark" : "light");
-    }
+    texto.addEventListener("input", contarTexto);
 
-    if (localStorage.getItem("tema") === "dark") {
-      document.body.classList.add("dark");
+    botaoTema.addEventListener("click", () => {
+      document.body.classList.toggle("escuro");
+
+      const escuro = document.body.classList.contains("escuro");
+
+      localStorage.setItem("tema", escuro ? "escuro" : "claro");
+      botaoTema.textContent = escuro ? "☀️ Modo claro" : "🌙 Modo escuro";
+    });
+
+    if (localStorage.getItem("tema") === "escuro") {
+      document.body.classList.add("escuro");
+      botaoTema.textContent = "☀️ Modo claro";
     }
   </script>
 </body>
