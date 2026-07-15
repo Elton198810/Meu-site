@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="30 ferramentas online gratuitas para cálculos, textos, conversões, geradores e produtividade.">
+  <meta name="description" content="40 ferramentas online gratuitas para cálculos, textos, conversões, geradores e produtividade.">
   <meta name="keywords" content="ferramentas online, calculadora, conversor, gerador de senha, contador de palavras, QR Code">
   <meta name="theme-color" content="#2563eb">
   <meta property="og:title" content="Ferramentas Pro">
-  <meta property="og:description" content="30 ferramentas rápidas, gratuitas e fáceis de usar pelo celular.">
+  <meta property="og:description" content="40 ferramentas rápidas, gratuitas e fáceis de usar pelo celular.">
   <meta property="og:type" content="website">
-  <title>Ferramentas Pro — Versão 5</title>
+  <title>Ferramentas Pro — Versão 6</title>
   <style>
     :root{--bg:#f4f7fb;--card:#fff;--text:#14213d;--muted:#64748b;--primary:#2563eb;--primary2:#7c3aed;--border:#dbe4f0;--shadow:0 10px 30px rgba(15,23,42,.08);--ok:#15803d;--danger:#dc2626}
     body.dark{--bg:#0f172a;--card:#182235;--text:#f8fafc;--muted:#a8b3c7;--border:#2a3952;--shadow:0 10px 30px rgba(0,0,0,.25)}
@@ -43,13 +43,28 @@
     .btn.secondary{background:#475569}.btn.danger{background:var(--danger)}.result{margin-top:14px;padding:14px;border-radius:14px;background:var(--bg);border:1px dashed var(--border);white-space:pre-wrap;word-break:break-word;min-height:48px}
     .actions{display:flex;gap:8px;flex-wrap:wrap}.history{margin:24px 0;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px}.history h2{margin-top:0;font-size:20px}.history-list{display:flex;gap:8px;flex-wrap:wrap}.history button{border:1px solid var(--border);background:var(--bg);color:var(--text);border-radius:999px;padding:8px 11px;cursor:pointer}
     footer{text-align:center;padding:24px;color:var(--muted)}
+
+    .popular{margin:18px 0;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+    .popular h2{margin:0 0 12px;font-size:20px}
+    .popular-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+    .popular-item{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:12px;cursor:pointer;color:var(--text);text-align:left}
+    .popular-item strong{display:block;margin-bottom:4px}
+    .popular-item small{color:var(--muted)}
+    .usage{display:inline-block;margin-left:8px;padding:4px 8px;border-radius:999px;background:rgba(21,128,61,.1);color:var(--ok);font-size:11px;font-weight:800}
+    .hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .hero-btn{border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.15);color:#fff;padding:9px 13px;border-radius:999px;font-weight:800;cursor:pointer}
+
     @media(max-width:600px){.row,.row3{grid-template-columns:1fr}.dialog{padding:16px}.topbar{margin-top:-12px}.iconbtn{padding:0 14px}}
   </style>
 </head>
 <body>
 <header>
   <h1>Ferramentas Pro</h1>
-  <p>30 ferramentas rápidas, gratuitas e fáceis de usar no celular.</p>
+  <p>40 ferramentas rápidas, gratuitas e fáceis de usar no celular.</p>
+  <div class="hero-actions">
+    <button class="hero-btn" onclick="document.getElementById('busca').focus()">🔎 Encontrar ferramenta</button>
+    <button class="hero-btn" onclick="document.getElementById('ranking').scrollIntoView({behavior:'smooth'})">🏆 Mais usadas</button>
+  </div>
 </header>
 
 <div class="topbar">
@@ -60,13 +75,18 @@
 
 <main class="wrap">
   <div class="stats">
-    <span class="pill"><strong>30</strong> ferramentas</span>
+    <span class="pill"><strong>40</strong> ferramentas</span>
     <span class="pill">Sem cadastro</span>
     <span class="pill">Funciona no celular</span>
-    <span class="pill">Versão 5</span>
+    <span class="pill">Versão 6</span>
   </div>
   <div id="filters" class="filters"></div>
   <section id="grid" class="grid"></section>
+
+  <section id="ranking" class="popular">
+    <h2>🏆 Ferramentas mais usadas</h2>
+    <div id="popularList" class="popular-list"></div>
+  </section>
 
   <section class="history">
     <h2>🕘 Usadas recentemente</h2>
@@ -74,7 +94,7 @@
   </section>
 </main>
 
-<footer>© 2026 Ferramentas Pro — Versão 5.0</footer>
+<footer>© 2026 Ferramentas Pro — Versão 6.0</footer>
 
 <div id="modal" class="modal" aria-hidden="true">
   <div class="dialog">
@@ -121,13 +141,25 @@ const ferramentas=[
 ['temporizador','⏳','Temporizador','Crie uma contagem regressiva.','Tempo'],
 ['qrcode','▦','Gerador de QR Code','Crie um QR Code para texto ou link.','Utilidades'],
 ['pix','💸','Gerador de PIX','Gere código PIX Copia e Cola.','Financeiro'],
-['sorteio','🎁','Sorteador de nomes','Sorteie um nome de uma lista.','Geradores']
+['sorteio','🎁','Sorteador de nomes','Sorteie um nome de uma lista.','Geradores'],
+
+['variacao','📊','Variação percentual','Calcule aumento ou redução percentual.','Calculadoras'],
+['combustivel','⛽','Custo de combustível','Estime o custo de uma viagem.','Financeiro'],
+['ritmo','🏃','Calculadora de ritmo','Calcule o ritmo por quilômetro.','Calculadoras'],
+['hora','💼','Salário por hora','Descubra quanto você ganha por hora.','Financeiro'],
+['calorias','🔥','Estimativa de calorias','Estime seu gasto calórico diário.','Calculadoras'],
+['inverter','🔁','Inverter texto','Inverta letras e frases rapidamente.','Texto'],
+['slug','🔗','Gerador de slug','Transforme títulos em links amigáveis.','Desenvolvimento'],
+['cor','🎨','Gerador de cor','Gere uma cor hexadecimal aleatória.','Geradores'],
+['timestamp','🕰️','Conversor de timestamp','Converta data para timestamp e vice-versa.','Datas'],
+['formatardata','📆','Formatador de data','Formate datas no padrão brasileiro.','Datas']
 ];
 
 const R=id=>document.getElementById(id), val=id=>parseFloat(R(id)?.value)||0;
 const grid=R('grid'), modal=R('modal'), tituloModal=R('tituloModal'), conteudoModal=R('conteudoModal');
 let categoria='Todas', somenteFavoritos=false, ferramentaAtual=null;
 let favoritos=JSON.parse(localStorage.getItem('fp_favoritos')||'[]');
+let usos=JSON.parse(localStorage.getItem('fp_usos')||'{}');
 let historico=JSON.parse(localStorage.getItem('fp_historico')||'[]');
 
 function renderFilters(){
@@ -140,12 +172,25 @@ function render(){
  grid.innerHTML=lista.length?'':`<div class="empty">Nenhuma ferramenta encontrada.</div>`;
  lista.forEach(f=>{
    const el=document.createElement('article');el.className='card';
-   el.innerHTML=`<button class="fav" onclick="event.stopPropagation();toggleFav('${f[0]}')">${favoritos.includes(f[0])?'★':'☆'}</button><div class="emoji">${f[1]}</div><h3>${f[2]}</h3><p>${f[3]}</p><span class="tag">${f[4]}</span>`;
+   el.innerHTML=`<button class="fav" onclick="event.stopPropagation();toggleFav('${f[0]}')">${favoritos.includes(f[0])?'★':'☆'}</button><div class="emoji">${f[1]}</div><h3>${f[2]}</h3><p>${f[3]}</p><span class="tag">${f[4]}</span><span class="usage">${usos[f[0]]||0} usos</span>`;
    el.onclick=()=>abrir(f[0]);grid.appendChild(el);
  });
 }
 function toggleFav(id){favoritos=favoritos.includes(id)?favoritos.filter(x=>x!==id):[...favoritos,id];localStorage.setItem('fp_favoritos',JSON.stringify(favoritos));render()}
-function addHistory(id){historico=[id,...historico.filter(x=>x!==id)].slice(0,6);localStorage.setItem('fp_historico',JSON.stringify(historico));renderHistory()}
+function addHistory(id){
+ historico=[id,...historico.filter(x=>x!==id)].slice(0,6);
+ usos[id]=(usos[id]||0)+1;
+ localStorage.setItem('fp_historico',JSON.stringify(historico));
+ localStorage.setItem('fp_usos',JSON.stringify(usos));
+ renderHistory();renderPopular();render();
+}
+
+function renderPopular(){
+ const lista=[...ferramentas].sort((a,b)=>(usos[b[0]]||0)-(usos[a[0]]||0)).slice(0,6);
+ const el=R('popularList');
+ el.innerHTML=lista.map((f,i)=>`<button class="popular-item" onclick="abrir('${f[0]}')"><strong>${i+1}. ${f[1]} ${f[2]}</strong><small>${usos[f[0]]||0} usos neste aparelho</small></button>`).join('');
+}
+
 function renderHistory(){
  const el=R('historyList');
  if(!historico.length){el.textContent='Nenhuma ferramenta usada ainda.';return}
@@ -196,6 +241,18 @@ temporizador:()=>`<input id="segTimer" type="number" value="60"><div id="tempoTi
 qrcode:()=>`<textarea id="qrTxt" placeholder="Texto ou link"></textarea><button class="btn" onclick="gerarQR()">Gerar QR Code</button><div id="rQr" class="result" style="text-align:center"></div>`,
 pix:()=>`<input id="pixChave" placeholder="Chave PIX"><div class="row"><input id="pixNome" maxlength="25" placeholder="Nome"><input id="pixCidade" maxlength="15" placeholder="Cidade"></div><input id="pixValor" type="number" step="0.01" placeholder="Valor opcional"><button class="btn" onclick="gerarPix()">Gerar código</button><div id="rPix" class="result"></div>`,
 sorteio:()=>`<textarea id="nomes" placeholder="Um nome por linha"></textarea><button class="btn" onclick="sortearNome()">Sortear nome</button><div id="rNome" class="result"></div>`
+
+,variacao:()=>`<div class="row"><input id="vInicial" type="number" placeholder="Valor inicial"><input id="vFinal" type="number" placeholder="Valor final"></div><button class="btn" onclick="calcVariacao()">Calcular</button><div id="rVariacao" class="result"></div>`
+,combustivel:()=>`<div class="row3"><input id="dist" type="number" placeholder="Distância (km)"><input id="consumo" type="number" placeholder="Km por litro"><input id="precoComb" type="number" step="0.01" placeholder="Preço do litro"></div><button class="btn" onclick="calcCombustivel()">Calcular</button><div id="rComb" class="result"></div>`
+,ritmo:()=>`<div class="row3"><input id="ritmoKm" type="number" step="0.01" placeholder="Distância (km)"><input id="ritmoH" type="number" placeholder="Horas"><input id="ritmoM" type="number" placeholder="Minutos"></div><button class="btn" onclick="calcRitmo()">Calcular</button><div id="rRitmo" class="result"></div>`
+,hora:()=>`<div class="row"><input id="salario" type="number" placeholder="Salário mensal"><input id="horasSemana" type="number" value="44" placeholder="Horas por semana"></div><button class="btn" onclick="calcHora()">Calcular</button><div id="rHora" class="result"></div>`
+,calorias:()=>`<div class="row3"><input id="calPeso" type="number" placeholder="Peso (kg)"><input id="calAltura" type="number" placeholder="Altura (cm)"><input id="calIdade" type="number" placeholder="Idade"></div><select id="calSexo"><option value="m">Masculino</option><option value="f">Feminino</option></select><select id="calAtiv"><option value="1.2">Sedentário</option><option value="1.375">Atividade leve</option><option value="1.55">Atividade moderada</option><option value="1.725">Muito ativo</option></select><button class="btn" onclick="calcCalorias()">Estimar</button><div id="rCalorias" class="result"></div>`
+,inverter:()=>`<textarea id="txtInv" placeholder="Digite o texto..."></textarea><button class="btn" onclick="out('rInv',txtInv.value.split('').reverse().join(''))">Inverter</button><div id="rInv" class="result"></div>`
+,slug:()=>`<textarea id="txtSlug" placeholder="Digite um título..."></textarea><button class="btn" onclick="gerarSlug()">Gerar slug</button><div id="rSlug" class="result"></div>`
+,cor:()=>`<button class="btn" onclick="gerarCor()">Gerar cor</button><div id="rCor" class="result" style="font-size:26px;text-align:center"></div>`
+,timestamp:()=>`<label>Data e hora</label><input id="tsData" type="datetime-local"><button class="btn" onclick="dataParaTs()">Data → timestamp</button><label>Timestamp</label><input id="tsNumero" type="number" placeholder="Ex.: 1767225600"><button class="btn secondary" onclick="tsParaData()">Timestamp → data</button><div id="rTs" class="result"></div>`
+,formatardata:()=>`<label>Escolha uma data</label><input id="fmtData" type="date"><button class="btn" onclick="formatarData()">Formatar</button><div id="rFmt" class="result"></div>`
+
 };
 
 function convTemplate(tipo){const o={temp:[['c','Celsius'],['f','Fahrenheit'],['k','Kelvin']],comp:[['m','Metros'],['km','Quilômetros'],['mi','Milhas']],peso:[['kg','Quilos'],['g','Gramas'],['lb','Libras']],dados:[['b','Bytes'],['kb','KB'],['mb','MB'],['gb','GB']]}[tipo].map(x=>`<option value="${x[0]}">${x[1]}</option>`).join('');return `<input id="cv" type="number" placeholder="Valor"><div class="row"><select id="cde">${o}</select><select id="cpara">${o}</select></div><button class="btn" onclick="converter('${tipo}')">Converter</button><div id="rConv" class="result"></div>`}
@@ -222,9 +279,21 @@ function gerarQR(){let t=encodeURIComponent(qrTxt.value.trim());if(!t)return;out
 function crc16(str){let crc=0xFFFF;for(let c of str){crc^=c.charCodeAt(0)<<8;for(let i=0;i<8;i++)crc=(crc&0x8000)?((crc<<1)^0x1021):(crc<<1);crc&=0xFFFF}return crc.toString(16).toUpperCase().padStart(4,'0')}
 function emv(id,v){return id+String(v.length).padStart(2,'0')+v}
 function gerarPix(){let chave=pixChave.value.trim(),nome=pixNome.value.trim().toUpperCase().slice(0,25),cidade=pixCidade.value.trim().toUpperCase().slice(0,15),valor=parseFloat(pixValor.value);if(!chave||!nome||!cidade)return out('rPix','Preencha chave, nome e cidade.');let gui=emv('00','BR.GOV.BCB.PIX'),conta=emv('26',gui+emv('01',chave)),p=emv('00','01')+emv('01','12')+conta+emv('52','0000')+emv('53','986');if(valor>0)p+=emv('54',valor.toFixed(2));p+=emv('58','BR')+emv('59',nome)+emv('60',cidade)+emv('62',emv('05','***'))+'6304';out('rPix',p+crc16(p))}
+
+function calcVariacao(){let a=val('vInicial'),b=val('vFinal');if(!a)return out('rVariacao','O valor inicial não pode ser zero.');let p=(b-a)/a*100;out('rVariacao',`${p>=0?'Aumento':'Redução'} de ${Math.abs(p).toFixed(2)}%`)}
+function calcCombustivel(){let d=val('dist'),c=val('consumo'),p=val('precoComb');if(!d||!c||!p)return out('rComb','Preencha todos os campos.');let l=d/c;out('rComb',`Combustível: ${l.toFixed(2)} litros\nCusto estimado: R$ ${(l*p).toFixed(2)}`)}
+function calcRitmo(){let km=val('ritmoKm'),min=val('ritmoH')*60+val('ritmoM');if(!km||!min)return out('rRitmo','Preencha distância e tempo.');let ritmo=min/km,m=Math.floor(ritmo),s=Math.round((ritmo-m)*60);out('rRitmo',`Ritmo médio: ${m}:${String(s).padStart(2,'0')} min/km`)}
+function calcHora(){let s=val('salario'),h=val('horasSemana');if(!s||!h)return out('rHora','Preencha os campos.');out('rHora',`Valor aproximado por hora: R$ ${(s/(h*4.33)).toFixed(2)}`)}
+function calcCalorias(){let p=val('calPeso'),a=val('calAltura'),i=val('calIdade');if(!p||!a||!i)return out('rCalorias','Preencha peso, altura e idade.');let basal=calSexo.value==='m'?(10*p+6.25*a-5*i+5):(10*p+6.25*a-5*i-161);out('rCalorias',`Metabolismo basal: ${Math.round(basal)} kcal/dia\nGasto diário estimado: ${Math.round(basal*parseFloat(calAtiv.value))} kcal/dia`)}
+function gerarSlug(){let s=txtSlug.value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');out('rSlug',s)}
+function gerarCor(){let c='#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0').toUpperCase();R('rCor').innerHTML=`<div style="height:90px;border-radius:12px;background:${c};margin-bottom:10px"></div>${c}`}
+function dataParaTs(){let d=new Date(tsData.value);out('rTs',isNaN(d)?'Escolha uma data válida.':String(Math.floor(d.getTime()/1000)))}
+function tsParaData(){let n=parseInt(tsNumero.value);if(!n)return out('rTs','Digite um timestamp válido.');out('rTs',new Date(n*1000).toLocaleString('pt-BR'))}
+function formatarData(){let d=new Date(fmtData.value+'T00:00:00');out('rFmt',isNaN(d)?'Escolha uma data válida.':d.toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'long',year:'numeric'}))}
+
 function sortearNome(){let a=nomes.value.split('\\n').map(x=>x.trim()).filter(Boolean);out('rNome',a.length?`🎉 ${a[Math.floor(Math.random()*a.length)]}`:'Adicione pelo menos um nome.')}
 
-renderFilters();render();renderHistory();
+renderFilters();render();renderHistory();renderPopular();
 const hash=location.hash.replace('#','');if(ferramentas.some(f=>f[0]===hash))setTimeout(()=>abrir(hash),100);
 </script>
 </body>
