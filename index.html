@@ -9,7 +9,7 @@
 <meta property="og:title" content="Ferramentas Pro">
 <meta property="og:description" content="100 ferramentas rápidas com assistente inteligente para ajudar você.">
 <meta property="og:type" content="website">
-<title>Ferramentas Pro — Versão 10.1 | 100 ferramentas online</title>
+<title>Ferramentas Pro — 100 ferramentas online gratuitas</title>
 <style>
 :root{--bg:#f4f7fb;--card:#fff;--text:#14213d;--muted:#64748b;--primary:#2563eb;--primary2:#7c3aed;--border:#dbe4f0;--shadow:0 10px 30px rgba(15,23,42,.08);--ok:#15803d;--danger:#dc2626}
 body.dark{--bg:#0f172a;--card:#182235;--text:#f8fafc;--muted:#a8b3c7;--border:#2a3952;--shadow:0 10px 30px rgba(0,0,0,.25)}
@@ -74,18 +74,27 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 .trust-item{background:var(--card);border:1px solid var(--border);border-radius:15px;padding:13px;color:var(--muted);font-size:13px}
 .trust-item strong{display:block;color:var(--text);margin-bottom:3px}
 
+
+.brand-lockup{display:flex;align-items:center;justify-content:center;gap:12px;position:relative}.brand-mark{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);font-size:30px}.brand-copy{text-align:left}.brand-copy h1{line-height:1}.brand-copy span{display:block;margin-top:6px;font-size:13px;opacity:.9;font-weight:700}.hero-metrics{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}.hero-metric{padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);font-size:12px;font-weight:800}.v11-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0}.v11-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}.v11-card h2{margin:0 0 7px;font-size:18px}.v11-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}.v11-card button{margin-top:12px;border:0;border-radius:11px;background:var(--primary);color:#fff;padding:10px 13px;font-weight:800;cursor:pointer}.faq{margin:22px 0;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}.faq h2{margin:0 0 12px}.faq details{border-top:1px solid var(--border);padding:12px 0}.faq details:first-of-type{border-top:0}.faq summary{cursor:pointer;font-weight:800}.faq p{color:var(--muted);line-height:1.55;margin:8px 0 0}.suggestion-form{display:grid;gap:10px}.suggestion-form textarea{min-height:100px}.voice-pulse{animation:voicePulse 1s infinite}@keyframes voicePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}.ai-status{font-size:12px;opacity:.85;margin-left:6px}@media(max-width:600px){.brand-lockup{align-items:flex-start}.brand-copy h1{font-size:33px}.brand-mark{width:50px;height:50px}}
+
 </style>
+
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Ferramentas Pro">
+<meta name="application-name" content="Ferramentas Pro">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Ferramentas Pro">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Ferramentas Pro","inLanguage":"pt-BR","description":"Portal com 100 ferramentas online gratuitas para cálculos, textos, conversões, geradores e produtividade."}</script>
+
 </head>
 <body>
 <div id="progress"></div>
 <header>
-<h1>Ferramentas Pro</h1>
-<p>100 ferramentas rápidas, gratuitas e agora com Assistente Pro inteligente.</p>
-<div class="hero-actions">
-<button class="hero-btn" onclick="R('busca').focus()">🔎 Encontrar ferramenta</button>
-<button class="hero-btn" onclick="abrirIA()">🤖 Perguntar à IA</button>
-<button class="hero-btn" onclick="surpresa()">🎁 Ferramenta surpresa</button>
-</div>
+<div class="brand-lockup"><div class="brand-mark">🧰</div><div class="brand-copy"><h1>Ferramentas Pro</h1><span>Utilidades inteligentes para o dia a dia</span></div></div>
+<p>100 ferramentas gratuitas para cálculos, textos, conversões, geradores e produtividade.</p>
+<div class="hero-actions"><button class="hero-btn" onclick="R('busca').focus()">🔎 Encontrar ferramenta</button><button class="hero-btn" onclick="falarComIA()">🎤 Falar com a IA</button><button class="hero-btn" onclick="abrirIA()">⌨️ Digitar para a IA</button><button class="hero-btn" onclick="surpresa()">🎁 Ferramenta surpresa</button></div>
+<div class="hero-metrics"><span class="hero-metric">⚡ Uso imediato</span><span class="hero-metric">📱 Feito para celular</span><span class="hero-metric">🔒 Sem cadastro</span></div>
 </header>
 
 <div class="topbar">
@@ -98,13 +107,13 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 <span class="pill"><strong id="totalFerramentas">100</strong> ferramentas</span>
 <span class="pill"><strong id="totalUsos">0</strong> usos neste aparelho</span>
 <span class="pill"><strong id="totalFavoritos">0</strong> favoritas</span>
-<span class="pill">Sem cadastro</span><span class="pill">Versão 10.1</span>
+<span class="pill">Sem cadastro</span><span class="pill">Versão 11</span>
 </div>
 
 <section class="ai-banner">
-<h2>🚀 Versão 10.1 com Assistente Pro</h2>
-<p>Pesquise por voz, peça cálculos ao Assistente Pro e use 100 ferramentas em um só lugar.</p>
-<button onclick="abrirIA()">Conversar com o Assistente</button>
+<h2>🚀 Versão 11 com Assistente Pro</h2>
+<p>Toque em “Falar com a IA”, diga o que precisa e o site encontra a ferramenta certa.</p>
+<button onclick="falarComIA()">🎤 Falar com a IA</button>
 </section>
 
 <div id="filters" class="filters"></div>
@@ -123,14 +132,18 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 </section>
 
 <div class="ad-slot">Espaço reservado para anúncio futuro • Google AdSense</div>
+
+<section class="v11-grid"><div class="v11-card"><h2>✨ Ferramenta do dia</h2><p>Uma recomendação diferente todos os dias.</p><button onclick="ferramentaDoDia()">Abrir ferramenta do dia</button></div><div class="v11-card"><h2>💡 Dica do dia</h2><p id="dicaDoDia">Carregando uma dica útil...</p><button onclick="novaDica()">Mostrar outra dica</button></div><div class="v11-card"><h2>📩 Enviar sugestão</h2><p>Sentiu falta de alguma ferramenta? Envie sua ideia.</p><div class="suggestion-form"><input id="sugestaoNome" placeholder="Seu nome (opcional)"><textarea id="sugestaoTexto" placeholder="Qual ferramenta você gostaria de ver aqui?"></textarea><button onclick="enviarSugestao()">Enviar sugestão</button></div></div></section>
 <section id="grid" class="grid"></section>
 <section class="popular"><h2>🏆 Ferramentas mais usadas</h2><div id="popularList" class="popular-list"></div></section>
 <section class="history"><h2>🕘 Usadas recentemente</h2><div id="historyList" class="history-list">Nenhuma ferramenta usada ainda.</div></section>
 <section class="search-history"><h2>🔎 Pesquisas recentes</h2><div id="searchHistoryList" class="search-history-list">Nenhuma pesquisa ainda.</div></section>
+
+<section class="faq"><h2>❓ Perguntas frequentes</h2><details><summary>As ferramentas são gratuitas?</summary><p>Sim. As ferramentas podem ser usadas gratuitamente e sem cadastro.</p></details><details><summary>Os dados digitados ficam salvos?</summary><p>A maior parte dos cálculos acontece no próprio navegador. Favoritos, tema e histórico podem ser salvos localmente.</p></details><details><summary>Os resultados substituem orientação profissional?</summary><p>Não. Resultados financeiros, médicos, jurídicos, fiscais ou trabalhistas são estimativas.</p></details><details><summary>Como falar com o Assistente Pro?</summary><p>Use o botão “Falar com a IA” para ditar sua pergunta ou abra o chat para digitar.</p></details></section>
 </main>
 
-<footer>© 2026 Ferramentas Pro — Versão 10.1.1</footer>
-<button class="ai-fab" onclick="abrirIA()">🤖 Pergunte à IA</button>
+<footer>© 2026 Ferramentas Pro — Versão 11.1</footer>
+<button class="ai-fab" onclick="falarComIA()">🎤 Falar com a IA</button>
 <div id="toast" class="toast">Pronto!</div>
 
 <div id="modal" class="modal"><div class="dialog">
@@ -157,7 +170,7 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 </div>
 
 <aside id="aiPanel" class="ai-panel">
-<div class="ai-head"><strong>🤖 Assistente Pro</strong><button onclick="fecharIA()">×</button></div>
+<div class="ai-head"><strong>🤖 Assistente Pro <span id="aiStatus" class="ai-status">pronto</span></strong><button onclick="fecharIA()">×</button></div>
 <div id="aiMessages" class="ai-messages"></div>
 <div class="ai-suggestions">
 <button onclick="perguntar('Quero calcular desconto')">Calcular desconto</button>
@@ -431,6 +444,12 @@ function romano(n){let a=[['M',1000],['CM',900],['D',500],['CD',400],['C',100],[
 function copiarResultado(){navigator.clipboard.writeText(R('res')?.innerText||'').then(()=>toast('Resultado copiado!'))}
 function compartilhar(){let t=(ferramentaAtual?.[2]||'Ferramentas Pro')+': '+(R('res')?.innerText||'');navigator.share?navigator.share({title:'Ferramentas Pro',text:t,url:location.href}):window.open('https://wa.me/?text='+encodeURIComponent(t+' '+location.href))}
 
+
+const dicasV11=['Use os favoritos para deixar as ferramentas importantes sempre à mão.','A busca aceita palavras como desconto, senha, PIX e texto.','Você pode falar com a IA e pedir um cálculo de porcentagem.','A Ferramenta do Dia muda automaticamente todos os dias.','O modo escuro pode deixar a leitura mais confortável.'];
+function novaDica(){if(R('dicaDoDia'))R('dicaDoDia').textContent=dicasV11[Math.floor(Math.random()*dicasV11.length)]}
+function enviarSugestao(){const nome=R('sugestaoNome').value.trim(),texto=R('sugestaoTexto').value.trim();if(!texto){toast('Escreva sua sugestão.');return}window.location.href=`mailto:edxcervice@gmail.com?subject=${encodeURIComponent('Sugestão para o Ferramentas Pro')}&body=${encodeURIComponent('Nome: '+(nome||'Não informado')+'\n\nSugestão:\n'+texto)}`}
+function falarComIA(){abrirIA();const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){R('aiStatus').textContent='digite sua pergunta';R('aiInput').focus();toast('Seu navegador não liberou voz. Digite no chat.');return}const rec=new SR();rec.lang='pt-BR';rec.interimResults=false;R('aiStatus').textContent='ouvindo...';const fab=document.querySelector('.ai-fab');if(fab)fab.classList.add('voice-pulse');rec.onresult=e=>{R('aiStatus').textContent='processando...';perguntar(e.results[0][0].transcript)};rec.onerror=()=>{R('aiStatus').textContent='não consegui ouvir';toast('Não foi possível ouvir. Tente novamente ou digite.')};rec.onend=()=>{if(fab)fab.classList.remove('voice-pulse');setTimeout(()=>{if(R('aiStatus'))R('aiStatus').textContent='pronto'},700)};rec.start()}
+
 function abrirIA(){R('aiPanel').classList.add('open');if(!R('aiMessages').children.length)addBot('Olá! Diga o que você precisa. Exemplo: “calcular 20% de 500” ou “quero gerar uma senha”.')}
 function fecharIA(){R('aiPanel').classList.remove('open')}
 function addBot(t,botao){let d=document.createElement('div');d.className='msg bot';d.innerHTML=t+(botao?`<br><button class="btn" onclick="abrir('${botao}')">Abrir ferramenta</button>`:'');R('aiMessages').appendChild(d);R('aiMessages').scrollTop=9999}
@@ -514,15 +533,7 @@ conteudo:`<span class="info-date">Atualizada em julho de 2026</span>
 <h3>Como controlar</h3>
 <p>O visitante pode escolher “Somente necessários” no aviso do site e também apagar ou bloquear cookies pelas configurações do navegador. O bloqueio pode limitar algumas funções.</p>`
 },
-contato:{
-titulo:'Contato',
-conteudo:`<span class="info-date">Ferramentas Pro</span>
-<div class="contact-box">
-<p><strong>Canal de atendimento em preparação</strong></p>
-<p>Antes de enviar o site para análise do Google AdSense, cadastre aqui um endereço de e-mail que você consulte regularmente.</p>
-<p>O contato deve ser usado para dúvidas, correções, solicitações de privacidade e comunicação sobre o funcionamento do portal.</p>
-</div>`
-}
+contato:{titulo:'Contato',conteudo:`<span class="info-date">Ferramentas Pro</span><div class="contact-box"><p><strong>E-mail de atendimento</strong><br><a href="mailto:edxcervice@gmail.com">edxcervice@gmail.com</a></p><p><strong>Endereço</strong><br>Rua Olavo Firmino da Silva, nº 06</p><p>Use este canal para dúvidas, correções, solicitações de privacidade e sugestões relacionadas ao portal.</p></div>`}
 };
 function abrirPagina(id){
   const pagina=paginasInstitucionais[id];
@@ -546,7 +557,7 @@ function iniciarCookies(){
   if(!localStorage.getItem('fp_cookies'))setTimeout(()=>R('cookieBanner').classList.add('show'),700);
 }
 
-R('totalFerramentas').textContent=ferramentas.length;renderFilters();render();renderHistory();renderPopular();renderPesquisas();iniciarCookies();
+R('totalFerramentas').textContent=ferramentas.length;renderFilters();render();renderHistory();renderPopular();renderPesquisas();iniciarCookies();novaDica();
 </script>
 </body>
 </html>
