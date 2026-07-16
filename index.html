@@ -77,6 +77,20 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 
 .brand-lockup{display:flex;align-items:center;justify-content:center;gap:12px;position:relative}.brand-mark{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);font-size:30px}.brand-copy{text-align:left}.brand-copy h1{line-height:1}.brand-copy span{display:block;margin-top:6px;font-size:13px;opacity:.9;font-weight:700}.hero-metrics{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}.hero-metric{padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);font-size:12px;font-weight:800}.v11-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0}.v11-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}.v11-card h2{margin:0 0 7px;font-size:18px}.v11-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}.v11-card button{margin-top:12px;border:0;border-radius:11px;background:var(--primary);color:#fff;padding:10px 13px;font-weight:800;cursor:pointer}.faq{margin:22px 0;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}.faq h2{margin:0 0 12px}.faq details{border-top:1px solid var(--border);padding:12px 0}.faq details:first-of-type{border-top:0}.faq summary{cursor:pointer;font-weight:800}.faq p{color:var(--muted);line-height:1.55;margin:8px 0 0}.suggestion-form{display:grid;gap:10px}.suggestion-form textarea{min-height:100px}.voice-pulse{animation:voicePulse 1s infinite}@keyframes voicePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}.ai-status{font-size:12px;opacity:.85;margin-left:6px}@media(max-width:600px){.brand-lockup{align-items:flex-start}.brand-copy h1{font-size:33px}.brand-mark{width:50px;height:50px}}
 
+
+/* Versão 11.5 — acabamento, acessibilidade e monetização */
+.execute-btn{width:100%;min-height:50px}
+.result.ok{border-style:solid;border-color:rgba(21,128,61,.35);background:rgba(21,128,61,.08)}
+.result.warn{border-style:solid;border-color:rgba(245,158,11,.45);background:rgba(245,158,11,.08)}
+.empty-action{margin-top:10px;border:0;border-radius:11px;background:var(--primary);color:#fff;padding:10px 13px;font-weight:800;cursor:pointer}
+#toTop{position:fixed;left:18px;bottom:18px;width:48px;height:48px;border:0;border-radius:50%;background:var(--card);color:var(--text);box-shadow:var(--shadow);font-size:22px;cursor:pointer;display:none;z-index:29}
+#toTop.show{display:block}
+.footer-badges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:0 auto 16px}
+.footer-badge{padding:7px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--border);font-size:12px;font-weight:700;color:var(--muted)}
+.ad-slot{min-height:78px;display:grid;place-items:center}
+.card:focus-visible,.filter:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid rgba(37,99,235,.35);outline-offset:2px}
+@media(max-width:600px){#toTop{left:12px;bottom:12px}.site-footer{padding-bottom:105px}.ai-fab{max-width:64vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+
 </style>
 
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -107,11 +121,11 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 <span class="pill"><strong id="totalFerramentas">100</strong> ferramentas</span>
 <span class="pill"><strong id="totalUsos">0</strong> usos neste aparelho</span>
 <span class="pill"><strong id="totalFavoritos">0</strong> favoritas</span>
-<span class="pill">Sem cadastro</span><span class="pill">Versão 11</span>
+<span class="pill">Sem cadastro</span><span class="pill">Versão 11.5</span>
 </div>
 
 <section class="ai-banner">
-<h2>🚀 Versão 11 com Assistente Pro</h2>
+<h2>✨ Versão 11.5 — acabamento profissional</h2>
 <p>Toque em “Falar com a IA”, diga o que precisa e o site encontra a ferramenta certa.</p>
 <button onclick="falarComIA()">🎤 Falar com a IA</button>
 </section>
@@ -142,7 +156,18 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 <section class="faq"><h2>❓ Perguntas frequentes</h2><details><summary>As ferramentas são gratuitas?</summary><p>Sim. As ferramentas podem ser usadas gratuitamente e sem cadastro.</p></details><details><summary>Os dados digitados ficam salvos?</summary><p>A maior parte dos cálculos acontece no próprio navegador. Favoritos, tema e histórico podem ser salvos localmente.</p></details><details><summary>Os resultados substituem orientação profissional?</summary><p>Não. Resultados financeiros, médicos, jurídicos, fiscais ou trabalhistas são estimativas.</p></details><details><summary>Como falar com o Assistente Pro?</summary><p>Use o botão “Falar com a IA” para ditar sua pergunta ou abra o chat para digitar.</p></details></section>
 </main>
 
-<footer>© 2026 Ferramentas Pro — Versão 11.1</footer>
+<footer class="site-footer">
+<div class="footer-badges"><span class="footer-badge">🧰 100 ferramentas</span><span class="footer-badge">🔒 Sem cadastro</span><span class="footer-badge">📱 Otimizado para celular</span></div>
+<div class="footer-links">
+<button onclick="abrirPagina('sobre')">Sobre</button>
+<button onclick="abrirPagina('privacidade')">Privacidade</button>
+<button onclick="abrirPagina('termos')">Termos de Uso</button>
+<button onclick="abrirPagina('cookies')">Cookies</button>
+<button onclick="abrirPagina('contato')">Contato</button>
+</div>
+<p class="footer-note">© 2026 Ferramentas Pro — Versão 11.5. Resultados são informativos e podem ser estimativas. Confira dados importantes antes de tomar decisões.</p>
+</footer>
+<button id="toTop" title="Voltar ao topo" aria-label="Voltar ao topo">↑</button>
 <button class="ai-fab" onclick="falarComIA()">🎤 Falar com a IA</button>
 <div id="toast" class="toast">Pronto!</div>
 
@@ -291,14 +316,17 @@ let categoria='Todas',somenteFavoritos=false,ferramentaAtual=null;
 let favoritos=JSON.parse(localStorage.getItem('fp_favoritos')||'[]'),usos=JSON.parse(localStorage.getItem('fp_usos')||'{}'),historico=JSON.parse(localStorage.getItem('fp_historico')||'[]'),pesquisas=JSON.parse(localStorage.getItem('fp_pesquisas')||'[]');
 function toast(m){R('toast').textContent=m;R('toast').classList.add('show');setTimeout(()=>R('toast').classList.remove('show'),1600)}
 function renderFilters(){R('filters').innerHTML=['Todas',...new Set(ferramentas.map(f=>f[4]))].map(c=>`<button class="filter ${categoria===c?'active':''}" onclick="categoria='${c}';renderFilters();render()">${c}</button>`).join('')}
-function render(){let q=semAcento(R('busca').value);R('limparBusca').style.display=q?'block':'none';let list=ferramentas.filter(f=>(categoria==='Todas'||f[4]===categoria)&&(!somenteFavoritos||favoritos.includes(f[0]))&&semAcento(f.join(' ')).includes(q));R('grid').innerHTML=list.map(f=>`<article class="card" onclick="abrir('${f[0]}')"><button class="fav" onclick="event.stopPropagation();toggleFav('${f[0]}')">${favoritos.includes(f[0])?'★':'☆'}</button><div class="emoji">${f[1]}</div><h3>${f[2]}</h3><p>${f[3]}</p><span class="tag">${f[4]}</span><span class="usage">${usos[f[0]]||0} usos</span></article>`).join('')||'<p>Nenhuma ferramenta encontrada.</p>';R('totalFavoritos').textContent=favoritos.length;R('totalUsos').textContent=Object.values(usos).reduce((a,b)=>a+b,0)}
+function render(){let q=semAcento(R('busca').value);R('limparBusca').style.display=q?'block':'none';let list=ferramentas.filter(f=>(categoria==='Todas'||f[4]===categoria)&&(!somenteFavoritos||favoritos.includes(f[0]))&&semAcento(f.join(' ')).includes(q));R('grid').innerHTML=list.map(f=>`<article class="card" tabindex="0" role="button" onkeydown="if(event.key==='Enter')abrir('${f[0]}')" onclick="abrir('${f[0]}')"><button class="fav" onclick="event.stopPropagation();toggleFav('${f[0]}')">${favoritos.includes(f[0])?'★':'☆'}</button><div class="emoji">${f[1]}</div><h3>${f[2]}</h3><p>${f[3]}</p><span class="tag">${f[4]}</span><span class="usage">${usos[f[0]]||0} usos</span></article>`).join('')||'<p>Nenhuma ferramenta encontrada.</p>';R('totalFavoritos').textContent=favoritos.length;R('totalUsos').textContent=Object.values(usos).reduce((a,b)=>a+b,0)}
 function toggleFav(id){favoritos=favoritos.includes(id)?favoritos.filter(x=>x!==id):[...favoritos,id];localStorage.setItem('fp_favoritos',JSON.stringify(favoritos));render()}
 function mostrarFavoritos(){somenteFavoritos=true;render()}
 function surpresa(){abrir(ferramentas[Math.floor(Math.random()*ferramentas.length)][0])}
 function addHistory(id){historico=[id,...historico.filter(x=>x!==id)].slice(0,6);usos[id]=(usos[id]||0)+1;localStorage.setItem('fp_historico',JSON.stringify(historico));localStorage.setItem('fp_usos',JSON.stringify(usos));renderHistory();renderPopular();render()}
 function renderHistory(){R('historyList').innerHTML=historico.map(id=>{let f=ferramentas.find(x=>x[0]===id);return f?`<button onclick="abrir('${id}')">${f[1]} ${f[2]}</button>`:''}).join('')||'Nenhuma ferramenta usada ainda.'}
 function renderPopular(){R('popularList').innerHTML=[...ferramentas].sort((a,b)=>(usos[b[0]]||0)-(usos[a[0]]||0)).slice(0,6).map((f,i)=>`<button class="popular-item" onclick="abrir('${f[0]}')"><strong>${i+1}. ${f[1]} ${f[2]}</strong><small>${usos[f[0]]||0} usos</small></button>`).join('')}
-function renderPesquisas(){R('searchHistoryList').innerHTML=pesquisas.map(q=>`<button onclick="R('busca').value='${q.replace(/'/g,"\\'")}';render()">🔎 ${q}</button>`).join('')||'Nenhuma pesquisa ainda.'}
+function renderPesquisas(){
+  if(!pesquisas.length){R('searchHistoryList').innerHTML='<span>Nenhuma pesquisa ainda.</span><button class="empty-action" onclick="R(\'busca\').focus();window.scrollTo({top:0,behavior:\'smooth\'})">Pesquisar agora</button>';return}
+  R('searchHistoryList').innerHTML=pesquisas.map(q=>`<button onclick="R('busca').value=${JSON.stringify(q)};render();window.scrollTo({top:0,behavior:'smooth'})">🔎 ${q}</button>`).join('')
+}
 R('busca').oninput=()=>render();R('busca').onchange=()=>{let q=R('busca').value.trim();if(q){pesquisas=[q,...pesquisas.filter(x=>x!==q)].slice(0,8);localStorage.setItem('fp_pesquisas',JSON.stringify(pesquisas));renderPesquisas()}}
 R('limparBusca').onclick=()=>{R('busca').value='';render()};R('favoritosBtn').onclick=()=>{somenteFavoritos=!somenteFavoritos;render()};R('tema').onclick=()=>{document.body.classList.toggle('dark');localStorage.setItem('fp_tema',document.body.classList.contains('dark')?'dark':'light')};if(localStorage.getItem('fp_tema')==='dark')document.body.classList.add('dark');
 
@@ -335,9 +363,9 @@ gradiente:[],
 aspecto:['Largura original|number','Altura original|number','Nova largura|number'],
 densidade:['Massa|number','Volume|number']
 };
-function abrir(id){let f=ferramentas.find(x=>x[0]===id);ferramentaAtual=f;R('tituloModal').textContent=f[1]+' '+f[2];let fields=(configs[id]||[]).map((x,i)=>{let [p,t]=x.split('|');return t==='textarea'?`<textarea id="i${i}" placeholder="${p}"></textarea>`:`<input id="i${i}" type="${t}" placeholder="${p}">`}).join('');R('conteudoModal').innerHTML=fields+`<button class="btn" onclick="executar('${id}')">Executar</button><div id="res" class="result"></div>`;R('modal').classList.add('open');addHistory(id)}
+function abrir(id){let f=ferramentas.find(x=>x[0]===id);ferramentaAtual=f;R('tituloModal').textContent=f[1]+' '+f[2];let fields=(configs[id]||[]).map((x,i)=>{let [p,t]=x.split('|');return t==='textarea'?`<textarea id="i${i}" placeholder="${p}"></textarea>`:`<input id="i${i}" type="${t}" placeholder="${p}">`}).join('');R('conteudoModal').innerHTML=fields+`<button class="btn execute-btn" onclick="executar('${id}')">Executar</button><div id="res" class="result"></div>`;R('modal').classList.add('open');addHistory(id)}
 function fechar(){R('modal').classList.remove('open')}
-const n=i=>parseFloat(R('i'+i)?.value)||0,s=i=>R('i'+i)?.value||'',res=t=>R('res').innerHTML=t;
+const n=i=>parseFloat(R('i'+i)?.value)||0,s=i=>R('i'+i)?.value||'',res=(t,tipo='ok')=>{R('res').className='result '+tipo;R('res').innerHTML=t};
 function executar(id){try{
 let r='';
 if(id==='imc'){let x=n(0)/(n(1)**2);r=x?`IMC: ${x.toFixed(2)}`:'Preencha os campos.'}
@@ -369,7 +397,7 @@ else if(id==='pix')r='Código PIX: confira os dados antes de utilizar. Chave: '+
 else if(id==='sorteio'){let a=s(0).split('\n').filter(Boolean);r=a.length?'🎉 '+a[Math.floor(Math.random()*a.length)]:'Adicione nomes.'}
 else if(id==='variacao')r=n(0)?(((n(1)-n(0))/n(0))*100).toFixed(2)+'%':'Inicial não pode ser zero.';
 else if(id==='combustivel')r=n(1)?`Custo: R$ ${((n(0)/n(1))*n(2)).toFixed(2)}`:'Preencha os campos.';
-else if(id==='ritmo'){let x=(n(1)*60+n(2))/n(0);r=`${Math.floor(x)}:${String(Math.round((x%1)*60)).padStart(2,'0')} min/km`}
+else if(id==='ritmo'){if(!n(0)||(n(1)===0&&n(2)===0)){return res('⚠️ Informe a distância e o tempo da atividade.','warn')}let x=(n(1)*60+n(2))/n(0),m=Math.floor(x),seg=Math.round((x-m)*60);if(seg===60){m++;seg=0}r=`🏃 Seu ritmo é: ${m}:${String(seg).padStart(2,'0')} min/km`}
 else if(id==='hora')r=n(1)?`R$ ${(n(0)/(n(1)*4.33)).toFixed(2)} por hora`:'Informe as horas.';
 else if(id==='calorias')r=`Estimativa basal: ${Math.round(10*n(0)+6.25*n(1)-5*n(2)+5)} kcal/dia`;
 else if(id==='inverter')r=[...s(0)].reverse().join('');
@@ -455,8 +483,8 @@ function fecharIA(){R('aiPanel').classList.remove('open')}
 function addBot(t,botao){let d=document.createElement('div');d.className='msg bot';d.innerHTML=t+(botao?`<br><button class="btn" onclick="abrir('${botao}')">Abrir ferramenta</button>`:'');R('aiMessages').appendChild(d);R('aiMessages').scrollTop=9999}
 function addUser(t){let d=document.createElement('div');d.className='msg user';d.textContent=t;R('aiMessages').appendChild(d)}
 function enviarIA(){let q=R('aiInput').value.trim();if(!q)return;R('aiInput').value='';perguntar(q)}
-function perguntar(q){abrirIA();addUser(q);let t=semAcento(q),nums=(t.match(/-?\d+(?:[.,]\d+)?/g)||[]).map(x=>parseFloat(x.replace(',','.')));
-if((t.includes('%')||t.includes('porcent'))&&nums.length>=2){addBot(`Resultado: <strong>${(nums[0]*nums[1]/100).toFixed(2)}</strong>. Também posso abrir a calculadora completa.`,'porcentagem');return}
+function perguntar(q){abrirIA();addUser(q);let t=semAcento(q).replace(/\bpor cento\b|\bcento\b/g,'%'),nums=(t.match(/-?\d+(?:[.,]\d+)?/g)||[]).map(x=>parseFloat(x.replace(',','.')));
+if((t.includes('%')||t.includes('porcent'))&&nums.length>=2){let p=nums[0],v=nums[1],resultado=p*v/100;addBot(`✅ <strong>${p}% de ${v} é ${resultado.toFixed(2)}</strong>.<br>Você também pode abrir a calculadora para testar outros valores.`,'porcentagem');return}
 if(t.includes('desconto')&&nums.length>=2){addBot(`Com ${nums[1]}% de desconto, o valor fica <strong>R$ ${(nums[0]*(1-nums[1]/100)).toFixed(2)}</strong>.`,'desconto');return}
 let aliases={senha:'senha',password:'senha',imc:'imc',peso:'peso',temperatura:'temperatura',febre:'temperatura',palavra:'palavras',caracter:'caracteres',qr:'qrcode',pix:'pix',emprestimo:'emprestimo',juros:'juros',idade:'idade',data:'dias',sorteio:'sorteio',nome:'sorteio',tabuada:'tabuada',lucro:'lucro',parcela:'parcelas',gorjeta:'gorjeta',combustivel:'combustivel',cpf:'cpfvalidar',texto:'maiusculas',json:'json',base64:'base64',moeda:'moeda',dado:'dado',equipe:'times',freelancer:'freelancer',salario:'salarioliquido',comissao:'comissao',cashback:'cashback',energia:'energia',inflacao:'inflacao',binario:'decimalbinario',hexadecimal:'hexadecimal',aniversario:'aniversario',iniciais:'iniciais',email:'mascaraemail',pin:'pin',usuario:'usuario',paleta:'paleta',gradiente:'gradiente'};
 let id=Object.keys(aliases).find(k=>t.includes(k));if(id){let f=ferramentas.find(x=>x[0]===aliases[id]);addBot(`A melhor opção é <strong>${f[2]}</strong>.`,f[0]);return}
@@ -482,7 +510,7 @@ function pesquisarPorVoz(){
 }
 R('vozBtn').onclick=pesquisarPorVoz;
 
-window.addEventListener('scroll',()=>{let d=document.documentElement;R('progress').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%'});
+window.addEventListener('scroll',()=>{let d=document.documentElement,max=d.scrollHeight-d.clientHeight;R('progress').style.width=(max?d.scrollTop/max*100:0)+'%';R('toTop').classList.toggle('show',d.scrollTop>600)});R('toTop').onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 
 const paginasInstitucionais={
 sobre:{
