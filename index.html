@@ -78,7 +78,7 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 .brand-lockup{display:flex;align-items:center;justify-content:center;gap:12px;position:relative}.brand-mark{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);font-size:30px}.brand-copy{text-align:left}.brand-copy h1{line-height:1}.brand-copy span{display:block;margin-top:6px;font-size:13px;opacity:.9;font-weight:700}.hero-metrics{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}.hero-metric{padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);font-size:12px;font-weight:800}.v11-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0}.v11-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}.v11-card h2{margin:0 0 7px;font-size:18px}.v11-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}.v11-card button{margin-top:12px;border:0;border-radius:11px;background:var(--primary);color:#fff;padding:10px 13px;font-weight:800;cursor:pointer}.faq{margin:22px 0;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}.faq h2{margin:0 0 12px}.faq details{border-top:1px solid var(--border);padding:12px 0}.faq details:first-of-type{border-top:0}.faq summary{cursor:pointer;font-weight:800}.faq p{color:var(--muted);line-height:1.55;margin:8px 0 0}.suggestion-form{display:grid;gap:10px}.suggestion-form textarea{min-height:100px}.voice-pulse{animation:voicePulse 1s infinite}@keyframes voicePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}.ai-status{font-size:12px;opacity:.85;margin-left:6px}@media(max-width:600px){.brand-lockup{align-items:flex-start}.brand-copy h1{font-size:33px}.brand-mark{width:50px;height:50px}}
 
 
-/* Versão 11.5 — acabamento, acessibilidade e monetização */
+/* Versão 11.6 — acabamento, acessibilidade e monetização */
 .execute-btn{width:100%;min-height:50px}
 .result.ok{border-style:solid;border-color:rgba(21,128,61,.35);background:rgba(21,128,61,.08)}
 .result.warn{border-style:solid;border-color:rgba(245,158,11,.45);background:rgba(245,158,11,.08)}
@@ -91,6 +91,24 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 .card:focus-visible,.filter:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid rgba(37,99,235,.35);outline-offset:2px}
 @media(max-width:600px){#toTop{left:12px;bottom:12px}.site-footer{padding-bottom:105px}.ai-fab{max-width:64vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
 
+
+/* Versão 11.6 — SEO, compartilhamento, avaliação e monetização */
+.growth-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0}
+.growth-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+.growth-card h2{margin:0 0 7px;font-size:18px}.growth-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+.growth-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.growth-actions button{border:0;border-radius:11px;padding:10px 13px;font-weight:800;cursor:pointer;background:var(--primary);color:#fff}
+.rating-stars{display:flex;gap:4px;margin-top:10px}
+.rating-stars button{border:0;background:transparent;font-size:30px;padding:2px;cursor:pointer;filter:grayscale(1);opacity:.55}
+.rating-stars button.active{filter:none;opacity:1}
+.rating-note{margin-top:7px;color:var(--muted);font-size:12px}
+.ad-slot{position:relative;overflow:hidden}
+.ad-slot:before{content:"Publicidade";position:absolute;top:5px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);opacity:.7}
+.ad-slot span{display:block;margin-top:10px}
+.tool-share-bar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.tool-share-bar button{border:1px solid var(--border);background:var(--bg);color:var(--text);border-radius:999px;padding:8px 11px;cursor:pointer;font-weight:700}
+@media(max-width:600px){.growth-grid{grid-template-columns:1fr}.rating-stars button{font-size:28px}}
+
 </style>
 
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -100,6 +118,13 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 <meta property="og:site_name" content="Ferramentas Pro">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Ferramentas Pro","inLanguage":"pt-BR","description":"Portal com 100 ferramentas online gratuitas para cálculos, textos, conversões, geradores e produtividade."}</script>
+
+
+<link rel="canonical" href="https://elton198810.github.io/Meu-site/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232563eb'/><text x='50' y='68' text-anchor='middle' font-size='62'>🧰</text></svg>">
+<meta property="og:url" content="https://elton198810.github.io/Meu-site/">
+<meta name="twitter:title" content="Ferramentas Pro">
+<meta name="twitter:description" content="100 ferramentas online gratuitas para cálculos, textos, conversões, geradores e produtividade.">
 
 </head>
 <body>
@@ -121,12 +146,12 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 <span class="pill"><strong id="totalFerramentas">100</strong> ferramentas</span>
 <span class="pill"><strong id="totalUsos">0</strong> usos neste aparelho</span>
 <span class="pill"><strong id="totalFavoritos">0</strong> favoritas</span>
-<span class="pill">Sem cadastro</span><span class="pill">Versão 11.5</span>
+<span class="pill">Sem cadastro</span><span class="pill">Versão 11.6</span>
 </div>
 
 <section class="ai-banner">
-<h2>✨ Versão 11.5 — acabamento profissional</h2>
-<p>Toque em “Falar com a IA”, diga o que precisa e o site encontra a ferramenta certa.</p>
+<h2>🚀 Versão 11.6 — pronta para crescer</h2>
+<p>Use 100 ferramentas, fale com a IA e compartilhe o portal com quem precisa.</p>
 <button onclick="falarComIA()">🎤 Falar com a IA</button>
 </section>
 
@@ -145,14 +170,38 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 <div class="trust-item"><strong>🧰 100 ferramentas</strong>Cálculos, textos, conversões e produtividade em um só lugar.</div>
 </section>
 
-<div class="ad-slot">Espaço reservado para anúncio futuro • Google AdSense</div>
+<div class="ad-slot" id="ad-topo"><span>Espaço reservado para anúncio futuro • Google AdSense</span></div>
 
 <section class="v11-grid"><div class="v11-card"><h2>✨ Ferramenta do dia</h2><p>Uma recomendação diferente todos os dias.</p><button onclick="ferramentaDoDia()">Abrir ferramenta do dia</button></div><div class="v11-card"><h2>💡 Dica do dia</h2><p id="dicaDoDia">Carregando uma dica útil...</p><button onclick="novaDica()">Mostrar outra dica</button></div><div class="v11-card"><h2>📩 Enviar sugestão</h2><p>Sentiu falta de alguma ferramenta? Envie sua ideia.</p><div class="suggestion-form"><input id="sugestaoNome" placeholder="Seu nome (opcional)"><textarea id="sugestaoTexto" placeholder="Qual ferramenta você gostaria de ver aqui?"></textarea><button onclick="enviarSugestao()">Enviar sugestão</button></div></div></section>
+
+<section class="growth-grid" aria-label="Compartilhamento e avaliação">
+<div class="growth-card">
+<h2>📱 Compartilhe o portal</h2>
+<p>Ajude outras pessoas a encontrar ferramentas gratuitas para o dia a dia.</p>
+<div class="growth-actions">
+<button onclick="compartilharSite()">Compartilhar site</button>
+<button onclick="copiarLinkSite()">Copiar link</button>
+</div>
+</div>
+<div class="growth-card">
+<h2>⭐ Avalie sua experiência</h2>
+<p>Sua avaliação fica salva apenas neste aparelho e nos ajuda a melhorar o projeto.</p>
+<div id="ratingStars" class="rating-stars" aria-label="Avaliar de 1 a 5 estrelas"></div>
+<div id="ratingNote" class="rating-note">Você ainda não avaliou.</div>
+</div>
+<div class="growth-card">
+<h2>💰 Preparação para anúncios</h2>
+<p>Os espaços publicitários já estão organizados para receber o Google AdSense depois da aprovação.</p>
+<div class="growth-actions"><button onclick="abrirPagina('privacidade')">Ver privacidade</button></div>
+</div>
+</section>
+
 <section id="grid" class="grid"></section>
 <section class="popular"><h2>🏆 Ferramentas mais usadas</h2><div id="popularList" class="popular-list"></div></section>
 <section class="history"><h2>🕘 Usadas recentemente</h2><div id="historyList" class="history-list">Nenhuma ferramenta usada ainda.</div></section>
 <section class="search-history"><h2>🔎 Pesquisas recentes</h2><div id="searchHistoryList" class="search-history-list">Nenhuma pesquisa ainda.</div></section>
 
+<div class="ad-slot" id="ad-rodape"><span>Segundo espaço reservado para anúncio futuro</span></div>
 <section class="faq"><h2>❓ Perguntas frequentes</h2><details><summary>As ferramentas são gratuitas?</summary><p>Sim. As ferramentas podem ser usadas gratuitamente e sem cadastro.</p></details><details><summary>Os dados digitados ficam salvos?</summary><p>A maior parte dos cálculos acontece no próprio navegador. Favoritos, tema e histórico podem ser salvos localmente.</p></details><details><summary>Os resultados substituem orientação profissional?</summary><p>Não. Resultados financeiros, médicos, jurídicos, fiscais ou trabalhistas são estimativas.</p></details><details><summary>Como falar com o Assistente Pro?</summary><p>Use o botão “Falar com a IA” para ditar sua pergunta ou abra o chat para digitar.</p></details></section>
 </main>
 
@@ -165,7 +214,7 @@ footer{text-align:center;padding:24px;color:var(--muted)}
 <button onclick="abrirPagina('cookies')">Cookies</button>
 <button onclick="abrirPagina('contato')">Contato</button>
 </div>
-<p class="footer-note">© 2026 Ferramentas Pro — Versão 11.5. Resultados são informativos e podem ser estimativas. Confira dados importantes antes de tomar decisões.</p>
+<p class="footer-note">© 2026 Ferramentas Pro — Versão 11.6. Resultados são informativos e podem ser estimativas. Confira dados importantes antes de tomar decisões.</p>
 </footer>
 <button id="toTop" title="Voltar ao topo" aria-label="Voltar ao topo">↑</button>
 <button class="ai-fab" onclick="falarComIA()">🎤 Falar com a IA</button>
@@ -363,8 +412,58 @@ gradiente:[],
 aspecto:['Largura original|number','Altura original|number','Nova largura|number'],
 densidade:['Massa|number','Volume|number']
 };
-function abrir(id){let f=ferramentas.find(x=>x[0]===id);ferramentaAtual=f;R('tituloModal').textContent=f[1]+' '+f[2];let fields=(configs[id]||[]).map((x,i)=>{let [p,t]=x.split('|');return t==='textarea'?`<textarea id="i${i}" placeholder="${p}"></textarea>`:`<input id="i${i}" type="${t}" placeholder="${p}">`}).join('');R('conteudoModal').innerHTML=fields+`<button class="btn execute-btn" onclick="executar('${id}')">Executar</button><div id="res" class="result"></div>`;R('modal').classList.add('open');addHistory(id)}
-function fechar(){R('modal').classList.remove('open')}
+
+function compartilharSite(){
+  const data={title:'Ferramentas Pro',text:'100 ferramentas online gratuitas para cálculos, textos, conversões e produtividade.',url:'https://elton198810.github.io/Meu-site/'};
+  if(navigator.share){navigator.share(data).catch(()=>{})}
+  else{navigator.clipboard.writeText(data.url).then(()=>toast('Link do site copiado!'))}
+}
+function copiarLinkSite(){
+  navigator.clipboard.writeText('https://elton198810.github.io/Meu-site/').then(()=>toast('Link do site copiado!'));
+}
+function compartilharFerramentaAtual(){
+  if(!ferramentaAtual)return;
+  const url='https://elton198810.github.io/Meu-site/#'+ferramentaAtual[0];
+  const data={title:ferramentaAtual[2]+' — Ferramentas Pro',text:ferramentaAtual[3],url};
+  if(navigator.share){navigator.share(data).catch(()=>{})}
+  else{navigator.clipboard.writeText(url).then(()=>toast('Link da ferramenta copiado!'))}
+}
+function copiarLinkFerramenta(){
+  if(!ferramentaAtual)return;
+  navigator.clipboard.writeText('https://elton198810.github.io/Meu-site/#'+ferramentaAtual[0]).then(()=>toast('Link da ferramenta copiado!'));
+}
+function atualizarMetaFerramenta(f){
+  if(!f)return;
+  document.title=f[2]+' grátis — Ferramentas Pro';
+  const desc=document.querySelector('meta[name="description"]');
+  if(desc)desc.setAttribute('content',f[3]+' Use gratuitamente no Ferramentas Pro.');
+  const ogTitle=document.querySelector('meta[property="og:title"]');
+  const ogDesc=document.querySelector('meta[property="og:description"]');
+  const ogUrl=document.querySelector('meta[property="og:url"]');
+  if(ogTitle)ogTitle.setAttribute('content',f[2]+' — Ferramentas Pro');
+  if(ogDesc)ogDesc.setAttribute('content',f[3]);
+  if(ogUrl)ogUrl.setAttribute('content','https://elton198810.github.io/Meu-site/#'+f[0]);
+}
+function restaurarMeta(){
+  document.title='Ferramentas Pro — 100 ferramentas online gratuitas';
+  const desc=document.querySelector('meta[name="description"]');
+  if(desc)desc.setAttribute('content','100 ferramentas online gratuitas com Assistente Pro inteligente para cálculos, textos, conversões, geradores e produtividade.');
+}
+function renderAvaliacao(){
+  const nota=parseInt(localStorage.getItem('fp_avaliacao')||'0',10);
+  const area=R('ratingStars');
+  if(!area)return;
+  area.innerHTML=Array.from({length:5},(_,i)=>`<button class="${i<nota?'active':''}" aria-label="${i+1} estrela${i?'s':''}" onclick="salvarAvaliacao(${i+1})">⭐</button>`).join('');
+  R('ratingNote').textContent=nota?`Sua avaliação: ${nota} de 5 estrelas.`:'Você ainda não avaliou.';
+}
+function salvarAvaliacao(nota){
+  localStorage.setItem('fp_avaliacao',String(nota));
+  renderAvaliacao();
+  toast('Obrigado pela avaliação!');
+}
+
+function abrir(id){let f=ferramentas.find(x=>x[0]===id);ferramentaAtual=f;atualizarMetaFerramenta(f);R('tituloModal').textContent=f[1]+' '+f[2];let fields=(configs[id]||[]).map((x,i)=>{let [p,t]=x.split('|');return t==='textarea'?`<textarea id="i${i}" placeholder="${p}"></textarea>`:`<input id="i${i}" type="${t}" placeholder="${p}">`}).join('');R('conteudoModal').innerHTML=`<div class="tool-share-bar"><button onclick="compartilharFerramentaAtual()">📱 Compartilhar ferramenta</button><button onclick="copiarLinkFerramenta()">🔗 Copiar link</button></div>`+fields+`<button class="btn execute-btn" onclick="executar('${id}')">Executar</button><div id="res" class="result"></div>`;R('modal').classList.add('open');addHistory(id)}
+function fechar(){R('modal').classList.remove('open');restaurarMeta()}
 const n=i=>parseFloat(R('i'+i)?.value)||0,s=i=>R('i'+i)?.value||'',res=(t,tipo='ok')=>{R('res').className='result '+tipo;R('res').innerHTML=t};
 function executar(id){try{
 let r='';
@@ -585,7 +684,7 @@ function iniciarCookies(){
   if(!localStorage.getItem('fp_cookies'))setTimeout(()=>R('cookieBanner').classList.add('show'),700);
 }
 
-R('totalFerramentas').textContent=ferramentas.length;renderFilters();render();renderHistory();renderPopular();renderPesquisas();iniciarCookies();novaDica();
+R('totalFerramentas').textContent=ferramentas.length;renderFilters();render();renderHistory();renderPopular();renderPesquisas();iniciarCookies();novaDica();renderAvaliacao();
 </script>
 </body>
 </html>
